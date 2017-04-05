@@ -28,72 +28,72 @@ Public Class FormLogin
 
     Sub iuy() Handles Me.Load
         '''''' TEST pdf form inhumation
-        LeDem = New Acteur With {.Nom = "Ngeghy", .Prenom = "Laszlo", .Adresse = "Drève du Zèle", .Tel = "+7675765765", .Cp = 12345, .DateNaiss = #12/09/1973#, .NoRegistre = 123456789, .Pays = "Iran", .Ville = "Al-Hulp"}
-        LeDef = New Defunt With {.Nom = "MacAbbé", .Prenom = "Antoine", .Adresse = "90 boulevard iurfzeof", .DateDeces = Today, .DateNaiss = Today, .LieuDeces = "Là-bas", .Ville = "La Hulpe", .Pays = "Italie", .NumeroAnnee = 2345, .NumeroLh = 123456, .LieuNaiss = "Ici-bas", .Cp = 23456, .EtatCivil = "epoux", .EtatCivilDe = "Simone Sesavet"}
+        'LeDem = New Acteur With {.Nom = "Ngeghy", .Prenom = "Laszlo", .Adresse = "Drève du Zèle", .Tel = "+7675765765", .Cp = 12345, .DateNaiss = #12/09/1973#, .NoRegistre = 123456789, .Pays = "Iran", .Ville = "Al-Hulp"}
+        'LeDef = New Defunt With {.Nom = "MacAbbé", .Prenom = "Antoine", .Adresse = "90 boulevard iurfzeof", .DateDeces = Today, .DateNaiss = Today, .LieuDeces = "Là-bas", .Ville = "La Hulpe", .Pays = "Italie", .NumeroAnnee = 2345, .NumeroLh = 123456, .LieuNaiss = "Ici-bas", .Cp = 23456, .EtatCivil = "epoux", .EtatCivilDe = "Simone Sesavet"}
 
-        '' ajouter form nv con
-        Dim csnr As New Acteur With {
-        .Adresse = "13 rue du IUDSIUHDIsudsf",
-        .Cp = "23123213",
-        .DateNaiss = Today,
-        .Nom = "Klupo",
-        .NoRegistre = 273737,
-        .Pays = "République populaire démocratique de Poiulande septentrionale du sud-ouest montagneux",
-        .Prenom = "Kroug",
-        .Tel = "23123123",
-        .Ville = "Bruxeilless"
-        }
+        ''' ajouter form nv con
+        'Dim csnr As New Acteur With {
+        '.Adresse = "13 rue du IUDSIUHDIsudsf",
+        '.Cp = "23123213",
+        '.DateNaiss = Today,
+        '.Nom = "Klupo",
+        '.NoRegistre = 273737,
+        '.Pays = "République populaire démocratique de Poiulande septentrionale du sud-ouest montagneux",
+        '.Prenom = "Kroug",
+        '.Tel = "23123123",
+        '.Ville = "Bruxeilless"
+        '}
 
-        Dim fnvc As New FormulaireNvConcession With {
-        .DateSign = Today,
-        .TypeCon = "pl_2pers_15ans_urne",
-        .SigneParPmand = True,
-        .CsnrAdresse = "158b Schukruttstrasse",
-        .Commentaire = "Si possible orienté sud",
-        .CsnrCp = 567,
-        .CsnrDateNaiss = Today,
-        .CsnrNom = "Vanderbiest",
-        .CsnrNoNational = 345678,
-        .CsnrPays = "Belgique",
-        .CsnrPrenom = "Anaïs",
-        .CsnrTel = "45678945678",
-        .CsnrVille = "Binche",
-        .PmandAdresse = "76 rue de Rome",
-        .PmandCp = 45678,
-        .PmandDateNaiss = Today,
-        .PmandNom = "André",
-        .PmandPays = "Belgique",
-        .PmandPrenom = "Ernest",
-        .PmandTel = "34567890",
-        .PmandVille = "Tournai"
-        }
+        'Dim fnvc As New FormulaireNvConcession With {
+        '.DateSign = Today,
+        '.TypeCon = "pl_2pers_15ans_urne",
+        '.SigneParPmand = True,
+        '.CsnrAdresse = "158b Schukruttstrasse",
+        '.Commentaire = "Si possible orienté sud",
+        '.CsnrCp = 567,
+        '.CsnrDateNaiss = Today,
+        '.CsnrNom = "Vanderbiest",
+        '.CsnrNoNational = 345678,
+        '.CsnrPays = "Belgique",
+        '.CsnrPrenom = "Anaïs",
+        '.CsnrTel = "45678945678",
+        '.CsnrVille = "Binche",
+        '.PmandAdresse = "76 rue de Rome",
+        '.PmandCp = 45678,
+        '.PmandDateNaiss = Today,
+        '.PmandNom = "André",
+        '.PmandPays = "Belgique",
+        '.PmandPrenom = "Ernest",
+        '.PmandTel = "34567890",
+        '.PmandVille = "Tournai"
+        '}
 
-        fnvc.IntegrerInfosCsnr(csnr)
+        'fnvc.IntegrerInfosCsnr(csnr)
 
-        Dim UnBenef As New Acteur With {.Adresse = "89 Hermelijnlaan", .Cp = 8765, .DateNaiss = Today, .Nom = "Verstraeten", .Prenom = "Kim", .Ville = "Kortrijk", .Pays = "Belgique"}
+        'Dim UnBenef As New Acteur With {.Adresse = "89 Hermelijnlaan", .Cp = 8765, .DateNaiss = Today, .Nom = "Verstraeten", .Prenom = "Kim", .Ville = "Kortrijk", .Pays = "Belgique"}
 
-        'fnvc.AjouterBeneficiaire(UnBenef)
-        'fnvc.AjouterBeneficiaire(UnBenef)
-        'fnvc.AjouterBeneficiaire(UnBenef)
-        'fnvc.AjouterBeneficiaire(UnBenef)
+        ''fnvc.AjouterBeneficiaire(UnBenef)
+        ''fnvc.AjouterBeneficiaire(UnBenef)
+        ''fnvc.AjouterBeneficiaire(UnBenef)
+        ''fnvc.AjouterBeneficiaire(UnBenef)
 
 
-        Dim leform As New FormulaireInhumation With {
-        .AvisFossoy = True,
-        .Commentaire = "ràs",
-        .ConcSollic = "sans_concession",
-        .DateSign = Today,
-        .RefEmpl = "A3",
-        .RefAutresDef = "lui, elle et elle"
-        }
+        'Dim leform As New FormulaireInhumation With {
+        '.AvisFossoy = True,
+        '.Commentaire = "ràs",
+        '.ConcSollic = "sans_concession",
+        '.DateSign = Today,
+        '.RefEmpl = "A3",
+        '.RefAutresDef = "lui, elle et elle"
+        '}
 
-        leform.FormNvCon = fnvc
-        leform.IntegrerInfosDefunt(LeDef)
-        leform.IntegrerInfosDemandeur(LeDem)
+        'leform.FormNvCon = fnvc
+        'leform.IntegrerInfosDefunt(LeDef)
+        'leform.IntegrerInfosDemandeur(LeDem)
 
-        Dim ep As New ExporteurPdf
+        'Dim ep As New ExporteurPdf
         'ep.CreePdfInhum(leform)
-        ep.CreePdfReservation(fnvc)
+        'ep.CreePdfReservation(fnvc)
         'ep.CreePdfProlongation()
 
 
