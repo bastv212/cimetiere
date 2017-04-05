@@ -255,3 +255,4 @@ paket-files/
 .idea/
 *.sln.iml
 cimetiere/bin/Debug/cimetiere.exe
+cimetiere/bin/Debug/*.exe
