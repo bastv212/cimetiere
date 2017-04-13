@@ -14,10 +14,9 @@ Public Class FormGestion
         DgvListeDefunts.AutoGenerateColumns = False
         DgvListeDefunts.DataSource = ListeDefuntsSortable
 
-        Dim ListeConcessionnaire = 
         Dim ListeConcessionnaireSortable As New SortableBindingList(Of Object)(ListeConcessionaire)
         DgvListeDefunts.AutoGenerateColumns = False
-        DgvListeDefunts.DataSource =
+
 
 
     End Sub

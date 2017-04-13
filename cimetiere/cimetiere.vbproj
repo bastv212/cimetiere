@@ -203,6 +203,18 @@
     <Compile Include="FormEditActeur.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEditConcession.Designer.vb">
+      <DependentUpon>FormEditConcession.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditConcession.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEmplacement.Designer.vb">
+      <DependentUpon>FormEditEmplacement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditEmplacement.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormNouvelleConcession.Designer.vb">
       <DependentUpon>FormNouvelleConcession.vb</DependentUpon>
     </Compile>
@@ -343,6 +355,9 @@
     <Compile Include="TextBoxNullable.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TextBoxFloat.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="tmpExFormNouvelleInhumation.Designer.vb">
       <DependentUpon>tmpExFormNouvelleInhumation.vb</DependentUpon>
     </Compile>
@@ -447,6 +462,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditActeur.resx">
       <DependentUpon>FormEditActeur.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditConcession.resx">
+      <DependentUpon>FormEditConcession.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditEmplacement.resx">
+      <DependentUpon>FormEditEmplacement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRechercheConcession.resx">
       <DependentUpon>FormRechercheConcession.vb</DependentUpon>
