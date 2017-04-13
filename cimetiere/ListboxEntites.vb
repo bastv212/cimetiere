@@ -16,7 +16,7 @@
     Public Event ActeurChanged()
 
     Public Sub New()
-        Me.DisplayMember = "Nom"
+        'Me.DisplayMember = "Texte"        ' passer à ToString() pour les entités/condensés qui n'auraient pas de .Texte ?
         Me.ValueMember = "Id"
         AddHandler Me.SelectedValueChanged, AddressOf Me_SelectedValueChanged
     End Sub
@@ -51,7 +51,7 @@
     End Sub
 
     Public Function FiltrerElem(elem As Object, filtre As String) As Boolean
-        'Return elem.Nom.contains(filtre)
+        'Return elem.Texte.contains(filtre)
         Return UzineAGaz.ReduireString(elem.ToString).Contains(UzineAGaz.ReduireString(filtre))
     End Function
 

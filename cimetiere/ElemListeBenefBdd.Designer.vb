@@ -79,7 +79,7 @@ Partial Class ElemListeBenefBdd
         Me.BtRetirerBeneficiaire.Margin = New System.Windows.Forms.Padding(4)
         Me.BtRetirerBeneficiaire.Name = "BtRetirerBeneficiaire"
         Me.BtRetirerBeneficiaire.Size = New System.Drawing.Size(32, 30)
-        Me.BtRetirerBeneficiaire.TabIndex = 21
+        Me.BtRetirerBeneficiaire.TabIndex = 1
         Me.BtRetirerBeneficiaire.UseVisualStyleBackColor = True
         '
         'TbLienParente
@@ -88,7 +88,7 @@ Partial Class ElemListeBenefBdd
         Me.TbLienParente.Location = New System.Drawing.Point(654, 3)
         Me.TbLienParente.Name = "TbLienParente"
         Me.TbLienParente.Size = New System.Drawing.Size(167, 22)
-        Me.TbLienParente.TabIndex = 20
+        Me.TbLienParente.TabIndex = 2
         Me.TbLienParente.Value = Nothing
         '
         'BtModifier
@@ -96,7 +96,7 @@ Partial Class ElemListeBenefBdd
         Me.BtModifier.Location = New System.Drawing.Point(840, 4)
         Me.BtModifier.Name = "BtModifier"
         Me.BtModifier.Size = New System.Drawing.Size(76, 23)
-        Me.BtModifier.TabIndex = 22
+        Me.BtModifier.TabIndex = 3
         Me.BtModifier.Text = "Modifier"
         Me.BtModifier.UseVisualStyleBackColor = True
         '

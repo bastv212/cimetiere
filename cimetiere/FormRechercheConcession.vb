@@ -1,75 +1,36 @@
 ﻿Public Class FormRechercheConcession
-
+    ' Sert à retrouver une concession existante sur base d'infos fournies par le demandeur
     Private ListeConcessions As SortableBindingList(Of Concession.InfosPourListe)
     Private _csnSelect As Concession
-    Public ReadOnly Property CsnSelect
+    Public ReadOnly Property CsnSelect As Concession
         Get
             Return _csnSelect
         End Get
     End Property
-    ' Sert à retrouver une concession existante sur base d'infos fournies par le demandeur
+
 
     ' à faire :
     ' - charger la liste des concessions
 
     Private Sub FormRechercheConcession_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabFiltre.Text = ""
-        ChargerListe()
-        ListeConcessions.FilterFunc = AddressOf FiltrerElement
         DgvConcessions.AutoGenerateColumns = False
-        DgvConcessions.DataSource = ListeConcessions
+        ChargerListe()
+
     End Sub
 
     Private Sub TbChampRecherche_KeyDown(sender As Object, e As KeyEventArgs) Handles TbChampRecherche.KeyDown
         If e.KeyCode = Keys.Enter Then
             BtChercher_Click(BtChercher, Nothing)
+            e.Handled = True
         End If
     End Sub
 
-
-    'Private Function FiltrerElem(elem As , filtre As String)
-
-    'End Function
-
-
-    ' colonnes à reprendre dans la grille :
-    ' - nom & prénom du concessionnaire (utiliser NomComplet)
-    ' - numéro de la concession (quoi que ça puisse être)
-    ' - référence emplacement
-    ' - Bénéficiaires
-    ' - Défunts (auto ellipsis pourrait servir)
-    ' - peut-être date d'expiration ?
-
-    ' critères pertinents :
-    ' - nom, prénom du concessionnaire
-    ' - nom, prénom de la personne de contact
-    ' - noms, prénoms des bénéficiaires désignés si présents
-    ' - numéro de la concession (probablement inconnu)
-    ' - (commentaire ?)
-    ' - réf emplacement
-    ' (- parcelle emplacement)
-    ' - noms défunts [actuellement] associés à l'emplacement ou si libre/vide
-
-    ' - données à afficher quand sélection :
-    ' x - dates de début et de fin (expire)
-    ' x - commentaire (?)
-    ' x - infos du concessionnaire (nom complet & adresse avec signalement absence, pour le reste si rien a afficher ne rien mettre)
-    ' x - liste des bénéficiaires (avec scroll, on ne sait jamais - peut-être dgv)
-    ' - référence, type, nombre de places, peut-être commentaire ? de l'emplacement, ainsi que
-    ' x - défunt(s) qui sont actuellement dans l'emplacement - peut-être pas sous forme d'une liste, il risque de n'y en avoir qu'un le plus souvent)
-
-
-
-    ' :
-    ' champ général nom de la personne/des bénefs/des défunts
-    ' champ pour l'emplacement
-
-    ' (peut-être des boutons/liens/actions au double clic pour éditer les éléments ? (intégration plus générale dans une interface de gestion/édition))
-
-    ' - montrer (en rouge ?) si la concession est expiré (ou proche de l'expiration, en orange ?)
-
-    Private Sub ChargerListe()
-        ListeConcessions = New SortableBindingList(Of Concession.InfosPourListe)(Bdd.GetListeConcessions)
+    Private Sub ChargerListe(Optional AvecExpirees As Boolean = False)
+        ListeConcessions = New SortableBindingList(Of Concession.InfosPourListe)(Bdd.GetListeConcessions(AvecExpirees)) '(Bdd.GetListeConcessions)
+        ListeConcessions.FilterFunc = AddressOf FiltrerElement
+        DgvConcessions.DataSource = ListeConcessions
+        BtChercher_Click(BtChercher, Nothing)
     End Sub
 
     Private Sub BtChercher_Click(sender As Object, e As EventArgs) Handles BtChercher.Click
@@ -82,7 +43,22 @@
         End If
     End Sub
 
-
+    '' couleur différente aux concessions expirées
+    'Private Sub ColorLignes(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DgvConcessions.CellFormatting
+    '    Dim larow As DataGridViewRow = DgvConcessions.Rows(e.RowIndex)
+    '    Dim datefin As Date? = CType(larow.DataBoundItem, Concession.InfosPourListe).DateFin
+    '    Dim expire As Boolean = datefin.HasValue AndAlso datefin < Today
+    '    Dim impair As Boolean = e.RowIndex Mod 2 <> 0
+    '    If expire Then
+    '        If impair Then
+    '            larow.DefaultCellStyle.BackColor = Color.FromArgb(212, 212, 212)
+    '            larow.DefaultCellStyle.ForeColor = SystemColors.GrayText
+    '        Else
+    '            larow.DefaultCellStyle.BackColor = Color.FromArgb(222, 222, 222)
+    '            larow.DefaultCellStyle.ForeColor = SystemColors.GrayText
+    '        End If
+    '    End If
+    'End Sub
 
     Private Function FiltrerElement(elem As Object, f As String)
         Dim celem = CType(elem, Concession.InfosPourListe)
@@ -90,21 +66,107 @@
     End Function
 
     Private Sub DgvConcessions_SelectionChanged(sender As Object, e As EventArgs) Handles DgvConcessions.SelectionChanged
-        If DgvConcessions.SelectedRows.Count > 0 Then
-            Try
-                _csnSelect = DgvConcessions.SelectedRows(0).DataBoundItem.Id
-            Catch ex As Exception
-                ChargerListe()
-                ' (À FAIRE voir si recharger la liste vide/update les infos affichées)
-                Exit Sub
-            End Try
-
+        If Not DgvConcessions.SelectedRows.Count > 0 Then
+            _csnSelect = Nothing
+            LabCsnrNom.Text = ""
+            LabCsnrDomicile.Text = ""
+            LabCsnrTel.Text = ""
+            LabCsnrDateNaiss.Text = ""
+            LabCsnrNoRegistre.Text = ""
+            LabRefEmplacement.Text = ""
+            LabDateDebut.Text = ""
+            LabDateFin.Text = ""
+            LabEmplPlaces.Text = ""
+            LabCommentaireCsn.Text = ""
+            FlpBeneficiaires.Controls.Clear()
+            FlpOccupants.Controls.Clear()
+            GbCommentaire.Visible = False
+            LabCommentaireCsn.Text = ""
+        Else
+            _csnSelect = Bdd.GetConcession(DgvConcessions.SelectedRows(0).DataBoundItem.Id)
             ' affiche les infos
+            ' Concessionnaire
+            With _csnSelect.Concessionnaire
+                LabCsnrNom.Text = .NomComplet
+                LabCsnrDomicile.Text = .AdresseComplete
+                LabCsnrTel.Text = .Tel
+                LabCsnrDateNaiss.Text = If(.DateNaiss.HasValue, .DateNaiss.Value.ToString("dd/MM/yyyy"), "")
+                LabCsnrNoRegistre.Text = If(.NoRegistre, "")
+            End With
 
+            ' Cadre Emplacement
+            With _csnSelect.Emplacement
+                If _csnSelect.Emplacement IsNot Nothing Then LabRefEmplacement.Text = .Reference Else LabRefEmplacement.Text = "(Réf. emplacement non disponible)"
+                LabDateDebut.Text = If(_csnSelect.DateDebut.HasValue, "Depuis " & _csnSelect.DateDebut.Value.ToString("dd/MM/yyyy"), "")
+                LabDateFin.Text = If(_csnSelect.DateFin.HasValue, "Expire " & _csnSelect.DateFin.Value.ToString("dd/MM/yyyy"), "")
+                LabEmplPlaces.Text = If(_csnSelect.Emplacement IsNot Nothing AndAlso .NbPlaces.HasValue, "Places (en tout) : " & .NbPlaces, "")     ' À FAIRE : décompter les places prises
+                LabCommentaireEmpl.Text = If(_csnSelect.Emplacement IsNot Nothing, .Commentaire, "")
+            End With
 
+            ' Bénéficiaires
+            With _csnSelect.MentionsBenefs ' collection
+                FlpBeneficiaires.Controls.Clear()         ' dispose ?
+                If Not .Count > 0 Then
+                    FlpBeneficiaires.Controls.Add(New Label With {.Text = "Aucun bénéficiaire n'a été spécifié.", .AutoSize = True})
+                Else
+                    For Each men In _csnSelect.MentionsBenefs
+                        FlpBeneficiaires.Controls.Add(New Label With {.Text = men.Beneficiaire.NomComplet, .AutoSize = True})
+                    Next
+                End If
+            End With
 
-
+            ' Occupants
+            ' de emplacement -> get défunts dont c'est le séjour actuel
+            If _csnSelect.Emplacement IsNot Nothing Then
+                Dim defs = Bdd.GetOccupants(_csnSelect.Emplacement.Id)
+                FlpOccupants.Controls.Clear()
+                If Not defs.Count > 0 Then
+                    FlpOccupants.Controls.Add(New Label With {.Text = "Emplacement vide.", .AutoSize = True})
+                Else
+                    For Each occ In defs
+                        FlpOccupants.Controls.Add(New Label With {.Text = occ.NomComplet, .AutoSize = True})
+                    Next
+                End If
+            End If
+            ' Commentaire
+            If _csnSelect.Commentaire <> "" Then
+                GbCommentaire.Visible = True
+                LabCommentaireCsn.Text = _csnSelect.Commentaire
+            Else
+                GbCommentaire.Visible = False
+                LabCommentaireCsn.Text = ""
+            End If
         End If
     End Sub
 
+    Private Sub BtMontrerExpirees_Click(sender As Object, e As EventArgs) Handles BtMontrerExpirees.Click
+        BtMontrerExpirees.Visible = False
+        Dim idconcselect As Integer? = If(DgvConcessions.SelectedRows.Count > 0, CType(DgvConcessions.SelectedRows(0).DataBoundItem, Concession.InfosPourListe).Id, Nothing)
+        ChargerListe(True)
+        If idconcselect IsNot Nothing Then
+            Dim rowselect = (From r As DataGridViewRow In DgvConcessions.Rows
+                             Where r.DataBoundItem.id = idconcselect) _
+                            .FirstOrDefault
+            If rowselect IsNot Nothing Then rowselect.Selected = True
+        End If
+    End Sub
+
+    Private Sub DgvConcessions_KeyDown(sender As Object, e As KeyEventArgs) Handles DgvConcessions.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            DialogResult = DialogResult.OK
+            Me.Close()
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub DgvConcessions_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvConcessions.CellDoubleClick
+        _csnSelect = Bdd.GetConcession(DgvConcessions.Rows(e.RowIndex).DataBoundItem.Id)
+        DialogResult = DialogResult.OK
+        Me.Close()
+    End Sub
+
+    Private Sub BtTermine_Click(sender As Object, e As EventArgs) Handles BtTermine.Click
+        DialogResult = DialogResult.OK
+        Me.Close()
+    End Sub
 End Class

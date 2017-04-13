@@ -38,7 +38,6 @@
         End Get
     End Property
 
-
     ' C/C de la même dans Acteur, mais flemme de faire encore une classe
     ' Renvoie une seule string du style "13 avenue de la rue, 1415 Trouperdu (France)"
     Public ReadOnly Property AdresseComplete(Optional ForcerPays As Boolean = False) As String
@@ -74,13 +73,15 @@
     End Property
 
 
-    ' C/C de la même dans Acteur, mais flemme de faire encore une classe
+    ' C/C de la même dans Acteur, flemme de faire encore une classe
     Public ReadOnly Property NomComplet(Optional SignalerAbsence As Boolean = False) As String
         Get
             If Nom <> Nothing And Prenom <> Nothing Then
-                Return Nom & ", " & Prenom
+                'Return Nom & ", " & Prenom
+                Return Nom.ToUpper & " " & Prenom
             ElseIf Nom <> Nothing And Prenom = Nothing Then
-                Return If(SignalerAbsence, Nom & ", (prénom non précisé)", Nom)
+                'Return If(SignalerAbsence, Nom & ", (prénom non précisé)", Nom)
+                Return If(SignalerAbsence, Nom.ToUpper & " (prénom non précisé)", Nom.ToUpper)
             ElseIf Nom = Nothing And Prenom <> Nothing Then
                 Return If(SignalerAbsence, Prenom & " (nom de famille non précisé)", Prenom)
             Else

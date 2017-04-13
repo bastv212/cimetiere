@@ -12,11 +12,11 @@
         If texte.Equals("") Then
             Dim l = Bdd.GetCondenseActeurs
             ' cannot convert [automatiquement] List(Of Truc) to List(Of Object)
-            Me.ElementsListe = l.ConvertAll(New Converter(Of IEntity.Condense, Object)(Function(x) New With {.Id = x.Id, .Nom = x.Nom}))
+            Me.ElementsListe = l.ConvertAll(New Converter(Of IEntity.Condense, Object)(Function(x) New With {.Id = x.Id, .Nom = x.Texte}))
 
         Else
             Dim l = Bdd.ChercherActeurs(texte)
-            Me.ElementsListe = l.ConvertAll(New Converter(Of IEntity.Condense, Object)(Function(x) New With {.Id = x.Id, .Nom = x.Nom}))
+            Me.ElementsListe = l.ConvertAll(New Converter(Of IEntity.Condense, Object)(Function(x) New With {.Id = x.Id, .Nom = x.Texte}))
         End If
     End Sub
 End Class

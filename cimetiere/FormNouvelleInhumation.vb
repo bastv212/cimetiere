@@ -46,12 +46,14 @@ Public Class FormNouvelleInhumation
     Public Sub New()
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
-        PartieConcessionExistante.Hide()
+
         ' position du bouton Suivant
         BtSuivantDeInh.Location = New Point(PanChoixExistNv.Location.X + PanChoixExistNv.Width _
                                             - BtSuivantDeInh.Width - 6, PanChoixExistNv.Location.Y _
                                             + PanChoixExistNv.Height + 6)
+        InitPartieConExistante()
     End Sub
+
     Private Sub FormNouvelleInhumation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' masque les onglets
         TabControl1.Appearance = TabAppearance.FlatButtons
@@ -166,7 +168,7 @@ Public Class FormNouvelleInhumation
         If LeFormInh.ConcSollic = "existante" Then
 
             LeFormInh.RefEmpl = ExistanteRefEmpl.Value
-            LeFormInh.RefAutresDef = ExistanteRefAutresDefunts.Value
+            LeFormInh.RefAutresDef = TbExistanteRefAutresDefunts.Value
             '  À FAIRE
             ' type de sépulture + utilité/pertinence de ces trois champs à confirmer ;
             ' code qui sera peut-être amené à évoluer si ajout d'un "assistant" pour repérer la csn existante)
@@ -188,8 +190,8 @@ Public Class FormNouvelleInhumation
 
                 LeFormNvCon.AjouterBeneficiaires(LesBenefs, LesParentes)
 
-                leconcessionnaire = LbListeConcessionnaires.ActeurSelectionne
-                LeFormNvCon.IntegrerInfosCsnr(leconcessionnaire)
+                LeConcessionnaire = LbListeConcessionnaires.ActeurSelectionne
+                LeFormNvCon.IntegrerInfosCsnr(LeConcessionnaire)
 
                 LeFormInh.FormNvCon = LeFormNvCon
 
@@ -244,7 +246,7 @@ Public Class FormNouvelleInhumation
             LabCsnrTel.Text = If(LeConcessionnaire.Tel <> "", LeConcessionnaire.Tel, "(pas de numéro de téléphone)")
             FlowPanelLabsBenefs.Controls.Clear()
             For n = 0 To LesBenefs.Count - 1
-                FlowPanelLabsBenefs.Controls.Add(New Label With {.Text = LesBenefs(n).NomComplet & " (" & LesParentes(n) & ")", .AutoSize = True})
+                FlowPanelLabsBenefs.Controls.Add(New Label With {.Text = LesBenefs(n).NomComplet & If(LesParentes(n) <> "", " (" & LesParentes(n) & ")", ""), .AutoSize = True})
             Next
         Else      ' concession existante
             ' À FAIRE : au nom de - quand l'"assistant" de recherche de l'ancienne concession sera fait (si il l'est un jour)
@@ -416,7 +418,7 @@ Public Class FormNouvelleInhumation
             PartieConcessionExistante.Show()
             BtSuivantDeInh.Location = New Point(PartieConcessionExistante.Location.X + PartieConcessionExistante.Width - BtSuivantDeInh.Width - 6, PartieConcessionExistante.Location.Y + PartieConcessionExistante.Height + 6)
         End If
-        UpdateBtSuivantDeInh
+        UpdateBtSuivantDeInh()
     End Sub
     Private Sub rbObtenirEmplacement_CheckedChanged(sender As RadioButton, e As EventArgs) Handles rbDemandeObtEmplacement.CheckedChanged
         If sender.Checked Then
@@ -424,7 +426,7 @@ Public Class FormNouvelleInhumation
             'PanPartieNouvelleCon.Show()
             'BtSuivantDeInh.Location = New Point(PanPartieNouvelleCon.Location.X + PanPartieNouvelleCon.Width - BtSuivantDeInh.Width - 6, PanPartieNouvelleCon.Location.Y + PanPartieNouvelleCon.Height + 6)
             BtSuivantDeInh.Location = New Point(PanChoixExistNv.Location.X + PanChoixExistNv.Width - BtSuivantDeInh.Width - 6, PanChoixExistNv.Location.Y + PanChoixExistNv.Height + 6)
-            Updatebtsuivantdeinh
+            UpdateBtSuivantDeInh()
         End If
     End Sub
 
@@ -437,6 +439,14 @@ Public Class FormNouvelleInhumation
 
     Private Sub OnConcessionnaireChanged() Handles LbListeConcessionnaires.ActeurChanged, PanTypeEmplNv.SelectionChanged
         UpdateBtSuivantDeCon()
+    End Sub
+
+    Private Sub InitPartieConExistante()
+        BtRetirerConExist.Visible = False
+        BtRetirerConExist.Location = BtRechercherConExist.Location
+        PanInfosConExistBdd.Visible = False
+        PanInfosConExistBdd.Location = PanChampsTexteConExist.Location
+        PartieConcessionExistante.Visible = False
     End Sub
 
     Private Sub MajAspectPartieConcession() Handles PanTypeEmplNv.SelectionChanged
@@ -513,7 +523,7 @@ Public Class FormNouvelleInhumation
     ' A CONTINUER
 
     ' TEST
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         ListeBeneficiaires.ChargerListeSuggestions()
         Dim listact As List(Of Acteur)
         Dim listring As List(Of String)
@@ -542,5 +552,37 @@ Public Class FormNouvelleInhumation
                                    OrElse LbListeConcessionnaires.ActeurSelectionne IsNot Nothing
     End Sub
 
+    Private Sub BtRechercherConExist_Click(sender As Object, e As EventArgs) Handles BtRechercherConExist.Click
+        Dim leform As New FormRechercheConcession
+        Dim res = leform.ShowDialog()
+        If res = DialogResult.OK AndAlso leform.CsnSelect IsNot Nothing Then
+            ' à faire : remplacer les champs texte par les infos
+            If leform.CsnSelect.Emplacement IsNot Nothing Then
+                LabPartieConExisRefEmpl.Text = leform.CsnSelect.Emplacement.Reference
+                Dim occupants = Bdd.GetOccupants(leform.CsnSelect.Emplacement.Id)
+                LabPartieConExisAutresDefunts.Text = "Occupants actuels : " & String.Join(", ", (From o In occupants Select o.NomComplet).ToList)
+                LabPartieConExisPlaces.Text = If(leform.CsnSelect.Emplacement.NbPlaces.HasValue, "(" & leform.CsnSelect.Emplacement.NbPlaces & " places)", "")
+            Else
+                LabPartieConExisRefEmpl.Text = ""
+                LabPartieConExisAutresDefunts.Text = ""
+                LabPartieConExisNomCsnr.Text = ""
+                LabPartieConExisPlaces.Text = ""
+            End If
+            LabPartieConExisNomCsnr.Text = leform.CsnSelect.Concessionnaire.NomComplet
+            MessageBox.Show(leform.CsnSelect.Id)
+            PanChampsTexteConExist.Hide()
+            BtRechercherConExist.Hide()
+            PanInfosConExistBdd.Show()
+            BtRetirerConExist.Show()
+        End If
+        ' dispose ?
+    End Sub
+
+    Private Sub BtRetirerConExist_Click(sender As Object, e As EventArgs) Handles BtRetirerConExist.Click
+        PanInfosConExistBdd.Hide()
+        BtRetirerConExist.Hide()
+        PanChampsTexteConExist.Show()
+        BtRechercherConExist.Show()
+    End Sub
 
 End Class

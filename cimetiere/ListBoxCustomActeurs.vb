@@ -25,10 +25,9 @@ Public Class ListBoxCustomActeurs
         End Set
     End Property
 
-#Region "Variables pour les couleurs originales des contrôles"
+#Region "passage en mode grisé (inutilisé)"
     Private CoBack, CoFore, CoBackListe, CoForeListe, CoBackTb, CoForeTb, CoBackBouton, CoForeBouton, CoBackLabel, CoForeLabel As Color
 
-#End Region
     ' si false, donne un aspect grisé au contrôle
     ' TESTER via designer
     Private _aspectActif As Boolean = True
@@ -91,21 +90,15 @@ Public Class ListBoxCustomActeurs
         CoForeLabel = LabNom.ForeColor
         CoBackLabel = LabNom.BackColor
     End Sub
+#End Region
 
     Public Sub New()
         InitializeComponent()
-        ''LbListe.DisplayMember = "Nom"
-        ''LbListe.ValueMember = "Id"
-        ' AddHandler LbListe.SelectedValueChanged, AddressOf LbListe_SelectedValueChanged
-        ''UpdateListeActeurs()
-        'LbListe.DataSource = New SortableBindingList(Of Acteur.Condense)(Bdd.GetListeActeurs)
-        '        UpdateListeActeurs()
-
         ' note les couleurs originales des composants
         'PrendreEchantillonsCouleurs()
-        LbListe.FonctionFiltre = AddressOf FiltrerElem
-
+        'LbListe.FonctionFiltre = AddressOf FiltrerElem
     End Sub
+
 
     Public Sub Me_Load() Handles Me.Load
         ' vérification en attendant de savoir pourquoi l'évènement Load s'exécute 3 fois pour les contrôles qui sont sur le premier onglet
@@ -236,10 +229,10 @@ Public Class ListBoxCustomActeurs
         End If
     End Sub
 
-    Function FiltrerElem(elem As Object, filtre As String) As Boolean
-        'Return elem.Nom.contains(filtre)
-        Return UzineAGaz.ReduireString(elem.Nom).Contains(UzineAGaz.ReduireString(filtre))
-    End Function
+    '    Function FiltrerElem(elem As Object, filtre As String) As Boolean
+    ''Return elem.Nom.contains(filtre)
+    'Return UzineAGaz.ReduireString(elem.Texte).Contains(UzineAGaz.ReduireString(filtre))
+    'End Function
 
     Private Sub BtClearFiltr_Click(sender As Object, e As EventArgs) Handles BtClearFiltr.Click
         TbFiltre.Text = ""

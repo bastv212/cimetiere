@@ -110,12 +110,12 @@
                     unben.DateNaiss = Nothing
                 End If
                 ListeActeursRetour.Add(unben)
-                ListeParentes.Add(ctrlben.TbLienParente.Value)
+                ListeParentes.Add(ctrlben.TbLienParente.Text.Trim)
             End If
         Next
         For Each ctrlbenbdd In ListeBenefsBdd
             ListeActeursRetour.Add(ctrlbenbdd.Benef)
-            ListeParentes.Add(ctrlbenbdd.TbLienParente.Value)
+            ListeParentes.Add(ctrlbenbdd.TbLienParente.Text.Trim)
         Next
     End Sub
 
@@ -250,7 +250,7 @@
         ' comme la liste ne distingue pas le nom et le prénom dans le texte de ses éléments, le résultat sera approximatif, mais soit
         ' transmet la valeur jugée pertinente à la fonction de filtrage originale de la liste
         Return LbSuggestions.FiltrerElem(elem, nom)
-        ' Return UzineAGaz.ReduireString(elem.Nom).Contains(UzineAGaz.ReduireString(filtre))
+
 
 
     End Function

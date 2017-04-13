@@ -72,9 +72,11 @@
 
     Public Shared Function StaticNomComplet(prenom As String, nom As String, Optional SignalerAbsence As Boolean = False) As String
         If nom <> Nothing And prenom <> Nothing Then
-            Return nom & ", " & prenom
+            'Return nom & ", " & prenom
+            Return nom.ToUpper & " " & prenom
         ElseIf nom <> Nothing And prenom = Nothing Then
-            Return If(SignalerAbsence, nom & ", (prénom non précisé)", nom)
+            'Return If(SignalerAbsence, nom & ", (prénom non précisé)", nom)
+            Return If(SignalerAbsence, nom.ToUpper & " (prénom non précisé)", nom.ToUpper)
         ElseIf nom = Nothing And prenom <> Nothing Then
             Return If(SignalerAbsence, prenom & " (nom de famille non précisé)", prenom)
         Else

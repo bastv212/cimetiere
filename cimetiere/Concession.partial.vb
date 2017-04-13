@@ -7,6 +7,7 @@
         Public Property RefEmpl As String
         Public Property NomsBenefs As String
         Public Property NomsDefunts As String
+        Public Property DateFin As Date?
     End Class
 
 End Class

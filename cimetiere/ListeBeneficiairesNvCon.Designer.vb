@@ -77,6 +77,7 @@ Partial Class ListeBeneficiairesNvCon
         Me.LbSuggestions.Name = "LbSuggestions"
         Me.LbSuggestions.Size = New System.Drawing.Size(132, 45)
         Me.LbSuggestions.TabIndex = 9
+        Me.LbSuggestions.TabStop = False
         Me.LbSuggestions.ValueMember = "Id"
         '
         'ListeBeneficiairesNvCon

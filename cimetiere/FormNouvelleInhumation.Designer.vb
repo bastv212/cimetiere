@@ -28,11 +28,19 @@ Partial Class FormNouvelleInhumation
         Me.BtSuivantDeInh = New System.Windows.Forms.Button()
         Me.PartieConcessionExistante = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PanInfosConExistBdd = New System.Windows.Forms.Panel()
+        Me.LabPartieConExisPlaces = New System.Windows.Forms.Label()
+        Me.LabPartieConExisAutresDefunts = New System.Windows.Forms.Label()
+        Me.LabPartieConExisNomCsnr = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.LabPartieConExisRefEmpl = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.PanChampsTexteConExist = New System.Windows.Forms.Panel()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.BtRetirerConExist = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtRechercherConExist = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.RbConExistTypeColomb = New System.Windows.Forms.RadioButton()
         Me.RbConExistTypeUrne = New System.Windows.Forms.RadioButton()
@@ -70,11 +78,11 @@ Partial Class FormNouvelleInhumation
         Me.BtSuivantDeCon = New System.Windows.Forms.Button()
         Me.PanDecor1 = New System.Windows.Forms.Panel()
         Me.PanCoordsNvCon = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PanP2InfosCsnr = New System.Windows.Forms.Panel()
         Me.GbCsnrNvCon = New System.Windows.Forms.GroupBox()
         Me.CbSigneParPmand = New System.Windows.Forms.CheckBox()
         Me.TabRecap = New System.Windows.Forms.TabPage()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.FlpRecapPartieNouvelleCon = New System.Windows.Forms.FlowLayoutPanel()
         Me.GbDemandeNvCon = New System.Windows.Forms.GroupBox()
         Me.LabNvConChoisie = New System.Windows.Forms.Label()
@@ -117,8 +125,8 @@ Partial Class FormNouvelleInhumation
         Me.CbOuvrirPdf = New System.Windows.Forms.CheckBox()
         Me.CbEnregPdf = New System.Windows.Forms.CheckBox()
         Me.BtTerminer = New System.Windows.Forms.Button()
-        Me.ExistanteRefAutresDefunts = New cimetiere.TextBoxNullable()
         Me.ExistanteRefEmpl = New cimetiere.TextBoxNullable()
+        Me.TbExistanteRefAutresDefunts = New cimetiere.TextBoxNullable()
         Me.LbListeDemandeurs = New cimetiere.ListBoxCustomActeurs()
         Me.TbDefDateDeces = New cimetiere.MaskedTextBoxDate()
         Me.TbDefDateNaiss = New cimetiere.MaskedTextBoxDate()
@@ -138,6 +146,8 @@ Partial Class FormNouvelleInhumation
         Me.TabInh.SuspendLayout()
         Me.PartieConcessionExistante.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.PanInfosConExistBdd.SuspendLayout()
+        Me.PanChampsTexteConExist.SuspendLayout()
         Me.PanChoixExistNv.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.PanCoordsDmdr.SuspendLayout()
@@ -172,7 +182,7 @@ Partial Class FormNouvelleInhumation
         Me.TabControl1.Controls.Add(Me.TabInh)
         Me.TabControl1.Controls.Add(Me.TabNvCon)
         Me.TabControl1.Controls.Add(Me.TabRecap)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 8)
+        Me.TabControl1.Location = New System.Drawing.Point(3, 56)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1394, 1066)
@@ -196,10 +206,10 @@ Partial Class FormNouvelleInhumation
         'BtSuivantDeInh
         '
         Me.BtSuivantDeInh.Enabled = False
-        Me.BtSuivantDeInh.Location = New System.Drawing.Point(763, 867)
+        Me.BtSuivantDeInh.Location = New System.Drawing.Point(763, 877)
         Me.BtSuivantDeInh.Name = "BtSuivantDeInh"
         Me.BtSuivantDeInh.Size = New System.Drawing.Size(154, 48)
-        Me.BtSuivantDeInh.TabIndex = 172
+        Me.BtSuivantDeInh.TabIndex = 30
         Me.BtSuivantDeInh.Text = "Suivant >>"
         Me.BtSuivantDeInh.UseVisualStyleBackColor = True
         '
@@ -210,20 +220,18 @@ Partial Class FormNouvelleInhumation
         Me.PartieConcessionExistante.Location = New System.Drawing.Point(8, 685)
         Me.PartieConcessionExistante.Margin = New System.Windows.Forms.Padding(4)
         Me.PartieConcessionExistante.Name = "PartieConcessionExistante"
-        Me.PartieConcessionExistante.Size = New System.Drawing.Size(912, 178)
+        Me.PartieConcessionExistante.Size = New System.Drawing.Size(912, 188)
         Me.PartieConcessionExistante.TabIndex = 169
         Me.PartieConcessionExistante.Visible = False
         '
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.GhostWhite
+        Me.GroupBox3.Controls.Add(Me.PanInfosConExistBdd)
+        Me.GroupBox3.Controls.Add(Me.PanChampsTexteConExist)
+        Me.GroupBox3.Controls.Add(Me.BtRetirerConExist)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.ExistanteRefAutresDefunts)
-        Me.GroupBox3.Controls.Add(Me.ExistanteRefEmpl)
-        Me.GroupBox3.Controls.Add(Me.Label36)
-        Me.GroupBox3.Controls.Add(Me.Button4)
-        Me.GroupBox3.Controls.Add(Me.Button3)
-        Me.GroupBox3.Controls.Add(Me.Label35)
+        Me.GroupBox3.Controls.Add(Me.BtRechercherConExist)
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.RbConExistTypeColomb)
         Me.GroupBox3.Controls.Add(Me.RbConExistTypeUrne)
@@ -236,65 +244,150 @@ Partial Class FormNouvelleInhumation
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(896, 161)
+        Me.GroupBox3.Size = New System.Drawing.Size(896, 172)
         Me.GroupBox3.TabIndex = 155
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Concession existante"
         '
-        'Label3
+        'PanInfosConExistBdd
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(46, 118)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 18)
-        Me.Label3.TabIndex = 164
-        Me.Label3.Text = "[Non impl.]"
+        Me.PanInfosConExistBdd.Controls.Add(Me.LabPartieConExisPlaces)
+        Me.PanInfosConExistBdd.Controls.Add(Me.LabPartieConExisAutresDefunts)
+        Me.PanInfosConExistBdd.Controls.Add(Me.LabPartieConExisNomCsnr)
+        Me.PanInfosConExistBdd.Controls.Add(Me.Label8)
+        Me.PanInfosConExistBdd.Controls.Add(Me.LabPartieConExisRefEmpl)
+        Me.PanInfosConExistBdd.Controls.Add(Me.Label7)
+        Me.PanInfosConExistBdd.Location = New System.Drawing.Point(332, 14)
+        Me.PanInfosConExistBdd.Name = "PanInfosConExistBdd"
+        Me.PanInfosConExistBdd.Size = New System.Drawing.Size(828, 60)
+        Me.PanInfosConExistBdd.TabIndex = 167
+        '
+        'LabPartieConExisPlaces
+        '
+        Me.LabPartieConExisPlaces.AutoSize = True
+        Me.LabPartieConExisPlaces.Location = New System.Drawing.Point(147, 2)
+        Me.LabPartieConExisPlaces.Name = "LabPartieConExisPlaces"
+        Me.LabPartieConExisPlaces.Size = New System.Drawing.Size(81, 18)
+        Me.LabPartieConExisPlaces.TabIndex = 5
+        Me.LabPartieConExisPlaces.Text = "(00 places)"
+        '
+        'LabPartieConExisAutresDefunts
+        '
+        Me.LabPartieConExisAutresDefunts.AutoEllipsis = True
+        Me.LabPartieConExisAutresDefunts.AutoSize = True
+        Me.LabPartieConExisAutresDefunts.Location = New System.Drawing.Point(3, 29)
+        Me.LabPartieConExisAutresDefunts.MaximumSize = New System.Drawing.Size(822, 0)
+        Me.LabPartieConExisAutresDefunts.Name = "LabPartieConExisAutresDefunts"
+        Me.LabPartieConExisAutresDefunts.Size = New System.Drawing.Size(160, 18)
+        Me.LabPartieConExisAutresDefunts.TabIndex = 4
+        Me.LabPartieConExisAutresDefunts.Text = "AutresDefuntsCsnExist"
+        '
+        'LabPartieConExisNomCsnr
+        '
+        Me.LabPartieConExisNomCsnr.AutoSize = True
+        Me.LabPartieConExisNomCsnr.Location = New System.Drawing.Point(310, 2)
+        Me.LabPartieConExisNomCsnr.Name = "LabPartieConExisNomCsnr"
+        Me.LabPartieConExisNomCsnr.Size = New System.Drawing.Size(99, 18)
+        Me.LabPartieConExisNomCsnr.TabIndex = 3
+        Me.LabPartieConExisNomCsnr.Text = "CsnrCsnExist"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(231, 2)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(79, 18)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "Au nom de"
+        '
+        'LabPartieConExisRefEmpl
+        '
+        Me.LabPartieConExisRefEmpl.AutoSize = True
+        Me.LabPartieConExisRefEmpl.Location = New System.Drawing.Point(101, 2)
+        Me.LabPartieConExisRefEmpl.Name = "LabPartieConExisRefEmpl"
+        Me.LabPartieConExisRefEmpl.Size = New System.Drawing.Size(49, 18)
+        Me.LabPartieConExisRefEmpl.TabIndex = 1
+        Me.LabPartieConExisRefEmpl.Text = "A0000"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(3, 1)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(99, 18)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Emplacement"
+        '
+        'PanChampsTexteConExist
+        '
+        Me.PanChampsTexteConExist.Controls.Add(Me.Label36)
+        Me.PanChampsTexteConExist.Controls.Add(Me.Label35)
+        Me.PanChampsTexteConExist.Controls.Add(Me.ExistanteRefEmpl)
+        Me.PanChampsTexteConExist.Controls.Add(Me.TbExistanteRefAutresDefunts)
+        Me.PanChampsTexteConExist.Location = New System.Drawing.Point(19, 62)
+        Me.PanChampsTexteConExist.Name = "PanChampsTexteConExist"
+        Me.PanChampsTexteConExist.Size = New System.Drawing.Size(831, 64)
+        Me.PanChampsTexteConExist.TabIndex = 166
         '
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(30, 46)
+        Me.Label36.Location = New System.Drawing.Point(2, 5)
         Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(207, 18)
         Me.Label36.TabIndex = 113
         Me.Label36.Text = "Référence de l'emplacement : "
         '
-        'Button4
-        '
-        Me.Button4.Image = Global.cimetiere.My.Resources.Resources.Table_16x
-        Me.Button4.Location = New System.Drawing.Point(747, 88)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(33, 28)
-        Me.Button4.TabIndex = 129
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Image = Global.cimetiere.My.Resources.Resources.Table_16x
-        Me.Button3.Location = New System.Drawing.Point(585, 42)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(33, 28)
-        Me.Button3.TabIndex = 128
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(30, 91)
+        Me.Label35.Location = New System.Drawing.Point(2, 39)
         Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(402, 18)
         Me.Label35.TabIndex = 115
         Me.Label35.Text = "Références des éventuels autres défunts dans la sépulture : "
         '
+        'BtRetirerConExist
+        '
+        Me.BtRetirerConExist.Image = Global.cimetiere.My.Resources.Resources.Cancel_16x
+        Me.BtRetirerConExist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtRetirerConExist.Location = New System.Drawing.Point(234, 28)
+        Me.BtRetirerConExist.Name = "BtRetirerConExist"
+        Me.BtRetirerConExist.Size = New System.Drawing.Size(81, 29)
+        Me.BtRetirerConExist.TabIndex = 21
+        Me.BtRetirerConExist.Text = "Retirer"
+        Me.BtRetirerConExist.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtRetirerConExist.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(46, 129)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 18)
+        Me.Label3.TabIndex = 164
+        Me.Label3.Text = "[Non impl.]"
+        '
+        'BtRechercherConExist
+        '
+        Me.BtRechercherConExist.Image = Global.cimetiere.My.Resources.Resources.Table_16x
+        Me.BtRechercherConExist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtRechercherConExist.Location = New System.Drawing.Point(39, 28)
+        Me.BtRechercherConExist.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtRechercherConExist.Name = "BtRechercherConExist"
+        Me.BtRechercherConExist.Size = New System.Drawing.Size(117, 29)
+        Me.BtRechercherConExist.TabIndex = 20
+        Me.BtRechercherConExist.Text = "Rechercher"
+        Me.BtRechercherConExist.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtRechercherConExist.UseVisualStyleBackColor = True
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(207, 132)
+        Me.Label4.Location = New System.Drawing.Point(207, 143)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(12, 18)
@@ -304,11 +397,11 @@ Partial Class FormNouvelleInhumation
         'RbConExistTypeColomb
         '
         Me.RbConExistTypeColomb.AutoSize = True
-        Me.RbConExistTypeColomb.Location = New System.Drawing.Point(474, 128)
+        Me.RbConExistTypeColomb.Location = New System.Drawing.Point(474, 139)
         Me.RbConExistTypeColomb.Margin = New System.Windows.Forms.Padding(4)
         Me.RbConExistTypeColomb.Name = "RbConExistTypeColomb"
         Me.RbConExistTypeColomb.Size = New System.Drawing.Size(184, 22)
-        Me.RbConExistTypeColomb.TabIndex = 126
+        Me.RbConExistTypeColomb.TabIndex = 28
         Me.RbConExistTypeColomb.TabStop = True
         Me.RbConExistTypeColomb.Text = "Cellule de colombarium"
         Me.RbConExistTypeColomb.UseVisualStyleBackColor = True
@@ -316,11 +409,11 @@ Partial Class FormNouvelleInhumation
         'RbConExistTypeUrne
         '
         Me.RbConExistTypeUrne.AutoSize = True
-        Me.RbConExistTypeUrne.Location = New System.Drawing.Point(35, 127)
+        Me.RbConExistTypeUrne.Location = New System.Drawing.Point(35, 138)
         Me.RbConExistTypeUrne.Margin = New System.Windows.Forms.Padding(4)
         Me.RbConExistTypeUrne.Name = "RbConExistTypeUrne"
         Me.RbConExistTypeUrne.Size = New System.Drawing.Size(61, 22)
-        Me.RbConExistTypeUrne.TabIndex = 121
+        Me.RbConExistTypeUrne.TabIndex = 24
         Me.RbConExistTypeUrne.TabStop = True
         Me.RbConExistTypeUrne.Text = "Urne"
         Me.RbConExistTypeUrne.UseVisualStyleBackColor = True
@@ -328,11 +421,11 @@ Partial Class FormNouvelleInhumation
         'RbConExistTypeCercueil
         '
         Me.RbConExistTypeCercueil.AutoSize = True
-        Me.RbConExistTypeCercueil.Location = New System.Drawing.Point(112, 127)
+        Me.RbConExistTypeCercueil.Location = New System.Drawing.Point(112, 138)
         Me.RbConExistTypeCercueil.Margin = New System.Windows.Forms.Padding(4)
         Me.RbConExistTypeCercueil.Name = "RbConExistTypeCercueil"
         Me.RbConExistTypeCercueil.Size = New System.Drawing.Size(83, 22)
-        Me.RbConExistTypeCercueil.TabIndex = 125
+        Me.RbConExistTypeCercueil.TabIndex = 25
         Me.RbConExistTypeCercueil.TabStop = True
         Me.RbConExistTypeCercueil.Text = "Cercueil"
         Me.RbConExistTypeCercueil.UseVisualStyleBackColor = True
@@ -340,11 +433,11 @@ Partial Class FormNouvelleInhumation
         'RbConExistTypeCaveau
         '
         Me.RbConExistTypeCaveau.AutoSize = True
-        Me.RbConExistTypeCaveau.Location = New System.Drawing.Point(368, 128)
+        Me.RbConExistTypeCaveau.Location = New System.Drawing.Point(368, 139)
         Me.RbConExistTypeCaveau.Margin = New System.Windows.Forms.Padding(4)
         Me.RbConExistTypeCaveau.Name = "RbConExistTypeCaveau"
         Me.RbConExistTypeCaveau.Size = New System.Drawing.Size(79, 22)
-        Me.RbConExistTypeCaveau.TabIndex = 122
+        Me.RbConExistTypeCaveau.TabIndex = 27
         Me.RbConExistTypeCaveau.TabStop = True
         Me.RbConExistTypeCaveau.Text = "Caveau"
         Me.RbConExistTypeCaveau.UseVisualStyleBackColor = True
@@ -352,11 +445,11 @@ Partial Class FormNouvelleInhumation
         'RbConExistTypePleineTerre
         '
         Me.RbConExistTypePleineTerre.AutoSize = True
-        Me.RbConExistTypePleineTerre.Location = New System.Drawing.Point(234, 127)
+        Me.RbConExistTypePleineTerre.Location = New System.Drawing.Point(234, 138)
         Me.RbConExistTypePleineTerre.Margin = New System.Windows.Forms.Padding(4)
         Me.RbConExistTypePleineTerre.Name = "RbConExistTypePleineTerre"
         Me.RbConExistTypePleineTerre.Size = New System.Drawing.Size(103, 22)
-        Me.RbConExistTypePleineTerre.TabIndex = 124
+        Me.RbConExistTypePleineTerre.TabIndex = 26
         Me.RbConExistTypePleineTerre.TabStop = True
         Me.RbConExistTypePleineTerre.Text = "Pleine terre"
         Me.RbConExistTypePleineTerre.UseVisualStyleBackColor = True
@@ -364,11 +457,11 @@ Partial Class FormNouvelleInhumation
         'RbConExistTypeCavurne
         '
         Me.RbConExistTypeCavurne.AutoSize = True
-        Me.RbConExistTypeCavurne.Location = New System.Drawing.Point(717, 128)
+        Me.RbConExistTypeCavurne.Location = New System.Drawing.Point(717, 139)
         Me.RbConExistTypeCavurne.Margin = New System.Windows.Forms.Padding(4)
         Me.RbConExistTypeCavurne.Name = "RbConExistTypeCavurne"
         Me.RbConExistTypeCavurne.Size = New System.Drawing.Size(84, 22)
-        Me.RbConExistTypeCavurne.TabIndex = 123
+        Me.RbConExistTypeCavurne.TabIndex = 29
         Me.RbConExistTypeCavurne.TabStop = True
         Me.RbConExistTypeCavurne.Text = "Cavurne"
         Me.RbConExistTypeCavurne.UseVisualStyleBackColor = True
@@ -403,7 +496,7 @@ Partial Class FormNouvelleInhumation
         Me.rbDemandeConcessionExistante.Margin = New System.Windows.Forms.Padding(4)
         Me.rbDemandeConcessionExistante.Name = "rbDemandeConcessionExistante"
         Me.rbDemandeConcessionExistante.Size = New System.Drawing.Size(264, 22)
-        Me.rbDemandeConcessionExistante.TabIndex = 1
+        Me.rbDemandeConcessionExistante.TabIndex = 18
         Me.rbDemandeConcessionExistante.TabStop = True
         Me.rbDemandeConcessionExistante.Text = "Inhumation en concession existante"
         Me.rbDemandeConcessionExistante.UseVisualStyleBackColor = True
@@ -415,7 +508,7 @@ Partial Class FormNouvelleInhumation
         Me.rbDemandeObtEmplacement.Margin = New System.Windows.Forms.Padding(4)
         Me.rbDemandeObtEmplacement.Name = "rbDemandeObtEmplacement"
         Me.rbDemandeObtEmplacement.Size = New System.Drawing.Size(217, 22)
-        Me.rbDemandeObtEmplacement.TabIndex = 0
+        Me.rbDemandeObtEmplacement.TabIndex = 19
         Me.rbDemandeObtEmplacement.TabStop = True
         Me.rbDemandeObtEmplacement.Text = "Obtention d'un emplacement"
         Me.rbDemandeObtEmplacement.UseVisualStyleBackColor = True
@@ -542,7 +635,7 @@ Partial Class FormNouvelleInhumation
         Me.RbDefEtatCivilEpx.Margin = New System.Windows.Forms.Padding(4)
         Me.RbDefEtatCivilEpx.Name = "RbDefEtatCivilEpx"
         Me.RbDefEtatCivilEpx.Size = New System.Drawing.Size(125, 22)
-        Me.RbDefEtatCivilEpx.TabIndex = 136
+        Me.RbDefEtatCivilEpx.TabIndex = 12
         Me.RbDefEtatCivilEpx.TabStop = True
         Me.RbDefEtatCivilEpx.Text = "Époux(se) de :"
         Me.RbDefEtatCivilEpx.UseVisualStyleBackColor = True
@@ -554,7 +647,7 @@ Partial Class FormNouvelleInhumation
         Me.RbDefEtatCivilFils.Margin = New System.Windows.Forms.Padding(4)
         Me.RbDefEtatCivilFils.Name = "RbDefEtatCivilFils"
         Me.RbDefEtatCivilFils.Size = New System.Drawing.Size(115, 22)
-        Me.RbDefEtatCivilFils.TabIndex = 135
+        Me.RbDefEtatCivilFils.TabIndex = 15
         Me.RbDefEtatCivilFils.TabStop = True
         Me.RbDefEtatCivilFils.Text = "Fils (fille) de :"
         Me.RbDefEtatCivilFils.UseVisualStyleBackColor = True
@@ -566,7 +659,7 @@ Partial Class FormNouvelleInhumation
         Me.RbDefEtatCivilDivorc.Margin = New System.Windows.Forms.Padding(4)
         Me.RbDefEtatCivilDivorc.Name = "RbDefEtatCivilDivorc"
         Me.RbDefEtatCivilDivorc.Size = New System.Drawing.Size(126, 22)
-        Me.RbDefEtatCivilDivorc.TabIndex = 134
+        Me.RbDefEtatCivilDivorc.TabIndex = 14
         Me.RbDefEtatCivilDivorc.TabStop = True
         Me.RbDefEtatCivilDivorc.Text = "Divorcé(e) de :"
         Me.RbDefEtatCivilDivorc.UseVisualStyleBackColor = True
@@ -578,7 +671,7 @@ Partial Class FormNouvelleInhumation
         Me.RbDefEtatCivilVeuf.Margin = New System.Windows.Forms.Padding(4)
         Me.RbDefEtatCivilVeuf.Name = "RbDefEtatCivilVeuf"
         Me.RbDefEtatCivilVeuf.Size = New System.Drawing.Size(111, 22)
-        Me.RbDefEtatCivilVeuf.TabIndex = 133
+        Me.RbDefEtatCivilVeuf.TabIndex = 13
         Me.RbDefEtatCivilVeuf.TabStop = True
         Me.RbDefEtatCivilVeuf.Text = "Veuf(ve) de :"
         Me.RbDefEtatCivilVeuf.UseVisualStyleBackColor = True
@@ -590,7 +683,7 @@ Partial Class FormNouvelleInhumation
         Me.RbDefEtatCivilCelib.Margin = New System.Windows.Forms.Padding(4)
         Me.RbDefEtatCivilCelib.Name = "RbDefEtatCivilCelib"
         Me.RbDefEtatCivilCelib.Size = New System.Drawing.Size(98, 22)
-        Me.RbDefEtatCivilCelib.TabIndex = 132
+        Me.RbDefEtatCivilCelib.TabIndex = 11
         Me.RbDefEtatCivilCelib.TabStop = True
         Me.RbDefEtatCivilCelib.Text = "Célibataire"
         Me.RbDefEtatCivilCelib.UseVisualStyleBackColor = True
@@ -719,7 +812,6 @@ Partial Class FormNouvelleInhumation
         'PanCoordsNvCon
         '
         Me.PanCoordsNvCon.BackColor = System.Drawing.Color.SeaGreen
-        Me.PanCoordsNvCon.Controls.Add(Me.Button1)
         Me.PanCoordsNvCon.Controls.Add(Me.PanP2InfosCsnr)
         Me.PanCoordsNvCon.Controls.Add(Me.CbSigneParPmand)
         Me.PanCoordsNvCon.Controls.Add(Me.ListeBeneficiaires)
@@ -728,15 +820,6 @@ Partial Class FormNouvelleInhumation
         Me.PanCoordsNvCon.Name = "PanCoordsNvCon"
         Me.PanCoordsNvCon.Size = New System.Drawing.Size(950, 527)
         Me.PanCoordsNvCon.TabIndex = 145
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(839, 394)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 169
-        Me.Button1.Text = "Test"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'PanP2InfosCsnr
         '
@@ -767,13 +850,14 @@ Partial Class FormNouvelleInhumation
         Me.CbSigneParPmand.Name = "CbSigneParPmand"
         Me.CbSigneParPmand.Padding = New System.Windows.Forms.Padding(11, 0, 0, 0)
         Me.CbSigneParPmand.Size = New System.Drawing.Size(933, 37)
-        Me.CbSigneParPmand.TabIndex = 167
+        Me.CbSigneParPmand.TabIndex = 2
         Me.CbSigneParPmand.Text = "La demande de concession est signée par la personne mandatée"
         Me.CbSigneParPmand.UseVisualStyleBackColor = False
         '
         'TabRecap
         '
         Me.TabRecap.BackColor = System.Drawing.Color.GhostWhite
+        Me.TabRecap.Controls.Add(Me.Label12)
         Me.TabRecap.Controls.Add(Me.FlpRecapPartieNouvelleCon)
         Me.TabRecap.Controls.Add(Me.FlowLayoutPanel4)
         Me.TabRecap.Location = New System.Drawing.Point(4, 27)
@@ -783,6 +867,16 @@ Partial Class FormNouvelleInhumation
         Me.TabRecap.TabIndex = 1
         Me.TabRecap.Text = "Récapitulatif"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(23, 7)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(350, 36)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Résumé des informations"
+        '
         'FlpRecapPartieNouvelleCon
         '
         Me.FlpRecapPartieNouvelleCon.AutoSize = True
@@ -790,7 +884,7 @@ Partial Class FormNouvelleInhumation
         Me.FlpRecapPartieNouvelleCon.Controls.Add(Me.GroupBox9)
         Me.FlpRecapPartieNouvelleCon.Controls.Add(Me.GbRecapBenefs)
         Me.FlpRecapPartieNouvelleCon.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlpRecapPartieNouvelleCon.Location = New System.Drawing.Point(700, 4)
+        Me.FlpRecapPartieNouvelleCon.Location = New System.Drawing.Point(700, 58)
         Me.FlpRecapPartieNouvelleCon.Margin = New System.Windows.Forms.Padding(4)
         Me.FlpRecapPartieNouvelleCon.Name = "FlpRecapPartieNouvelleCon"
         Me.FlpRecapPartieNouvelleCon.Size = New System.Drawing.Size(685, 515)
@@ -951,7 +1045,7 @@ Partial Class FormNouvelleInhumation
         Me.FlowLayoutPanel4.Controls.Add(Me.FlpQuestions)
         Me.FlowLayoutPanel4.Controls.Add(Me.PanTerminer)
         Me.FlowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(1, 4)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(1, 58)
         Me.FlowLayoutPanel4.Margin = New System.Windows.Forms.Padding(4)
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
         Me.FlowLayoutPanel4.Size = New System.Drawing.Size(683, 837)
@@ -1236,7 +1330,7 @@ Partial Class FormNouvelleInhumation
         Me.BtPrecedentDeRecap.Location = New System.Drawing.Point(309, 155)
         Me.BtPrecedentDeRecap.Name = "BtPrecedentDeRecap"
         Me.BtPrecedentDeRecap.Size = New System.Drawing.Size(154, 48)
-        Me.BtPrecedentDeRecap.TabIndex = 175
+        Me.BtPrecedentDeRecap.TabIndex = 4
         Me.BtPrecedentDeRecap.Text = "<< Précédent"
         Me.BtPrecedentDeRecap.UseVisualStyleBackColor = True
         '
@@ -1256,7 +1350,7 @@ Partial Class FormNouvelleInhumation
         Me.TbCommentaire.Multiline = True
         Me.TbCommentaire.Name = "TbCommentaire"
         Me.TbCommentaire.Size = New System.Drawing.Size(624, 91)
-        Me.TbCommentaire.TabIndex = 161
+        Me.TbCommentaire.TabIndex = 1
         '
         'CbOuvrirPdf
         '
@@ -1267,7 +1361,7 @@ Partial Class FormNouvelleInhumation
         Me.CbOuvrirPdf.Margin = New System.Windows.Forms.Padding(4)
         Me.CbOuvrirPdf.Name = "CbOuvrirPdf"
         Me.CbOuvrirPdf.Size = New System.Drawing.Size(162, 22)
-        Me.CbOuvrirPdf.TabIndex = 156
+        Me.CbOuvrirPdf.TabIndex = 3
         Me.CbOuvrirPdf.Text = "Ouvrir le fichier PDF"
         Me.CbOuvrirPdf.UseVisualStyleBackColor = True
         '
@@ -1280,7 +1374,7 @@ Partial Class FormNouvelleInhumation
         Me.CbEnregPdf.Margin = New System.Windows.Forms.Padding(4)
         Me.CbEnregPdf.Name = "CbEnregPdf"
         Me.CbEnregPdf.Size = New System.Drawing.Size(194, 22)
-        Me.CbEnregPdf.TabIndex = 155
+        Me.CbEnregPdf.TabIndex = 2
         Me.CbEnregPdf.Text = "Enregistrer le fichier PDF"
         Me.CbEnregPdf.UseVisualStyleBackColor = True
         '
@@ -1290,29 +1384,29 @@ Partial Class FormNouvelleInhumation
         Me.BtTerminer.Margin = New System.Windows.Forms.Padding(4)
         Me.BtTerminer.Name = "BtTerminer"
         Me.BtTerminer.Size = New System.Drawing.Size(134, 48)
-        Me.BtTerminer.TabIndex = 154
+        Me.BtTerminer.TabIndex = 5
         Me.BtTerminer.Text = "Terminer"
         Me.BtTerminer.UseVisualStyleBackColor = True
-        '
-        'ExistanteRefAutresDefunts
-        '
-        Me.ExistanteRefAutresDefunts.CueBanner = Nothing
-        Me.ExistanteRefAutresDefunts.Location = New System.Drawing.Point(540, 88)
-        Me.ExistanteRefAutresDefunts.Margin = New System.Windows.Forms.Padding(4)
-        Me.ExistanteRefAutresDefunts.Name = "ExistanteRefAutresDefunts"
-        Me.ExistanteRefAutresDefunts.Size = New System.Drawing.Size(190, 24)
-        Me.ExistanteRefAutresDefunts.TabIndex = 163
-        Me.ExistanteRefAutresDefunts.Value = Nothing
         '
         'ExistanteRefEmpl
         '
         Me.ExistanteRefEmpl.CueBanner = Nothing
-        Me.ExistanteRefEmpl.Location = New System.Drawing.Point(302, 46)
+        Me.ExistanteRefEmpl.Location = New System.Drawing.Point(274, 5)
         Me.ExistanteRefEmpl.Margin = New System.Windows.Forms.Padding(4)
         Me.ExistanteRefEmpl.Name = "ExistanteRefEmpl"
         Me.ExistanteRefEmpl.Size = New System.Drawing.Size(256, 24)
-        Me.ExistanteRefEmpl.TabIndex = 162
+        Me.ExistanteRefEmpl.TabIndex = 22
         Me.ExistanteRefEmpl.Value = Nothing
+        '
+        'TbExistanteRefAutresDefunts
+        '
+        Me.TbExistanteRefAutresDefunts.CueBanner = Nothing
+        Me.TbExistanteRefAutresDefunts.Location = New System.Drawing.Point(412, 36)
+        Me.TbExistanteRefAutresDefunts.Margin = New System.Windows.Forms.Padding(4)
+        Me.TbExistanteRefAutresDefunts.Name = "TbExistanteRefAutresDefunts"
+        Me.TbExistanteRefAutresDefunts.Size = New System.Drawing.Size(190, 24)
+        Me.TbExistanteRefAutresDefunts.TabIndex = 23
+        Me.TbExistanteRefAutresDefunts.Value = Nothing
         '
         'LbListeDemandeurs
         '
@@ -1322,7 +1416,7 @@ Partial Class FormNouvelleInhumation
         Me.LbListeDemandeurs.Location = New System.Drawing.Point(9, 24)
         Me.LbListeDemandeurs.Name = "LbListeDemandeurs"
         Me.LbListeDemandeurs.Size = New System.Drawing.Size(876, 213)
-        Me.LbListeDemandeurs.TabIndex = 0
+        Me.LbListeDemandeurs.TabIndex = 17
         '
         'TbDefDateDeces
         '
@@ -1333,7 +1427,7 @@ Partial Class FormNouvelleInhumation
         Me.TbDefDateDeces.Mask = "00/00/0000"
         Me.TbDefDateDeces.Name = "TbDefDateDeces"
         Me.TbDefDateDeces.Size = New System.Drawing.Size(148, 24)
-        Me.TbDefDateDeces.TabIndex = 157
+        Me.TbDefDateDeces.TabIndex = 10
         Me.TbDefDateDeces.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TbDefDateNaiss
@@ -1345,7 +1439,7 @@ Partial Class FormNouvelleInhumation
         Me.TbDefDateNaiss.Mask = "00/00/0000"
         Me.TbDefDateNaiss.Name = "TbDefDateNaiss"
         Me.TbDefDateNaiss.Size = New System.Drawing.Size(148, 24)
-        Me.TbDefDateNaiss.TabIndex = 156
+        Me.TbDefDateNaiss.TabIndex = 8
         Me.TbDefDateNaiss.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'DefEtatCivilDe
@@ -1355,7 +1449,7 @@ Partial Class FormNouvelleInhumation
         Me.DefEtatCivilDe.Margin = New System.Windows.Forms.Padding(4)
         Me.DefEtatCivilDe.Name = "DefEtatCivilDe"
         Me.DefEtatCivilDe.Size = New System.Drawing.Size(576, 24)
-        Me.DefEtatCivilDe.TabIndex = 155
+        Me.DefEtatCivilDe.TabIndex = 16
         Me.DefEtatCivilDe.Value = Nothing
         '
         'DefLieuDeces
@@ -1365,7 +1459,7 @@ Partial Class FormNouvelleInhumation
         Me.DefLieuDeces.Margin = New System.Windows.Forms.Padding(4)
         Me.DefLieuDeces.Name = "DefLieuDeces"
         Me.DefLieuDeces.Size = New System.Drawing.Size(187, 24)
-        Me.DefLieuDeces.TabIndex = 154
+        Me.DefLieuDeces.TabIndex = 9
         Me.DefLieuDeces.Value = Nothing
         '
         'DefLieuNaiss
@@ -1375,7 +1469,7 @@ Partial Class FormNouvelleInhumation
         Me.DefLieuNaiss.Margin = New System.Windows.Forms.Padding(4)
         Me.DefLieuNaiss.Name = "DefLieuNaiss"
         Me.DefLieuNaiss.Size = New System.Drawing.Size(187, 24)
-        Me.DefLieuNaiss.TabIndex = 153
+        Me.DefLieuNaiss.TabIndex = 7
         Me.DefLieuNaiss.Value = Nothing
         '
         'DefPays
@@ -1385,7 +1479,7 @@ Partial Class FormNouvelleInhumation
         Me.DefPays.Margin = New System.Windows.Forms.Padding(4)
         Me.DefPays.Name = "DefPays"
         Me.DefPays.Size = New System.Drawing.Size(187, 24)
-        Me.DefPays.TabIndex = 152
+        Me.DefPays.TabIndex = 6
         Me.DefPays.Value = Nothing
         '
         'DefVille
@@ -1395,7 +1489,7 @@ Partial Class FormNouvelleInhumation
         Me.DefVille.Margin = New System.Windows.Forms.Padding(4)
         Me.DefVille.Name = "DefVille"
         Me.DefVille.Size = New System.Drawing.Size(223, 24)
-        Me.DefVille.TabIndex = 151
+        Me.DefVille.TabIndex = 5
         Me.DefVille.Value = Nothing
         '
         'DefAdresse
@@ -1405,7 +1499,7 @@ Partial Class FormNouvelleInhumation
         Me.DefAdresse.Margin = New System.Windows.Forms.Padding(4)
         Me.DefAdresse.Name = "DefAdresse"
         Me.DefAdresse.Size = New System.Drawing.Size(223, 24)
-        Me.DefAdresse.TabIndex = 150
+        Me.DefAdresse.TabIndex = 3
         Me.DefAdresse.Value = Nothing
         '
         'DefPrenom
@@ -1415,7 +1509,7 @@ Partial Class FormNouvelleInhumation
         Me.DefPrenom.Margin = New System.Windows.Forms.Padding(4)
         Me.DefPrenom.Name = "DefPrenom"
         Me.DefPrenom.Size = New System.Drawing.Size(223, 24)
-        Me.DefPrenom.TabIndex = 149
+        Me.DefPrenom.TabIndex = 2
         Me.DefPrenom.Value = Nothing
         '
         'DefNom
@@ -1425,7 +1519,7 @@ Partial Class FormNouvelleInhumation
         Me.DefNom.Margin = New System.Windows.Forms.Padding(4)
         Me.DefNom.Name = "DefNom"
         Me.DefNom.Size = New System.Drawing.Size(205, 24)
-        Me.DefNom.TabIndex = 148
+        Me.DefNom.TabIndex = 1
         Me.DefNom.Value = Nothing
         '
         'DefCodePostal
@@ -1435,7 +1529,7 @@ Partial Class FormNouvelleInhumation
         Me.DefCodePostal.Margin = New System.Windows.Forms.Padding(4)
         Me.DefCodePostal.Name = "DefCodePostal"
         Me.DefCodePostal.Size = New System.Drawing.Size(165, 24)
-        Me.DefCodePostal.TabIndex = 147
+        Me.DefCodePostal.TabIndex = 4
         Me.DefCodePostal.Value = Nothing
         '
         'PanTypeEmplNv
@@ -1445,7 +1539,7 @@ Partial Class FormNouvelleInhumation
         Me.PanTypeEmplNv.Margin = New System.Windows.Forms.Padding(6)
         Me.PanTypeEmplNv.Name = "PanTypeEmplNv"
         Me.PanTypeEmplNv.Size = New System.Drawing.Size(933, 386)
-        Me.PanTypeEmplNv.TabIndex = 158
+        Me.PanTypeEmplNv.TabIndex = 1
         '
         'LbListeConcessionnaires
         '
@@ -1455,7 +1549,7 @@ Partial Class FormNouvelleInhumation
         Me.LbListeConcessionnaires.Location = New System.Drawing.Point(3, 20)
         Me.LbListeConcessionnaires.Name = "LbListeConcessionnaires"
         Me.LbListeConcessionnaires.Size = New System.Drawing.Size(876, 191)
-        Me.LbListeConcessionnaires.TabIndex = 0
+        Me.LbListeConcessionnaires.TabIndex = 3
         '
         'ListeBeneficiaires
         '
@@ -1476,7 +1570,7 @@ Partial Class FormNouvelleInhumation
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1977, 1037)
+        Me.ClientSize = New System.Drawing.Size(1445, 1037)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -1484,12 +1578,16 @@ Partial Class FormNouvelleInhumation
         Me.MaximizeBox = False
         Me.Name = "FormNouvelleInhumation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "tmp_demande_inh"
+        Me.Text = "Introduire une demande d'inhumation"
         Me.TabControl1.ResumeLayout(False)
         Me.TabInh.ResumeLayout(False)
         Me.PartieConcessionExistante.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.PanInfosConExistBdd.ResumeLayout(False)
+        Me.PanInfosConExistBdd.PerformLayout()
+        Me.PanChampsTexteConExist.ResumeLayout(False)
+        Me.PanChampsTexteConExist.PerformLayout()
         Me.PanChoixExistNv.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -1542,11 +1640,10 @@ Partial Class FormNouvelleInhumation
     Friend WithEvents BtSuivantDeInh As Button
     Friend WithEvents PartieConcessionExistante As Panel
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents ExistanteRefAutresDefunts As TextBoxNullable
+    Friend WithEvents TbExistanteRefAutresDefunts As TextBoxNullable
     Friend WithEvents ExistanteRefEmpl As TextBoxNullable
     Friend WithEvents Label36 As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents BtRechercherConExist As Button
     Friend WithEvents Label35 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents RbConExistTypeColomb As RadioButton
@@ -1644,8 +1741,17 @@ Partial Class FormNouvelleInhumation
     Friend WithEvents BtPrecedentDeCon As Button
     Friend WithEvents BtPrecedentDeRecap As Button
     Friend WithEvents LbListeConcessionnaires As ListBoxCustomActeurs
-    Friend WithEvents Button1 As Button
     Friend WithEvents LbListeDemandeurs As ListBoxCustomActeurs
     Friend WithEvents Label6 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents BtRetirerConExist As Button
+    Friend WithEvents PanInfosConExistBdd As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents PanChampsTexteConExist As Panel
+    Friend WithEvents LabPartieConExisNomCsnr As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents LabPartieConExisRefEmpl As Label
+    Friend WithEvents LabPartieConExisAutresDefunts As Label
+    Friend WithEvents LabPartieConExisPlaces As Label
+    Friend WithEvents Label12 As Label
 End Class

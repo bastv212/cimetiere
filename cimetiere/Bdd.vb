@@ -85,13 +85,12 @@ Module Bdd
         End Using
     End Function
 
-    Function GetOccupantsActuels(empl As Emplacement) As List(Of Defunt)
+    ' défunts actuellement dans l'emplacement
+    Function GetOccupants(IdEmpl As Integer) As List(Of Defunt)
         Using ctx As New CimBddContext
-            'rq = From sej In ctx.Sejours
-            '     Where sej.Defunt.sejour
-
-
-
+            Return (From def In ctx.Defunts
+                    Where def.SejourActif.Emplacement.Id = IdEmpl) _
+                    .ToList()
         End Using
     End Function
 
@@ -121,11 +120,13 @@ Module Bdd
             ' include peut-être pas utile si il y a ToList ?
             Dim rq1 = (From con As Concession In ctx.Concessions.Include("Concessionnaire").Include("MentionsBenefs.Beneficiaire").Include("Emplacement.Sejour.Defunt")
                        Where con.DateFin >= datemax
+                       Order By con.DateFin < Now
                        Select New With {
                          .Id = con.Id,
                          .PrenomCsnr = con.Concessionnaire.Prenom,
                          .NomCsnr = con.Concessionnaire.Nom,
                          .Numero = con.Numero,
+                         .DateFin = con.DateFin,
                          .RefEmpl = con.Emplacement.Reference,
                          .Benefs = (From b In con.MentionsBenefs Select New With {.Nom = b.Beneficiaire.Nom, .Prenom = b.Beneficiaire.Prenom}),
                          .Defunts = (From s In con.Emplacement.Sejours Where s.Defunt.SejourActif Is s Select New With {.Nom = s.Defunt.Nom, .Prenom = s.Defunt.Prenom})        ' Is à tester
@@ -134,8 +135,9 @@ Module Bdd
             Dim rq2 = From e In rq1.ToList
                       Select New Concession.InfosPourListe With {
                          .Id = e.Id,
-                         .NomCsnr = e.NomCsnr,
+                         .NomCsnr = Acteur.StaticNomComplet(e.PrenomCsnr, e.NomCsnr),
                          .Numero = e.Numero,
+                         .DateFin = e.DateFin,
                          .RefEmpl = e.RefEmpl,
                          .NomsBenefs = String.Join(", ", From b In e.Benefs Select Acteur.StaticNomComplet(b.Prenom, b.Nom)),
                          .NomsDefunts = String.Join(", ", From d In e.Defunts Select Acteur.StaticNomComplet(d.Prenom, d.Nom))
@@ -152,7 +154,7 @@ Module Bdd
                      Order By dem.Nom
                      Select New IEntity.Condense With {'With {
                          .Id = dem.Id,
-                         .Nom = dem.Nom & " " & dem.Prenom
+                         .Texte = dem.Nom & " " & dem.Prenom
                      }
             Return rq.ToList
         End Using
@@ -167,7 +169,7 @@ Module Bdd
                      Where act.Nom.Contains(text) Or act.Prenom.Contains(text) Or act.Adresse.Contains(text)
                      Select New IEntity.Condense With { ' New With {
                         .Id = act.Id,
-                        .Nom = act.Nom & " " & act.Prenom
+                        .Texte = act.Nom & " " & act.Prenom
                      }
             Return rq.ToList
         End Using

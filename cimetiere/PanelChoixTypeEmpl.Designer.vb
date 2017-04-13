@@ -110,7 +110,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl1a.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl1a.Name = "RbTypeEmpl1a"
         Me.RbTypeEmpl1a.Size = New System.Drawing.Size(80, 21)
-        Me.RbTypeEmpl1a.TabIndex = 145
+        Me.RbTypeEmpl1a.TabIndex = 1
         Me.RbTypeEmpl1a.TabStop = True
         Me.RbTypeEmpl1a.Text = "Cercueil"
         Me.RbTypeEmpl1a.UseVisualStyleBackColor = True
@@ -122,7 +122,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl4a.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl4a.Name = "RbTypeEmpl4a"
         Me.RbTypeEmpl4a.Size = New System.Drawing.Size(80, 21)
-        Me.RbTypeEmpl4a.TabIndex = 145
+        Me.RbTypeEmpl4a.TabIndex = 7
         Me.RbTypeEmpl4a.TabStop = True
         Me.RbTypeEmpl4a.Text = "Cercueil"
         Me.RbTypeEmpl4a.UseVisualStyleBackColor = True
@@ -143,7 +143,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl3a.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl3a.Name = "RbTypeEmpl3a"
         Me.RbTypeEmpl3a.Size = New System.Drawing.Size(80, 21)
-        Me.RbTypeEmpl3a.TabIndex = 145
+        Me.RbTypeEmpl3a.TabIndex = 5
         Me.RbTypeEmpl3a.TabStop = True
         Me.RbTypeEmpl3a.Text = "Cercueil"
         Me.RbTypeEmpl3a.UseVisualStyleBackColor = True
@@ -155,7 +155,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl1b.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl1b.Name = "RbTypeEmpl1b"
         Me.RbTypeEmpl1b.Size = New System.Drawing.Size(60, 21)
-        Me.RbTypeEmpl1b.TabIndex = 146
+        Me.RbTypeEmpl1b.TabIndex = 2
         Me.RbTypeEmpl1b.TabStop = True
         Me.RbTypeEmpl1b.Text = "Urne"
         Me.RbTypeEmpl1b.UseVisualStyleBackColor = True
@@ -167,7 +167,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl2a.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl2a.Name = "RbTypeEmpl2a"
         Me.RbTypeEmpl2a.Size = New System.Drawing.Size(80, 21)
-        Me.RbTypeEmpl2a.TabIndex = 145
+        Me.RbTypeEmpl2a.TabIndex = 3
         Me.RbTypeEmpl2a.TabStop = True
         Me.RbTypeEmpl2a.Text = "Cercueil"
         Me.RbTypeEmpl2a.UseVisualStyleBackColor = True
@@ -179,7 +179,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl4b.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl4b.Name = "RbTypeEmpl4b"
         Me.RbTypeEmpl4b.Size = New System.Drawing.Size(60, 21)
-        Me.RbTypeEmpl4b.TabIndex = 146
+        Me.RbTypeEmpl4b.TabIndex = 8
         Me.RbTypeEmpl4b.TabStop = True
         Me.RbTypeEmpl4b.Text = "Urne"
         Me.RbTypeEmpl4b.UseVisualStyleBackColor = True
@@ -191,7 +191,7 @@ Partial Class PanelChoixTypeEmpl
         Me.cbCaveauCom.Margin = New System.Windows.Forms.Padding(4)
         Me.cbCaveauCom.Name = "cbCaveauCom"
         Me.cbCaveauCom.Size = New System.Drawing.Size(312, 21)
-        Me.cbCaveauCom.TabIndex = 154
+        Me.cbCaveauCom.TabIndex = 9
         Me.cbCaveauCom.Text = "Emplacement pourvu d'un caveau communal"
         Me.cbCaveauCom.UseVisualStyleBackColor = True
         '
@@ -202,7 +202,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl3b.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl3b.Name = "RbTypeEmpl3b"
         Me.RbTypeEmpl3b.Size = New System.Drawing.Size(60, 21)
-        Me.RbTypeEmpl3b.TabIndex = 146
+        Me.RbTypeEmpl3b.TabIndex = 6
         Me.RbTypeEmpl3b.TabStop = True
         Me.RbTypeEmpl3b.Text = "Urne"
         Me.RbTypeEmpl3b.UseVisualStyleBackColor = True
@@ -214,7 +214,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl2b.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl2b.Name = "RbTypeEmpl2b"
         Me.RbTypeEmpl2b.Size = New System.Drawing.Size(60, 21)
-        Me.RbTypeEmpl2b.TabIndex = 146
+        Me.RbTypeEmpl2b.TabIndex = 4
         Me.RbTypeEmpl2b.TabStop = True
         Me.RbTypeEmpl2b.Text = "Urne"
         Me.RbTypeEmpl2b.UseVisualStyleBackColor = True
@@ -226,7 +226,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl5.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl5.Name = "RbTypeEmpl5"
         Me.RbTypeEmpl5.Size = New System.Drawing.Size(536, 21)
-        Me.RbTypeEmpl5.TabIndex = 137
+        Me.RbTypeEmpl5.TabIndex = 10
         Me.RbTypeEmpl5.TabStop = True
         Me.RbTypeEmpl5.Text = "Ouverture de caveau uniquement si travail du Fossoyeur (ouverture par chemin)"
         Me.RbTypeEmpl5.UseVisualStyleBackColor = True
@@ -238,7 +238,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl6.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl6.Name = "RbTypeEmpl6"
         Me.RbTypeEmpl6.Size = New System.Drawing.Size(520, 21)
-        Me.RbTypeEmpl6.TabIndex = 138
+        Me.RbTypeEmpl6.TabIndex = 11
         Me.RbTypeEmpl6.TabStop = True
         Me.RbTypeEmpl6.Text = "Une urne mise en columbarium - place ordinaire (cell. 1 place prioritairement) "
         Me.RbTypeEmpl6.UseVisualStyleBackColor = True
@@ -250,7 +250,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl10.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl10.Name = "RbTypeEmpl10"
         Me.RbTypeEmpl10.Size = New System.Drawing.Size(178, 21)
-        Me.RbTypeEmpl10.TabIndex = 142
+        Me.RbTypeEmpl10.TabIndex = 15
         Me.RbTypeEmpl10.TabStop = True
         Me.RbTypeEmpl10.Text = "Dispersion des cendres"
         Me.RbTypeEmpl10.UseVisualStyleBackColor = True
@@ -262,7 +262,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl7.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl7.Name = "RbTypeEmpl7"
         Me.RbTypeEmpl7.Size = New System.Drawing.Size(383, 21)
-        Me.RbTypeEmpl7.TabIndex = 139
+        Me.RbTypeEmpl7.TabIndex = 12
         Me.RbTypeEmpl7.TabStop = True
         Me.RbTypeEmpl7.Text = "Une urne mise en colombarium  –  concession de 15 ans"
         Me.RbTypeEmpl7.UseVisualStyleBackColor = True
@@ -274,7 +274,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl9.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl9.Name = "RbTypeEmpl9"
         Me.RbTypeEmpl9.Size = New System.Drawing.Size(498, 21)
-        Me.RbTypeEmpl9.TabIndex = 141
+        Me.RbTypeEmpl9.TabIndex = 14
         Me.RbTypeEmpl9.TabStop = True
         Me.RbTypeEmpl9.Text = "Placement d'un cavurne communal  –  concession de 30 ans (max 5 urnes)"
         Me.RbTypeEmpl9.UseVisualStyleBackColor = True
@@ -286,7 +286,7 @@ Partial Class PanelChoixTypeEmpl
         Me.RbTypeEmpl8.Margin = New System.Windows.Forms.Padding(4)
         Me.RbTypeEmpl8.Name = "RbTypeEmpl8"
         Me.RbTypeEmpl8.Size = New System.Drawing.Size(383, 21)
-        Me.RbTypeEmpl8.TabIndex = 140
+        Me.RbTypeEmpl8.TabIndex = 13
         Me.RbTypeEmpl8.TabStop = True
         Me.RbTypeEmpl8.Text = "Une urne mise en colombarium  –  concession de 30 ans"
         Me.RbTypeEmpl8.UseVisualStyleBackColor = True

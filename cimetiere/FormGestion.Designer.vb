@@ -23,6 +23,7 @@ Partial Class FormGestion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGestion))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -49,6 +50,10 @@ Partial Class FormGestion
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DgvListeDefunts = New System.Windows.Forms.DataGridView()
+        Me.ColDefNom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColDefEmplacement = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColDateDeces = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.FPBRefresh = New System.Windows.Forms.Button()
@@ -140,10 +145,6 @@ Partial Class FormGestion
         Me.LeftToolStripPanel = New System.Windows.Forms.ToolStripPanel()
         Me.ContentPanel = New System.Windows.Forms.ToolStripContentPanel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.ColDefNom = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColDefEmplacement = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColDateDeces = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -449,6 +450,8 @@ Partial Class FormGestion
         Me.DgvListeDefunts.AllowUserToDeleteRows = False
         Me.DgvListeDefunts.AllowUserToOrderColumns = True
         Me.DgvListeDefunts.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.DgvListeDefunts.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvListeDefunts.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.DgvListeDefunts.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvListeDefunts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -466,6 +469,34 @@ Partial Class FormGestion
         Me.DgvListeDefunts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvListeDefunts.Size = New System.Drawing.Size(489, 586)
         Me.DgvListeDefunts.TabIndex = 48
+        '
+        'ColDefNom
+        '
+        Me.ColDefNom.DataPropertyName = "Nom"
+        Me.ColDefNom.HeaderText = "Nom"
+        Me.ColDefNom.Name = "ColDefNom"
+        Me.ColDefNom.ReadOnly = True
+        '
+        'ColDefEmplacement
+        '
+        Me.ColDefEmplacement.DataPropertyName = "RefEmplacement"
+        Me.ColDefEmplacement.HeaderText = "Emplacement"
+        Me.ColDefEmplacement.Name = "ColDefEmplacement"
+        Me.ColDefEmplacement.ReadOnly = True
+        '
+        'ColDateDeces
+        '
+        Me.ColDateDeces.DataPropertyName = "DateDeces"
+        Me.ColDateDeces.HeaderText = "Date de décès"
+        Me.ColDateDeces.Name = "ColDateDeces"
+        Me.ColDateDeces.ReadOnly = True
+        '
+        'ColCode
+        '
+        Me.ColCode.DataPropertyName = "NumeroLh"
+        Me.ColCode.HeaderText = "Code"
+        Me.ColCode.Name = "ColCode"
+        Me.ColCode.ReadOnly = True
         '
         'Panel2
         '
@@ -1449,34 +1480,6 @@ Partial Class FormGestion
         'ContentPanel
         '
         Me.ContentPanel.Size = New System.Drawing.Size(150, 150)
-        '
-        'ColDefNom
-        '
-        Me.ColDefNom.DataPropertyName = "Nom"
-        Me.ColDefNom.HeaderText = "Nom"
-        Me.ColDefNom.Name = "ColDefNom"
-        Me.ColDefNom.ReadOnly = True
-        '
-        'ColDefEmplacement
-        '
-        Me.ColDefEmplacement.DataPropertyName = "RefEmplacement"
-        Me.ColDefEmplacement.HeaderText = "Emplacement"
-        Me.ColDefEmplacement.Name = "ColDefEmplacement"
-        Me.ColDefEmplacement.ReadOnly = True
-        '
-        'ColDateDeces
-        '
-        Me.ColDateDeces.DataPropertyName = "DateDeces"
-        Me.ColDateDeces.HeaderText = "Date de décès"
-        Me.ColDateDeces.Name = "ColDateDeces"
-        Me.ColDateDeces.ReadOnly = True
-        '
-        'ColCode
-        '
-        Me.ColCode.DataPropertyName = "NumeroLh"
-        Me.ColCode.HeaderText = "Code"
-        Me.ColCode.Name = "ColCode"
-        Me.ColCode.ReadOnly = True
         '
         'FormGestion
         '

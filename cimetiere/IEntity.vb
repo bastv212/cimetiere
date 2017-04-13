@@ -44,7 +44,10 @@ Public Class IEntity
 
     Public Class Condense
         Public Property Id As Integer?
-        Public Property Nom As String
+        Public Property Texte As String
+        Public Overrides Function ToString() As String
+            Return Me.Texte
+        End Function
     End Class
 
 End Class

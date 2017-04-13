@@ -42,7 +42,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.DateNaiss.Name = "DateNaiss"
         Me.DateNaiss.ShowCheckBox = True
         Me.DateNaiss.Size = New System.Drawing.Size(159, 23)
-        Me.DateNaiss.TabIndex = 5
+        Me.DateNaiss.TabIndex = 3
         '
         'tbNom
         '
@@ -51,7 +51,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.tbNom.Margin = New System.Windows.Forms.Padding(4)
         Me.tbNom.Name = "tbNom"
         Me.tbNom.Size = New System.Drawing.Size(121, 22)
-        Me.tbNom.TabIndex = 7
+        Me.tbNom.TabIndex = 1
         Me.tbNom.Value = Nothing
         '
         'TbPrenom
@@ -61,7 +61,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.TbPrenom.Margin = New System.Windows.Forms.Padding(4)
         Me.TbPrenom.Name = "TbPrenom"
         Me.TbPrenom.Size = New System.Drawing.Size(131, 22)
-        Me.TbPrenom.TabIndex = 8
+        Me.TbPrenom.TabIndex = 2
         Me.TbPrenom.Value = Nothing
         '
         'TbAdresse
@@ -71,7 +71,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.TbAdresse.Margin = New System.Windows.Forms.Padding(4)
         Me.TbAdresse.Name = "TbAdresse"
         Me.TbAdresse.Size = New System.Drawing.Size(166, 22)
-        Me.TbAdresse.TabIndex = 9
+        Me.TbAdresse.TabIndex = 4
         Me.TbAdresse.Value = Nothing
         '
         'TbLienParente
@@ -81,7 +81,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.TbLienParente.Margin = New System.Windows.Forms.Padding(4)
         Me.TbLienParente.Name = "TbLienParente"
         Me.TbLienParente.Size = New System.Drawing.Size(167, 22)
-        Me.TbLienParente.TabIndex = 10
+        Me.TbLienParente.TabIndex = 6
         Me.TbLienParente.Value = Nothing
         '
         'btRetirerBeneficiaire
@@ -91,7 +91,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.btRetirerBeneficiaire.Margin = New System.Windows.Forms.Padding(4)
         Me.btRetirerBeneficiaire.Name = "btRetirerBeneficiaire"
         Me.btRetirerBeneficiaire.Size = New System.Drawing.Size(32, 30)
-        Me.btRetirerBeneficiaire.TabIndex = 6
+        Me.btRetirerBeneficiaire.TabIndex = 0
         Me.btRetirerBeneficiaire.UseVisualStyleBackColor = True
         '
         'TbVille
@@ -101,7 +101,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.TbVille.Margin = New System.Windows.Forms.Padding(4)
         Me.TbVille.Name = "TbVille"
         Me.TbVille.Size = New System.Drawing.Size(142, 22)
-        Me.TbVille.TabIndex = 12
+        Me.TbVille.TabIndex = 7
         Me.TbVille.Value = Nothing
         '
         'TbPays
@@ -111,7 +111,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.TbPays.Margin = New System.Windows.Forms.Padding(4)
         Me.TbPays.Name = "TbPays"
         Me.TbPays.Size = New System.Drawing.Size(154, 22)
-        Me.TbPays.TabIndex = 13
+        Me.TbPays.TabIndex = 8
         Me.TbPays.Value = Nothing
         '
         'TbCp
@@ -120,7 +120,7 @@ Partial Class ElemListeBeneficiairesNvCon
         Me.TbCp.Location = New System.Drawing.Point(642, 2)
         Me.TbCp.Name = "TbCp"
         Me.TbCp.Size = New System.Drawing.Size(59, 22)
-        Me.TbCp.TabIndex = 14
+        Me.TbCp.TabIndex = 5
         Me.TbCp.Value = Nothing
         '
         'ElemListeBeneficiairesNvCon

@@ -173,6 +173,9 @@
     <Compile Include="Concession.vb">
       <DependentUpon>CimBddContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewConcessions.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Defunt.vb">
       <DependentUpon>CimBddContext.tt</DependentUpon>
     </Compile>

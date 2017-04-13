@@ -48,7 +48,7 @@ Partial Class FormEditActeur
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 22)
+        Me.Label1.Location = New System.Drawing.Point(28, 25)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 17)
         Me.Label1.TabIndex = 0
@@ -57,7 +57,7 @@ Partial Class FormEditActeur
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(276, 27)
+        Me.Label2.Location = New System.Drawing.Point(276, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 17)
         Me.Label2.TabIndex = 1
@@ -66,7 +66,7 @@ Partial Class FormEditActeur
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(296, 68)
+        Me.Label4.Location = New System.Drawing.Point(278, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 17)
         Me.Label4.TabIndex = 3
@@ -75,7 +75,7 @@ Partial Class FormEditActeur
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(296, 112)
+        Me.Label5.Location = New System.Drawing.Point(281, 97)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(34, 17)
         Me.Label5.TabIndex = 4
@@ -84,7 +84,7 @@ Partial Class FormEditActeur
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(314, 158)
+        Me.Label6.Location = New System.Drawing.Point(281, 132)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(39, 17)
         Me.Label6.TabIndex = 5
@@ -93,7 +93,7 @@ Partial Class FormEditActeur
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(34, 124)
+        Me.Label7.Location = New System.Drawing.Point(28, 97)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(76, 17)
         Me.Label7.TabIndex = 6
@@ -102,7 +102,7 @@ Partial Class FormEditActeur
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(28, 157)
+        Me.Label8.Location = New System.Drawing.Point(28, 132)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(126, 17)
         Me.Label8.TabIndex = 7
@@ -111,90 +111,90 @@ Partial Class FormEditActeur
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(293, 204)
+        Me.Label9.Location = New System.Drawing.Point(32, 165)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(130, 17)
+        Me.Label9.Size = New System.Drawing.Size(78, 17)
         Me.Label9.TabIndex = 8
-        Me.Label9.Text = "N° registre national"
+        Me.Label9.Text = "N° national"
         '
         'TbPrenom
         '
         Me.TbPrenom.CueBanner = Nothing
-        Me.TbPrenom.Location = New System.Drawing.Point(101, 22)
+        Me.TbPrenom.Location = New System.Drawing.Point(108, 22)
         Me.TbPrenom.Name = "TbPrenom"
-        Me.TbPrenom.Size = New System.Drawing.Size(100, 22)
-        Me.TbPrenom.TabIndex = 9
+        Me.TbPrenom.Size = New System.Drawing.Size(160, 22)
+        Me.TbPrenom.TabIndex = 1
         Me.TbPrenom.Value = Nothing
         '
         'TbNom
         '
         Me.TbNom.CueBanner = Nothing
-        Me.TbNom.Location = New System.Drawing.Point(349, 24)
+        Me.TbNom.Location = New System.Drawing.Point(333, 24)
         Me.TbNom.Name = "TbNom"
-        Me.TbNom.Size = New System.Drawing.Size(100, 22)
-        Me.TbNom.TabIndex = 10
+        Me.TbNom.Size = New System.Drawing.Size(139, 22)
+        Me.TbNom.TabIndex = 2
         Me.TbNom.Value = Nothing
         '
         'TbCp
         '
         Me.TbCp.CueBanner = Nothing
-        Me.TbCp.Location = New System.Drawing.Point(386, 65)
+        Me.TbCp.Location = New System.Drawing.Point(368, 58)
         Me.TbCp.Name = "TbCp"
-        Me.TbCp.Size = New System.Drawing.Size(100, 22)
-        Me.TbCp.TabIndex = 12
+        Me.TbCp.Size = New System.Drawing.Size(104, 22)
+        Me.TbCp.TabIndex = 4
         Me.TbCp.Value = Nothing
         '
         'TbVille
         '
         Me.TbVille.CueBanner = Nothing
-        Me.TbVille.Location = New System.Drawing.Point(386, 107)
+        Me.TbVille.Location = New System.Drawing.Point(333, 94)
         Me.TbVille.Name = "TbVille"
-        Me.TbVille.Size = New System.Drawing.Size(100, 22)
-        Me.TbVille.TabIndex = 13
+        Me.TbVille.Size = New System.Drawing.Size(139, 22)
+        Me.TbVille.TabIndex = 6
         Me.TbVille.Value = Nothing
         '
         'TbPays
         '
         Me.TbPays.CueBanner = Nothing
-        Me.TbPays.Location = New System.Drawing.Point(404, 153)
+        Me.TbPays.Location = New System.Drawing.Point(333, 129)
         Me.TbPays.Name = "TbPays"
-        Me.TbPays.Size = New System.Drawing.Size(100, 22)
-        Me.TbPays.TabIndex = 14
+        Me.TbPays.Size = New System.Drawing.Size(139, 22)
+        Me.TbPays.TabIndex = 8
         Me.TbPays.Value = Nothing
         '
         'TbTel
         '
         Me.TbTel.CueBanner = Nothing
-        Me.TbTel.Location = New System.Drawing.Point(113, 124)
+        Me.TbTel.Location = New System.Drawing.Point(108, 94)
         Me.TbTel.Name = "TbTel"
-        Me.TbTel.Size = New System.Drawing.Size(100, 22)
-        Me.TbTel.TabIndex = 15
+        Me.TbTel.Size = New System.Drawing.Size(160, 22)
+        Me.TbTel.TabIndex = 5
         Me.TbTel.Value = Nothing
         '
         'MtbDateNaiss
         '
         Me.MtbDateNaiss.DateValue = Nothing
         Me.MtbDateNaiss.IntArrayValue = CType(resources.GetObject("MtbDateNaiss.IntArrayValue"), System.Collections.Generic.List(Of System.Nullable(Of Integer)))
-        Me.MtbDateNaiss.Location = New System.Drawing.Point(173, 158)
+        Me.MtbDateNaiss.Location = New System.Drawing.Point(160, 129)
         Me.MtbDateNaiss.Mask = "00/00/0000"
         Me.MtbDateNaiss.Name = "MtbDateNaiss"
         Me.MtbDateNaiss.Size = New System.Drawing.Size(100, 22)
-        Me.MtbDateNaiss.TabIndex = 16
+        Me.MtbDateNaiss.TabIndex = 7
         Me.MtbDateNaiss.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TbNumRegistre
         '
         Me.TbNumRegistre.CueBanner = Nothing
-        Me.TbNumRegistre.Location = New System.Drawing.Point(429, 201)
+        Me.TbNumRegistre.Location = New System.Drawing.Point(116, 162)
         Me.TbNumRegistre.Name = "TbNumRegistre"
-        Me.TbNumRegistre.Size = New System.Drawing.Size(100, 22)
-        Me.TbNumRegistre.TabIndex = 17
+        Me.TbNumRegistre.Size = New System.Drawing.Size(144, 22)
+        Me.TbNumRegistre.TabIndex = 9
         Me.TbNumRegistre.Value = Nothing
         '
         'BtEnregistrer
         '
         Me.BtEnregistrer.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.BtEnregistrer.Location = New System.Drawing.Point(489, 253)
+        Me.BtEnregistrer.Location = New System.Drawing.Point(356, 202)
         Me.BtEnregistrer.Name = "BtEnregistrer"
         Me.BtEnregistrer.Size = New System.Drawing.Size(97, 38)
         Me.BtEnregistrer.TabIndex = 18
@@ -204,7 +204,7 @@ Partial Class FormEditActeur
         'BtAnnuler
         '
         Me.BtAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.BtAnnuler.Location = New System.Drawing.Point(317, 253)
+        Me.BtAnnuler.Location = New System.Drawing.Point(223, 202)
         Me.BtAnnuler.Name = "BtAnnuler"
         Me.BtAnnuler.Size = New System.Drawing.Size(97, 38)
         Me.BtAnnuler.TabIndex = 19
@@ -214,16 +214,16 @@ Partial Class FormEditActeur
         'TbAdresse
         '
         Me.TbAdresse.CueBanner = Nothing
-        Me.TbAdresse.Location = New System.Drawing.Point(101, 63)
+        Me.TbAdresse.Location = New System.Drawing.Point(108, 58)
         Me.TbAdresse.Name = "TbAdresse"
-        Me.TbAdresse.Size = New System.Drawing.Size(100, 22)
-        Me.TbAdresse.TabIndex = 21
+        Me.TbAdresse.Size = New System.Drawing.Size(160, 22)
+        Me.TbAdresse.TabIndex = 3
         Me.TbAdresse.Value = Nothing
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(28, 66)
+        Me.Label3.Location = New System.Drawing.Point(28, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 17)
         Me.Label3.TabIndex = 20
@@ -235,7 +235,7 @@ Partial Class FormEditActeur
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.BtAnnuler
-        Me.ClientSize = New System.Drawing.Size(683, 303)
+        Me.ClientSize = New System.Drawing.Size(523, 254)
         Me.Controls.Add(Me.TbAdresse)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtAnnuler)
