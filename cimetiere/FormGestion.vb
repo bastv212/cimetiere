@@ -1,9 +1,51 @@
 ﻿
 Public Class FormGestion
+
+    Dim _listeConcessionnairesSortable As SortableBindingList(Of Acteur.InfosPourListe)
+    Dim _ListeBeneficiaireSortable As SortableBindingList(Of Acteur.InfosPourListe)
+    Dim _ListePersContactSortable As SortableBindingList(Of Acteur.InfosPourListe)
+    Private Property ListeConcessionnairesSortable As SortableBindingList(Of Acteur.InfosPourListe)
+        Get
+            If _listeConcessionnairesSortable Is Nothing Then
+                _listeConcessionnairesSortable = New SortableBindingList(Of Acteur.InfosPourListe)(Bdd.GetListeActeurs)
+            End If
+            Return _listeConcessionnairesSortable
+        End Get
+        Set(value As SortableBindingList(Of Acteur.InfosPourListe))
+            _listeConcessionnairesSortable = value
+        End Set
+    End Property
+
+    Private Property ListeBeneficiaireSortable As SortableBindingList(Of Acteur.InfosPourListe)
+        Get
+            If _ListeBeneficiaireSortable Is Nothing Then
+                _ListeBeneficiaireSortable = New SortableBindingList(Of Acteur.InfosPourListe)(Bdd.GetListeBeneficiaires)
+            End If
+            Return _ListeBeneficiaireSortable
+        End Get
+        Set(value As SortableBindingList(Of Acteur.InfosPourListe))
+            _ListeBeneficiaireSortable = value
+        End Set
+    End Property
+
+    Private Property ListePersContactSortable As SortableBindingList(Of Acteur.InfosPourListe)
+        Get
+            If _ListePersContactSortable Is Nothing Then
+                _ListePersContactSortable = New SortableBindingList(Of Acteur.InfosPourListe)(Bdd.GetListePersContact)
+            End If
+            Return _ListePersContactSortable
+        End Get
+        Set(value As SortableBindingList(Of Acteur.InfosPourListe))
+            _ListePersContactSortable = value
+        End Set
+    End Property
+
     Dim DefuntAffiche As Defunt
+    Dim ActeurAffiche As Acteur
 
     'Public dtLit As DataTable
     'Dim DTTPers As DataTable
+
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         '        BindDataDormeur()
@@ -14,11 +56,17 @@ Public Class FormGestion
         DgvListeDefunts.AutoGenerateColumns = False
         DgvListeDefunts.DataSource = ListeDefuntsSortable
 
-        Dim ListeConcessionnaire = 
-        Dim ListeConcessionnaireSortable As New SortableBindingList(Of Object)(ListeConcessionaire)
-        DgvListeDefunts.AutoGenerateColumns = False
-        DgvListeDefunts.DataSource =
 
+
+
+
+
+
+        '  lacteur.Cp = codepostal.Value
+
+
+
+        'Bdd.getliste
 
     End Sub
 
@@ -192,6 +240,34 @@ Public Class FormGestion
 
         End If
 
+    End Sub
+
+    Private Sub DgvListeConcessionnaire_SelectionChanged(sender As Object, e As EventArgs) Handles DgvListeConcessionnaire.SelectionChanged
+        If DgvListeConcessionnaire.SelectedRows.Count > 0 Then
+            If ActeurAffiche Is Nothing Then
+
+            End If
+
+            ActeurAffiche = Bdd.ChargerDefunt(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)
+            With ActeurAffiche
+                TBPersNom.Text = "alor"
+
+
+                ' TxtDefNom.Text = If(.Prenom IsNot Nothing Or .Nom IsNot Nothing, .Prenom & " " & .Nom, "?")
+                'TxtDefEmplacement.Text = If(.SejourActif IsNot Nothing, .SejourActif.Emplacement.Reference, "/")
+                'TxtDefDateDeces.Text = If(.DateDeces IsNot Nothing, .DateDeces.Value.ToString("dd/MM/yyyy"), "/")
+                'TxtDefCode.Text = If(.NumeroLh, "/")
+                'TxtDefEtatCiv.Text = If(.EtatCivil IsNot Nothing, Defunt.StaticEtatCivilToString(.EtatCivil) & If(.EtatCivil <> "celibataire", " de " & .EtatCivilDe, ""), "/")
+                'Dim strdomicile As String = If(.Adresse IsNot Nothing, .Adresse & ",", "") _
+                '   & If(.Cp IsNot Nothing, .Cp & " ", "") & If(.Ville IsNot Nothing, .Ville, "") & If(.Pays <> "" And String.Compare(.Pays, "belgique", True) <> 0, ", " & .Pays, "")
+                'TxtDefDomicile.Text = If(strdomicile <> "", strdomicile, "/")
+            End With
+
+        End If
+
+
+
+
 
     End Sub
 
@@ -203,7 +279,16 @@ Public Class FormGestion
         'CbDefChercherCode
     End Sub
 
-    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+    Private Sub PRBConcessionnaire_CheckedChanged(sender As Object, e As EventArgs) Handles PRBConcessionnaire.CheckedChanged
+        DgvListeConcessionnaire.DataSource = ListeConcessionnairesSortable
+    End Sub
 
+    Private Sub PRBPersCon_CheckedChanged(sender As Object, e As EventArgs) Handles PRBPersCon.CheckedChanged
+
+        DgvListeConcessionnaire.DataSource = ListePersContactSortable
+    End Sub
+
+    Private Sub PRBBenef_CheckedChanged(sender As Object, e As EventArgs) Handles PRBBenef.CheckedChanged
+        DgvListeConcessionnaire.DataSource = ListeBeneficiaireSortable
     End Sub
 End Class
