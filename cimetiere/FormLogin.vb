@@ -171,4 +171,16 @@ Public Class FormLogin
         Dim a = New FormRechercheConcession
         a.ShowDialog()
     End Sub
+
+    Private Sub BtTestFormeditempl_Click(sender As Object, e As EventArgs) Handles BtTestFormeditempl.Click
+        'Dim lid As Integer
+        Dim leform As New FormEditEmplacement(12)
+        leform.ShowDialog()
+    End Sub
+
+    Private Sub textboxfloattest() Handles Me.Load
+
+    End Sub
+
+
 End Class

@@ -85,6 +85,17 @@ Module Bdd
         End Using
     End Function
 
+    ' charge concessions liées et mentions bénef
+    Function GetActeur(id As Integer) As Acteur
+        Using ctx As New CimBddContext
+            Return (From act In ctx.Acteurs.Include("ConcessionnaireDe").Include("PersonneContactDe").Include("MentionsCommeBenef.Concession")
+                    Where act.Id = id) _
+                   .Single
+
+
+        End Using
+    End Function
+
     ' défunts actuellement dans l'emplacement
     Function GetOccupants(IdEmpl As Integer) As List(Of Defunt)
         Using ctx As New CimBddContext

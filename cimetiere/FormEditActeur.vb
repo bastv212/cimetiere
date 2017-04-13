@@ -1,16 +1,12 @@
 ﻿Public Class FormEditActeur
-
     ' modal
-
     Public IdActeur As Integer?     ' peut être utilisé comme valeur de retour pour renvoyer l'id de l'entité créée
     Private LActeur As Acteur
     Public Sub New(Optional idAct As Integer? = Nothing)
         ' This call is required by the designer.
         InitializeComponent()
         IdActeur = idAct
-
     End Sub
-
 
     Private Sub FormEditActeur_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' édit ou nouveau ?
