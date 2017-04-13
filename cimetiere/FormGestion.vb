@@ -249,7 +249,7 @@ Public Class FormGestion
 
             End If
 
-            ActeurAffiche = Bdd.ChargerDefunt(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)
+            'ActeurAffiche = Bdd.ChargerDefunt(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)  ' VIRE PAR BAST
             With ActeurAffiche
                 TBPersNom.Text = "alor"
 

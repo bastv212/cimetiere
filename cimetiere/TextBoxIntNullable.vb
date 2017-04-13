@@ -13,7 +13,7 @@
             End If
         End Get
         Set(value As Integer?)
-            Me.Text = If(value, "")     ' pas testé, vérifier quand value existe mais est 0
+            Me.Text = If(value, "")
         End Set
     End Property
 

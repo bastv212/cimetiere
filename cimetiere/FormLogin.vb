@@ -172,15 +172,8 @@ Public Class FormLogin
         a.ShowDialog()
     End Sub
 
-    Private Sub BtTestFormeditempl_Click(sender As Object, e As EventArgs) Handles BtTestFormeditempl.Click
-        'Dim lid As Integer
-        Dim leform As New FormEditEmplacement(12)
-        leform.ShowDialog()
+    Private Sub BtTestFormeditempl_Click(sender As Object, e As EventArgs) Handles BtTestEditact.Click
+        Dim kak = Bdd.GetActeur(2)
     End Sub
-
-    Private Sub textboxfloattest() Handles Me.Load
-
-    End Sub
-
 
 End Class
