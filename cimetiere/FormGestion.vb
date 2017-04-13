@@ -13,6 +13,13 @@ Public Class FormGestion
         Dim ListeDefuntsSortable As New SortableBindingList(Of Object)(ListeDefunts)
         DgvListeDefunts.AutoGenerateColumns = False
         DgvListeDefunts.DataSource = ListeDefuntsSortable
+
+        Dim ListeConcessionnaire = 
+        Dim ListeConcessionnaireSortable As New SortableBindingList(Of Object)(ListeConcessionaire)
+        DgvListeDefunts.AutoGenerateColumns = False
+        DgvListeDefunts.DataSource =
+
+
     End Sub
 
     Sub BindDataDormeur()
@@ -196,4 +203,7 @@ Public Class FormGestion
         'CbDefChercherCode
     End Sub
 
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+
+    End Sub
 End Class
