@@ -188,6 +188,12 @@
     <Compile Include="Emplacement.vb">
       <DependentUpon>CimBddContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="flowlayoutblabla.Designer.vb">
+      <DependentUpon>flowlayoutblabla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="flowlayoutblabla.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FnvConBenef.vb">
       <DependentUpon>CimBddContext.tt</DependentUpon>
     </Compile>
@@ -435,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ElemListeBenefBdd.resx">
       <DependentUpon>ElemListeBenefBdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flowlayoutblabla.resx">
+      <DependentUpon>flowlayoutblabla.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditActeur.resx">
       <DependentUpon>FormEditActeur.vb</DependentUpon>

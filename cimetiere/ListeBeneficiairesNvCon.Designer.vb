@@ -22,22 +22,22 @@ Partial Class ListeBeneficiairesNvCon
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Lab = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btAjoutBenef = New System.Windows.Forms.Button()
         Me.LbSuggestions = New cimetiere.ListboxEntites()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label7
+        'Lab
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(5, 1)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 17)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "Bénéficiaires"
+        Me.Lab.AutoSize = True
+        Me.Lab.Location = New System.Drawing.Point(5, 1)
+        Me.Lab.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Lab.Name = "Lab"
+        Me.Lab.Size = New System.Drawing.Size(89, 17)
+        Me.Lab.TabIndex = 7
+        Me.Lab.Text = "Bénéficiaires"
         '
         'FlowLayoutPanel1
         '
@@ -88,7 +88,7 @@ Partial Class ListeBeneficiairesNvCon
         Me.BackColor = System.Drawing.Color.AliceBlue
         Me.Controls.Add(Me.LbSuggestions)
         Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Lab)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ListeBeneficiairesNvCon"
         Me.Size = New System.Drawing.Size(874, 67)
@@ -99,7 +99,7 @@ Partial Class ListeBeneficiairesNvCon
     End Sub
 
     Friend WithEvents btAjoutBenef As Button
-    Friend WithEvents Label7 As Label
+    Friend WithEvents Lab As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents LbSuggestions As ListboxEntites
 End Class

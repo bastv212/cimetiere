@@ -144,9 +144,58 @@ Module Bdd
             }
 
             Return rq2.ToList
-
         End Using
     End Function
+
+    Function GetListeActeurs() As List(Of Acteur.InfosPourListe)
+        Using ctx As New CimBddContext
+            Return (From act In ctx.Acteurs
+                    Select New Acteur.InfosPourListe With {
+                        .Id = act.Id,
+                        .Nom = act.Nom & " " & act.Prenom
+                    }) _
+                    .ToList
+        End Using
+    End Function
+
+    'renvoie les "acteurs" qui sont mentionnés comme bénéficiaire quelque part
+    Function GetListeBeneficiaires() As List(Of Acteur.InfosPourListe)
+        Using ctx As New CimBddContext
+            Return (From act In ctx.Acteurs
+                    Where act.MentionsCommeBenef.Count > 0
+                    Select New Acteur.InfosPourListe With {
+                    .Id = act.Id,
+                    .Nom = act.Nom & " " & act.Prenom
+                    }) _
+                .ToList
+        End Using
+    End Function
+
+    ' acteurs qui sont titulaires d'une concession
+    Function GetListeConcessionnaires() As List(Of Acteur.InfosPourListe)
+        Using ctx As New CimBddContext
+            Return (From act In ctx.Acteurs
+                    Where act.ConcessionnaireDe.Count > 0
+                    Select New Acteur.InfosPourListe With {
+                        .Id = act.Id,
+                        .Nom = act.Nom
+                    }) _
+                  .ToList
+        End Using
+    End Function
+
+    Function GetListePersContact() As List(Of Acteur.InfosPourListe)
+        Using ctx As New CimBddContext
+            Return (From act In ctx.Acteurs
+                    Where act.PersonneContactDe.Count > 0
+                    Select New Acteur.InfosPourListe With {
+                           .Id = act.Id,
+                           .Nom = act.Nom
+                        }) _
+                  .ToList
+        End Using
+    End Function
+
 
     Function GetCondenseActeurs() As List(Of IEntity.Condense)
         Using ctx As New CimBddContext
