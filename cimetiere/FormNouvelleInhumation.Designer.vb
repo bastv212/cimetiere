@@ -119,12 +119,12 @@ Partial Class FormNouvelleInhumation
         Me.LabTypeNouvelEmpl = New System.Windows.Forms.Label()
         Me.FlpQuestions = New System.Windows.Forms.FlowLayoutPanel()
         Me.PanTerminer = New System.Windows.Forms.Panel()
-        Me.BtPrecedentDeRecap = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TbCommentaire = New System.Windows.Forms.TextBox()
-        Me.CbOuvrirPdf = New System.Windows.Forms.CheckBox()
-        Me.CbEnregPdf = New System.Windows.Forms.CheckBox()
         Me.BtTerminer = New System.Windows.Forms.Button()
+        Me.CbEnregPdf = New System.Windows.Forms.CheckBox()
+        Me.CbOuvrirPdf = New System.Windows.Forms.CheckBox()
+        Me.BtPrecedentDeRecap = New System.Windows.Forms.Button()
         Me.ExistanteRefEmpl = New cimetiere.TextBoxNullable()
         Me.TbExistanteRefAutresDefunts = New cimetiere.TextBoxNullable()
         Me.LbListeDemandeurs = New cimetiere.ListBoxCustomActeurs()
@@ -941,10 +941,10 @@ Partial Class FormNouvelleInhumation
         '
         Me.FlowLayoutPanel7.AutoScroll = True
         Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrNomComplet)
-        Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrNoNat)
-        Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrDateNaiss)
         Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrAdresseComplete)
         Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrTel)
+        Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrDateNaiss)
+        Me.FlowLayoutPanel7.Controls.Add(Me.LabCsnrNoNat)
         Me.FlowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel7.Location = New System.Drawing.Point(1, 26)
         Me.FlowLayoutPanel7.Margin = New System.Windows.Forms.Padding(4)
@@ -968,7 +968,7 @@ Partial Class FormNouvelleInhumation
         '
         Me.LabCsnrNoNat.AutoEllipsis = True
         Me.LabCsnrNoNat.AutoSize = True
-        Me.LabCsnrNoNat.Location = New System.Drawing.Point(4, 26)
+        Me.LabCsnrNoNat.Location = New System.Drawing.Point(4, 104)
         Me.LabCsnrNoNat.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabCsnrNoNat.Name = "LabCsnrNoNat"
         Me.LabCsnrNoNat.Padding = New System.Windows.Forms.Padding(6, 6, 3, 2)
@@ -980,7 +980,7 @@ Partial Class FormNouvelleInhumation
         '
         Me.LabCsnrDateNaiss.AutoEllipsis = True
         Me.LabCsnrDateNaiss.AutoSize = True
-        Me.LabCsnrDateNaiss.Location = New System.Drawing.Point(4, 52)
+        Me.LabCsnrDateNaiss.Location = New System.Drawing.Point(4, 78)
         Me.LabCsnrDateNaiss.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabCsnrDateNaiss.Name = "LabCsnrDateNaiss"
         Me.LabCsnrDateNaiss.Padding = New System.Windows.Forms.Padding(6, 6, 3, 2)
@@ -992,7 +992,7 @@ Partial Class FormNouvelleInhumation
         '
         Me.LabCsnrAdresseComplete.AutoEllipsis = True
         Me.LabCsnrAdresseComplete.AutoSize = True
-        Me.LabCsnrAdresseComplete.Location = New System.Drawing.Point(4, 78)
+        Me.LabCsnrAdresseComplete.Location = New System.Drawing.Point(4, 26)
         Me.LabCsnrAdresseComplete.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabCsnrAdresseComplete.Name = "LabCsnrAdresseComplete"
         Me.LabCsnrAdresseComplete.Padding = New System.Windows.Forms.Padding(6, 6, 3, 2)
@@ -1004,7 +1004,7 @@ Partial Class FormNouvelleInhumation
         '
         Me.LabCsnrTel.AutoEllipsis = True
         Me.LabCsnrTel.AutoSize = True
-        Me.LabCsnrTel.Location = New System.Drawing.Point(4, 104)
+        Me.LabCsnrTel.Location = New System.Drawing.Point(4, 52)
         Me.LabCsnrTel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabCsnrTel.Name = "LabCsnrTel"
         Me.LabCsnrTel.Padding = New System.Windows.Forms.Padding(6, 6, 3, 2)
@@ -1325,15 +1325,6 @@ Partial Class FormNouvelleInhumation
         Me.PanTerminer.Size = New System.Drawing.Size(670, 226)
         Me.PanTerminer.TabIndex = 170
         '
-        'BtPrecedentDeRecap
-        '
-        Me.BtPrecedentDeRecap.Location = New System.Drawing.Point(309, 155)
-        Me.BtPrecedentDeRecap.Name = "BtPrecedentDeRecap"
-        Me.BtPrecedentDeRecap.Size = New System.Drawing.Size(154, 48)
-        Me.BtPrecedentDeRecap.TabIndex = 4
-        Me.BtPrecedentDeRecap.Text = "<< Précédent"
-        Me.BtPrecedentDeRecap.UseVisualStyleBackColor = True
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -1352,18 +1343,15 @@ Partial Class FormNouvelleInhumation
         Me.TbCommentaire.Size = New System.Drawing.Size(624, 91)
         Me.TbCommentaire.TabIndex = 1
         '
-        'CbOuvrirPdf
+        'BtTerminer
         '
-        Me.CbOuvrirPdf.AutoSize = True
-        Me.CbOuvrirPdf.Checked = True
-        Me.CbOuvrirPdf.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CbOuvrirPdf.Location = New System.Drawing.Point(22, 161)
-        Me.CbOuvrirPdf.Margin = New System.Windows.Forms.Padding(4)
-        Me.CbOuvrirPdf.Name = "CbOuvrirPdf"
-        Me.CbOuvrirPdf.Size = New System.Drawing.Size(162, 22)
-        Me.CbOuvrirPdf.TabIndex = 3
-        Me.CbOuvrirPdf.Text = "Ouvrir le fichier PDF"
-        Me.CbOuvrirPdf.UseVisualStyleBackColor = True
+        Me.BtTerminer.Location = New System.Drawing.Point(514, 155)
+        Me.BtTerminer.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtTerminer.Name = "BtTerminer"
+        Me.BtTerminer.Size = New System.Drawing.Size(134, 48)
+        Me.BtTerminer.TabIndex = 5
+        Me.BtTerminer.Text = "Terminer"
+        Me.BtTerminer.UseVisualStyleBackColor = True
         '
         'CbEnregPdf
         '
@@ -1378,15 +1366,27 @@ Partial Class FormNouvelleInhumation
         Me.CbEnregPdf.Text = "Enregistrer le fichier PDF"
         Me.CbEnregPdf.UseVisualStyleBackColor = True
         '
-        'BtTerminer
+        'CbOuvrirPdf
         '
-        Me.BtTerminer.Location = New System.Drawing.Point(514, 155)
-        Me.BtTerminer.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtTerminer.Name = "BtTerminer"
-        Me.BtTerminer.Size = New System.Drawing.Size(134, 48)
-        Me.BtTerminer.TabIndex = 5
-        Me.BtTerminer.Text = "Terminer"
-        Me.BtTerminer.UseVisualStyleBackColor = True
+        Me.CbOuvrirPdf.AutoSize = True
+        Me.CbOuvrirPdf.Checked = True
+        Me.CbOuvrirPdf.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CbOuvrirPdf.Location = New System.Drawing.Point(22, 161)
+        Me.CbOuvrirPdf.Margin = New System.Windows.Forms.Padding(4)
+        Me.CbOuvrirPdf.Name = "CbOuvrirPdf"
+        Me.CbOuvrirPdf.Size = New System.Drawing.Size(162, 22)
+        Me.CbOuvrirPdf.TabIndex = 3
+        Me.CbOuvrirPdf.Text = "Ouvrir le fichier PDF"
+        Me.CbOuvrirPdf.UseVisualStyleBackColor = True
+        '
+        'BtPrecedentDeRecap
+        '
+        Me.BtPrecedentDeRecap.Location = New System.Drawing.Point(309, 155)
+        Me.BtPrecedentDeRecap.Name = "BtPrecedentDeRecap"
+        Me.BtPrecedentDeRecap.Size = New System.Drawing.Size(154, 48)
+        Me.BtPrecedentDeRecap.TabIndex = 4
+        Me.BtPrecedentDeRecap.Text = "<< Précédent"
+        Me.BtPrecedentDeRecap.UseVisualStyleBackColor = True
         '
         'ExistanteRefEmpl
         '
@@ -1560,6 +1560,7 @@ Partial Class FormNouvelleInhumation
         Me.ListeBeneficiaires.Name = "ListeBeneficiaires"
         Me.ListeBeneficiaires.Size = New System.Drawing.Size(931, 220)
         Me.ListeBeneficiaires.TabIndex = 161
+        Me.ListeBeneficiaires.Titre = "Bénéficiaires"
         '
         'FormNouvelleInhumation
         '
@@ -1730,16 +1731,12 @@ Partial Class FormNouvelleInhumation
     Friend WithEvents PanTerminer As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents TbCommentaire As TextBox
-    Friend WithEvents CbOuvrirPdf As CheckBox
-    Friend WithEvents CbEnregPdf As CheckBox
-    Friend WithEvents BtTerminer As Button
     Friend WithEvents BtSuivantDeCon As Button
     Friend WithEvents DefAdresse As TextBoxNullable
     Friend WithEvents DefNom As TextBoxNullable
     Friend WithEvents PanP2InfosCsnr As Panel
     Friend WithEvents GbCsnrNvCon As GroupBox
     Friend WithEvents BtPrecedentDeCon As Button
-    Friend WithEvents BtPrecedentDeRecap As Button
     Friend WithEvents LbListeConcessionnaires As ListBoxCustomActeurs
     Friend WithEvents LbListeDemandeurs As ListBoxCustomActeurs
     Friend WithEvents Label6 As Label
@@ -1754,4 +1751,8 @@ Partial Class FormNouvelleInhumation
     Friend WithEvents LabPartieConExisAutresDefunts As Label
     Friend WithEvents LabPartieConExisPlaces As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents BtPrecedentDeRecap As Button
+    Friend WithEvents CbOuvrirPdf As CheckBox
+    Friend WithEvents CbEnregPdf As CheckBox
+    Friend WithEvents BtTerminer As Button
 End Class

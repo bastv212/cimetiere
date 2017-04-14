@@ -119,5 +119,10 @@ Module UzineAGaz
     'End Sub
 
 
+    Function EmplacementImpliqueConcession(e As String) As Boolean
+        Return Not {"pl_ordinaire_cercueil", "pl_ordinaire_urne", "ouverture_caveau", "urne_colomb_ordinaire", "dispersion_cendres", ""}.Contains(e)
+    End Function
+
+
 
 End Module

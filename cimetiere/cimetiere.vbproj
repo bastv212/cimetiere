@@ -209,6 +209,12 @@
     <Compile Include="FormEditConcession.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEditDefunt.Designer.vb">
+      <DependentUpon>FormEditDefunt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditDefunt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditEmplacement.Designer.vb">
       <DependentUpon>FormEditEmplacement.vb</DependentUpon>
     </Compile>
@@ -469,8 +475,14 @@
     <EmbeddedResource Include="FormEditConcession.resx">
       <DependentUpon>FormEditConcession.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditDefunt.resx">
+      <DependentUpon>FormEditDefunt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditEmplacement.resx">
       <DependentUpon>FormEditEmplacement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNouvelleConcession.resx">
+      <DependentUpon>FormNouvelleConcession.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRechercheConcession.resx">
       <DependentUpon>FormRechercheConcession.vb</DependentUpon>

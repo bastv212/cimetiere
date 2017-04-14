@@ -19,7 +19,6 @@ Public Class FormNouvelleInhumation
     Dim LesParentes As List(Of String)
     Dim Questions As New List(Of SimpleQuestion)
 
-
 #Region "onglets"
     ' le form utilise des onglets pour les pages, mais on veut qu'il soit impossible de changer d'onglet autrement qu'en cliquant
     ' sur les boutons précédent/suivant
@@ -105,7 +104,7 @@ Public Class FormNouvelleInhumation
             LeFormInh.ConcSollic = "existante"
         Else
             LeFormInh.TypeEmpl = PanTypeEmplNv.GetChoix
-            If Not EmplacementImpliqueConcession(LeFormInh.TypeEmpl) Then
+            If Not UzineAGaz.EmplacementImpliqueConcession(LeFormInh.TypeEmpl) Then
                 LeFormInh.ConcSollic = "sans_concession"
             Else
                 LeFormInh.ConcSollic = "nouvelle"
@@ -115,7 +114,6 @@ Public Class FormNouvelleInhumation
 
 
         ' À FAIRE : numéro défunt la hulpe/année ; voir comment ils sont générés et trouver où mettre le compteur
-
 
         LeDemandeur = LbListeDemandeurs.ActeurSelectionne
         LeFormInh.IntegrerInfosDemandeur(LeDemandeur)
@@ -430,9 +428,6 @@ Public Class FormNouvelleInhumation
         End If
     End Sub
 
-    ' À FAIRE masquer/griser la partie csnr/ ' ALALALALALALA
-    ' À FAIRE MODIF UPDATE OUTON LE METTE QUAND ACTEUR CHANGED
-
     Private Sub OnDemandeurChanged() Handles LbListeDemandeurs.ActeurChanged
         UpdateBtSuivantDeInh()
     End Sub
@@ -450,12 +445,12 @@ Public Class FormNouvelleInhumation
     End Sub
 
     Private Sub MajAspectPartieConcession() Handles PanTypeEmplNv.SelectionChanged
-        Dim csnactif = EmplacementImpliqueConcession(PanTypeEmplNv.GetChoix)
+        Dim csnactif = UzineAGaz.EmplacementImpliqueConcession(PanTypeEmplNv.GetChoix)
         PanP2InfosCsnr.Enabled = csnactif
         ListeBeneficiaires.Enabled = csnactif
 
         ' code pour changer l'aspect tout en laissant les contrôles activés, mais après tout bof
-        'If Not EmplacementImpliqueConcession(PanTypeEmplNv.GetChoix) Then
+        'If Not UzineAGaz.EmplacementImpliqueConcession(PanTypeEmplNv.GetChoix) Then
         '    GbCsnrNvCon.ForeColor = SystemColors.GrayText
         '    'PanP2InfosCsnr.BackColor = SystemColors.Control
         '    PanP2InfosCsnr.BackColor = SystemColors.ControlLight ''
@@ -506,10 +501,6 @@ Public Class FormNouvelleInhumation
         Return tp
     End Function
 
-    Function EmplacementImpliqueConcession(e As String) As Boolean
-        Return Not {"pl_ordinaire_cercueil", "pl_ordinaire_urne", "ouverture_caveau", "urne_colomb_ordinaire", "dispersion_cendres", ""}.Contains(e)
-    End Function
-
     ' taille un peu adaptable pour les SimpleQuestion dans le panel des remarques
     Private Sub RedimQuestions(sender As Object, e As EventArgs) ' Handles FlpQuestions.SizeChanged
         For Each q As Control In FlpQuestions.Controls
@@ -548,7 +539,7 @@ Public Class FormNouvelleInhumation
                                  AndAlso
                                    LbListeDemandeurs.ActeurSelectionne IsNot Nothing _
                                  AndAlso
-                                   Not EmplacementImpliqueConcession(emplchoisi) _
+                                   Not UzineAGaz.EmplacementImpliqueConcession(emplchoisi) _
                                    OrElse LbListeConcessionnaires.ActeurSelectionne IsNot Nothing
     End Sub
 
