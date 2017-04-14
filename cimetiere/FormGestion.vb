@@ -62,7 +62,6 @@ Public Class FormGestion
 
 
 
-
         '  lacteur.Cp = codepostal.Value
 
 
@@ -244,14 +243,15 @@ Public Class FormGestion
     End Sub
 
     Private Sub DgvListeConcessionnaire_SelectionChanged(sender As Object, e As EventArgs) Handles DgvListeConcessionnaire.SelectionChanged
+
         If DgvListeConcessionnaire.SelectedRows.Count > 0 Then
             If ActeurAffiche Is Nothing Then
 
             End If
 
-            ActeurAffiche = Bdd.ChargerDefunt(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)
+            ActeurAffiche = Bdd.GetActeur(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)
             With ActeurAffiche
-                TBPersNom.Text = "alor"
+                TBPersPrenom.Text = If(.Prenom IsNot Nothing Or .Nom IsNot Nothing, .Prenom & " " & .Nom, "?")
 
 
                 ' TxtDefNom.Text = If(.Prenom IsNot Nothing Or .Nom IsNot Nothing, .Prenom & " " & .Nom, "?")

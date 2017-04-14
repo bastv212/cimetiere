@@ -85,14 +85,13 @@ Module Bdd
         End Using
     End Function
 
-    ' charge concessions liées et mentions bénef
+    ' charge concessions liées (comme concessionnaire, bénéficiaire, personne de contact)
     Function GetActeur(id As Integer) As Acteur
         Using ctx As New CimBddContext
-            Return (From act In ctx.Acteurs.Include("ConcessionnaireDe").Include("PersonneContactDe").Include("MentionsCommeBenef.Concession")
+            'Return (From act In ctx.Acteurs.Include("ConcessionnaireDe").Include("PersonneContactDe").Include("MentionsCommeBenef.Concession")     ' ne marche pas dans cet ordre !?
+            Return (From act In ctx.Acteurs.Include("MentionsCommeBenef.Concession").Include("ConcessionnaireDe").Include("PersonneContactDe")
                     Where act.Id = id) _
                    .Single
-
-
         End Using
     End Function
 
