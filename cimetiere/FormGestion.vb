@@ -250,6 +250,7 @@ Public Class FormGestion
             End If
 
             ActeurAffiche = Bdd.GetActeur(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)
+
             With ActeurAffiche
                 TBPersPrenom.Text = If(.Prenom IsNot Nothing Or .Nom IsNot Nothing, .Prenom & " " & .Nom, "?")
 

@@ -39,8 +39,7 @@ Partial Class FormLogin
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.testcsns = New System.Windows.Forms.Button()
-        Me.BtTestFormeditempl = New System.Windows.Forms.Button()
-        Me.tbfloattest = New cimetiere.TextBoxFloat()
+        Me.BtTestEditact = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -126,24 +125,14 @@ Partial Class FormLogin
         Me.testcsns.Text = "testcsns"
         Me.testcsns.UseVisualStyleBackColor = True
         '
-        'BtTestFormeditempl
+        'BtTestEditact
         '
-        Me.BtTestFormeditempl.Location = New System.Drawing.Point(496, 13)
-        Me.BtTestFormeditempl.Name = "BtTestFormeditempl"
-        Me.BtTestFormeditempl.Size = New System.Drawing.Size(75, 23)
-        Me.BtTestFormeditempl.TabIndex = 7
-        Me.BtTestFormeditempl.Text = "Test édit empl"
-        Me.BtTestFormeditempl.UseVisualStyleBackColor = True
-        '
-        'tbfloattest
-        '
-        Me.tbfloattest.CueBanner = Nothing
-        Me.tbfloattest.Location = New System.Drawing.Point(127, 162)
-        Me.tbfloattest.Name = "tbfloattest"
-        Me.tbfloattest.Size = New System.Drawing.Size(100, 22)
-        Me.tbfloattest.TabIndex = 8
-        Me.tbfloattest.Text = "0"
-        Me.tbfloattest.Value = 0
+        Me.BtTestEditact.Location = New System.Drawing.Point(496, 13)
+        Me.BtTestEditact.Name = "BtTestEditact"
+        Me.BtTestEditact.Size = New System.Drawing.Size(75, 23)
+        Me.BtTestEditact.TabIndex = 7
+        Me.BtTestEditact.Text = "test actbdd"
+        Me.BtTestEditact.UseVisualStyleBackColor = True
         '
         'FormLogin
         '
@@ -155,8 +144,7 @@ Partial Class FormLogin
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(645, 210)
-        Me.Controls.Add(Me.tbfloattest)
-        Me.Controls.Add(Me.BtTestFormeditempl)
+        Me.Controls.Add(Me.BtTestEditact)
         Me.Controls.Add(Me.testcsns)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
@@ -181,6 +169,5 @@ Partial Class FormLogin
     End Sub
 
     Friend WithEvents testcsns As Button
-    Friend WithEvents BtTestFormeditempl As Button
-    Friend WithEvents tbfloattest As TextBoxFloat
+    Friend WithEvents BtTestEditact As Button
 End Class

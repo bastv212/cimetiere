@@ -346,6 +346,9 @@
     <Compile Include="TextBoxCBanner.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TextBoxFloatNullable.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TextBoxInt.vb">
       <SubType>Component</SubType>
     </Compile>
