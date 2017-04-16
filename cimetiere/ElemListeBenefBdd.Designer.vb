@@ -85,7 +85,7 @@ Partial Class ElemListeBenefBdd
         'TbLienParente
         '
         Me.TbLienParente.CueBanner = "Lien de parenté"
-        Me.TbLienParente.Location = New System.Drawing.Point(654, 3)
+        Me.TbLienParente.Location = New System.Drawing.Point(197, 40)
         Me.TbLienParente.Name = "TbLienParente"
         Me.TbLienParente.Size = New System.Drawing.Size(167, 22)
         Me.TbLienParente.TabIndex = 2
@@ -93,7 +93,7 @@ Partial Class ElemListeBenefBdd
         '
         'BtModifier
         '
-        Me.BtModifier.Location = New System.Drawing.Point(840, 4)
+        Me.BtModifier.Location = New System.Drawing.Point(383, 41)
         Me.BtModifier.Name = "BtModifier"
         Me.BtModifier.Size = New System.Drawing.Size(76, 23)
         Me.BtModifier.TabIndex = 3
@@ -115,7 +115,7 @@ Partial Class ElemListeBenefBdd
         Me.Controls.Add(Me.LabPrenom)
         Me.Controls.Add(Me.LabNom)
         Me.Name = "ElemListeBenefBdd"
-        Me.Size = New System.Drawing.Size(919, 37)
+        Me.Size = New System.Drawing.Size(782, 102)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

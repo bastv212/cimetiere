@@ -8,13 +8,13 @@ Public Class FormNouvelleInhumation
 
     ' le panneau FlpQuestions est juste au-dessus du panel terminer 6 il a une hauteur de 0 tant qu'il est vide
 
-    Dim LeFormInh As FormulaireInhumation
+    Dim LeFormInh As DemandeInhumation
     Dim LeDefunt As Defunt
     Dim LeDemandeur As Acteur
     ' Resteront peut-être à Nothing si pas applicables pour la demande --
     ' ne pas se fier à leur valeur Not Nothing pour en conclure qu'ils sont utilisés, des allers-retours peuvent avoir laissé des traces 
     Dim LeConcessionnaire As Acteur
-    Dim LeFormNvCon As FormulaireNvConcession
+    Dim LeFormNvCon As DemandeNvConcession
     Dim LesBenefs As List(Of Acteur)
     Dim LesParentes As List(Of String)
     Dim Questions As New List(Of SimpleQuestion)
@@ -98,7 +98,7 @@ Public Class FormNouvelleInhumation
         ' À FAIRE (peut-être) : validation
         '  + gérer les ambiguïtés (demander quoi faire avec des SimpleQuestion ?)
 
-        LeFormInh = New FormulaireInhumation
+        LeFormInh = New DemandeInhumation
 
         If rbDemandeConcessionExistante.Checked Then
             LeFormInh.ConcSollic = "existante"
@@ -171,7 +171,7 @@ Public Class FormNouvelleInhumation
             ' type de sépulture + utilité/pertinence de ces trois champs à confirmer ;
             ' code qui sera peut-être amené à évoluer si ajout d'un "assistant" pour repérer la csn existante)
         Else        ' Nouvel emplacement
-            ' Nota : FormulaireInhumation.TypeEmpl devrait logiquement toujours être égal à son homologue dans le form nvcon associé,
+            ' Nota : DemandeInhumation.TypeEmpl devrait logiquement toujours être égal à son homologue dans le form nvcon associé,
             ' si celui-ci existe
             ' -- alternativement, pourrait être NULL si il y a une location associée, et si il n'y en a pas, ne devrait donc être rempli
             ' qu'avec un type d'emplacement ne donnant pas lieu à une concession
@@ -179,7 +179,7 @@ Public Class FormNouvelleInhumation
             If LeFormInh.ConcSollic = "sans_concession" Then
                 ' À FAIRE : voir si il faut récupérer d'autres infos dans ce cas
             Else        ' nouvelle concession
-                LeFormNvCon = New FormulaireNvConcession With {
+                LeFormNvCon = New DemandeNvConcession With {
                     .DateSign = LeFormInh.DateSign,
                     .TypeCon = LeFormInh.TypeEmpl,
                     .SigneParPmand = CbSigneParPmand.Checked
@@ -191,7 +191,7 @@ Public Class FormNouvelleInhumation
                 LeConcessionnaire = LbListeConcessionnaires.ActeurSelectionne
                 LeFormNvCon.IntegrerInfosCsnr(LeConcessionnaire)
 
-                LeFormInh.FormNvCon = LeFormNvCon
+                LeFormInh.DemandeNvCon = LeFormNvCon
 
             End If
         End If
@@ -215,7 +215,7 @@ Public Class FormNouvelleInhumation
         ' Quels panels doivent être masqués ?
         GbConcessionExistante.Visible = LeFormInh.ConcSollic = "existante"
         GbEmplSansCon.Visible = LeFormInh.ConcSollic = "sans_concession"
-        GbRecapBenefs.Visible = LeFormInh.ConcSollic = "nouvelle" AndAlso LeFormInh.FormNvCon.Beneficiaires.Count >= 1
+        GbRecapBenefs.Visible = LeFormInh.ConcSollic = "nouvelle" AndAlso LeFormInh.DemandeNvCon.Beneficiaires.Count >= 1
         FlpRecapPartieNouvelleCon.Visible = LeFormInh.ConcSollic = "nouvelle"
 
         ' Défunt
@@ -230,14 +230,14 @@ Public Class FormNouvelleInhumation
         LabDemAdresseComplete.Text = If(LeDemandeur.AdresseComplete <> "", LeDemandeur.AdresseComplete, "(adresse non précisée)")
 
         If LeFormInh.ConcSollic = "sans_concession" Then
-            LabTypeNouvelEmpl.Text = FormulaireNvConcession.TypeConToString(LeFormInh.TypeEmpl)
+            LabTypeNouvelEmpl.Text = DemandeNvConcession.TypeConToString(LeFormInh.TypeEmpl)
             ' À faire ? : autres infos ?
         ElseIf LeFormInh.ConcSollic = "nouvelle" Then
             LabSignePar.Text = If(LeFormNvCon.SigneParPmand.Value, "Signé par la personne mandatée (" & LeDemandeur.NomComplet & ")", "Signé par le concessionnaire (" & LeConcessionnaire.NomComplet & ")")
             ' À FAIRE : ajouter prix
             LabNvConChoisie.Text = LeFormNvCon.TypeConToString
             ' À CONTINUER : afficher infos concessionnaire & bénéficiaires
-            LabCsnrNomComplet.Text = LeConcessionnaire.NomComplet
+            LabCsnrNomComplet.Text = LeConcessionnaire.NomComplet(True)
             LabCsnrNoNat.Text = If(LeConcessionnaire.NoRegistre, LeConcessionnaire.NoRegistre.Value, "(numéro de registre national non précisé)")
             LabCsnrDateNaiss.Text = If(LeConcessionnaire.DateNaiss.HasValue, LeConcessionnaire.DateNaiss.Value.ToString("dd/MM/yyyy"), "(date de naissance non précisée)")
             LabCsnrAdresseComplete.Text = If(LeConcessionnaire.AdresseComplete <> "", LeConcessionnaire.AdresseComplete, "(adresse non précisée")
@@ -296,9 +296,10 @@ Public Class FormNouvelleInhumation
     End Sub
 
     Sub Finaliser()
-        LeFormInh.Commentaire = TbCommentaire.Text
-        If LeFormInh.FormNvCon IsNot Nothing Then
-            LeFormInh.FormNvCon.Commentaire = TbCommentaire.Text
+
+        LeFormInh.Commentaire = If(TbCommentaire.Text <> "", TbCommentaire.Text, Nothing)
+        If LeFormInh.DemandeNvCon IsNot Nothing Then
+            LeFormInh.DemandeNvCon.Commentaire = LeFormInh.Commentaire
         End If
 
         ' entités à enregistrer en bdd :

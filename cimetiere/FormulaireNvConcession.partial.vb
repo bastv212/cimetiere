@@ -1,4 +1,4 @@
-﻿Partial Public Class FormulaireNvConcession
+﻿Partial Public Class DemandeNvConcession
     Inherits IEntity
     Implements IEntityInterface
     Private Property InternId As Integer Implements IEntityInterface.Id

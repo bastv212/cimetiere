@@ -1,6 +1,16 @@
 ﻿Public Class ListeBeneficiairesNvCon
     Public Event BddChanged()
-    Public Property Titre As String = "Bénéficiaires"
+    Private _titre As String = "Bénéficiaires"
+    Public Property Titre As String
+        Get
+            Return _titre
+        End Get
+        Set(value As String)
+            _titre = value
+            LabTitre.Text = value
+        End Set
+    End Property
+
 
     Private ListeBenefs As New List(Of ElemListeBeneficiairesNvCon)
     Private ListeBenefsBdd As New List(Of ElemListeBenefBdd)

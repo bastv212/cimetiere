@@ -20,8 +20,8 @@ Partial Public Class FnvConBenef
     Public Property Ville As String
     Public Property Cp As Nullable(Of Integer)
     Public Property Pays As String
-    Public Property FkFnvcon As Integer
+    Public Property FkDemNvcon As Integer
 
-    Public Overridable Property FormNvCon As FormulaireNvConcession
+    Public Overridable Property DemNvCon As DemandeNvConcession
 
 End Class

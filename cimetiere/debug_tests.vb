@@ -68,7 +68,7 @@ Public Class debug_tests
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        MonForm = New FormulaireInhumation With {.NumDefLh = 14,
+        MonForm = New DemandeInhumation With {.NumDefLh = 14,
             .NumDefAnnee = 23,
         .Commentaire = "c'est un beau formulaire",
         .AvisFossoy = True,
@@ -97,7 +97,7 @@ Public Class debug_tests
             .RefEmpl = "au fond à gauche"} ',
         '            .FkDmdr = Nothing}
 
-        MonForm.FormNvCon = New FormulaireNvConcession With {.PmandNom = MonForm.DmdrNom,
+        MonForm.FormNvCon = New DemandeNvConcession With {.PmandNom = MonForm.DmdrNom,
             .PmandPrenom = MonForm.DmdrPrenom,
             .PmandTel = MonForm.DmdrTel,
             .PmandAdresse = MonForm.DmdrAdresse,

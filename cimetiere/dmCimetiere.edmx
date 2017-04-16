@@ -469,10 +469,10 @@
           <Property Name="Ville" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
           <Property Name="Cp" Type="Int32" Nullable="true" />
           <Property Name="Pays" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
-          <Property Name="FkFnvcon" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="FormNvCon" Relationship="Self.form_nouvelle_con_beneficiaires_ibfk_1" FromRole="form_nouvelle_con_beneficiaires" ToRole="forms_nouvelle_con" />
+          <Property Name="FkDemNvcon" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DemNvCon" Relationship="Self.form_nouvelle_con_beneficiaires_ibfk_1" FromRole="form_nouvelle_con_beneficiaires" ToRole="forms_nouvelle_con" />
         </EntityType>
-        <EntityType Name="FormulaireInhumation">
+        <EntityType Name="DemandeInhumation">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -505,9 +505,9 @@
           <Property Name="DateSign" Type="DateTime" Nullable="true" />
           <Property Name="AvisFossoy" Type="Boolean" Nullable="true" />
           <Property Name="Commentaire" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="true" />
-          <NavigationProperty Name="FormsNvCon" Relationship="Self.forms_nouvelle_con_ibfk_2" FromRole="forms_inhumation" ToRole="forms_nouvelle_con" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:GetterAccess="Private" />
+          <NavigationProperty Name="DemandesNvCon" Relationship="Self.forms_nouvelle_con_ibfk_2" FromRole="forms_inhumation" ToRole="forms_nouvelle_con" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:GetterAccess="Private" />
         </EntityType>
-        <EntityType Name="FormulaireNvConcession">
+        <EntityType Name="DemandeNvConcession">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -533,9 +533,9 @@
           <Property Name="DateSign" Type="DateTime" Nullable="true" />
           <Property Name="SigneParPmand" Type="Boolean" Nullable="true" />
           <Property Name="Commentaire" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="true" />
-          <Property Name="FkFinh" Type="Int32" Nullable="true" />
+          <Property Name="FkDemInh" Type="Int32" Nullable="true" />
           <NavigationProperty Name="Beneficiaires" Relationship="Self.form_nouvelle_con_beneficiaires_ibfk_1" FromRole="forms_nouvelle_con" ToRole="form_nouvelle_con_beneficiaires" />
-          <NavigationProperty Name="FormInhumation" Relationship="Self.forms_nouvelle_con_ibfk_2" FromRole="forms_nouvelle_con" ToRole="forms_inhumation" />
+          <NavigationProperty Name="DemandeInhumation" Relationship="Self.forms_nouvelle_con_ibfk_2" FromRole="forms_nouvelle_con" ToRole="forms_inhumation" />
         </EntityType>
         <EntityType Name="MentionBeneficiaire">
           <Key>
@@ -627,7 +627,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="form_nouvelle_con_beneficiaires_ibfk_1">
-          <End Role="forms_nouvelle_con" Type="cimetiereModel.FormulaireNvConcession" Multiplicity="1">
+          <End Role="forms_nouvelle_con" Type="cimetiereModel.DemandeNvConcession" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="form_nouvelle_con_beneficiaires" Type="cimetiereModel.FnvConBenef" Multiplicity="*" />
@@ -636,21 +636,21 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="form_nouvelle_con_beneficiaires">
-              <PropertyRef Name="FkFnvcon" />
+              <PropertyRef Name="FkDemNvcon" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="forms_nouvelle_con_ibfk_2">
-          <End Role="forms_inhumation" Type="cimetiereModel.FormulaireInhumation" Multiplicity="0..1">
+          <End Role="forms_inhumation" Type="cimetiereModel.DemandeInhumation" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="forms_nouvelle_con" Type="cimetiereModel.FormulaireNvConcession" Multiplicity="*" />
+          <End Role="forms_nouvelle_con" Type="cimetiereModel.DemandeNvConcession" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="forms_inhumation">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="forms_nouvelle_con">
-              <PropertyRef Name="FkFinh" />
+              <PropertyRef Name="FkDemInh" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -659,9 +659,9 @@
           <EntitySet Name="Concessions" EntityType="cimetiereModel.Concession" />
           <EntitySet Name="Defunts" EntityType="cimetiereModel.Defunt" />
           <EntitySet Name="Emplacements" EntityType="cimetiereModel.Emplacement" />
-          <EntitySet Name="FnvConBenefs" EntityType="cimetiereModel.FnvConBenef" />
-          <EntitySet Name="FormulairesInhumation" EntityType="cimetiereModel.FormulaireInhumation" />
-          <EntitySet Name="FormulairesNvConcession" EntityType="cimetiereModel.FormulaireNvConcession" />
+          <EntitySet Name="DemNvConBenefs" EntityType="cimetiereModel.FnvConBenef" />
+          <EntitySet Name="DemandesInhumation" EntityType="cimetiereModel.DemandeInhumation" />
+          <EntitySet Name="DemandesNvConcession" EntityType="cimetiereModel.DemandeNvConcession" />
           <EntitySet Name="MentionsBeneficiaires" EntityType="cimetiereModel.MentionBeneficiaire" />
           <EntitySet Name="Sejours" EntityType="cimetiereModel.Sejour" />
           <AssociationSet Name="concessions_ibfk_2" Association="Self.concessions_ibfk_2">
@@ -685,12 +685,12 @@
             <End Role="sejours" EntitySet="Sejours" />
           </AssociationSet>
           <AssociationSet Name="form_nouvelle_con_beneficiaires_ibfk_1" Association="Self.form_nouvelle_con_beneficiaires_ibfk_1">
-            <End Role="forms_nouvelle_con" EntitySet="FormulairesNvConcession" />
-            <End Role="form_nouvelle_con_beneficiaires" EntitySet="FnvConBenefs" />
+            <End Role="forms_nouvelle_con" EntitySet="DemandesNvConcession" />
+            <End Role="form_nouvelle_con_beneficiaires" EntitySet="DemNvConBenefs" />
           </AssociationSet>
           <AssociationSet Name="forms_nouvelle_con_ibfk_2" Association="Self.forms_nouvelle_con_ibfk_2">
-            <End Role="forms_inhumation" EntitySet="FormulairesInhumation" />
-            <End Role="forms_nouvelle_con" EntitySet="FormulairesNvConcession" />
+            <End Role="forms_inhumation" EntitySet="DemandesInhumation" />
+            <End Role="forms_nouvelle_con" EntitySet="DemandesNvConcession" />
           </AssociationSet>
           <AssociationSet Name="jnt_pcont_con1" Association="cimetiereModel.jnt_pcont_con1">
             <End Role="Acteur" EntitySet="Acteurs" />
@@ -810,7 +810,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FnvConBenefs">
+          <EntitySetMapping Name="DemNvConBenefs">
             <EntityTypeMapping TypeName="cimetiereModel.FnvConBenef">
               <MappingFragment StoreEntitySet="form_nouvelle_con_beneficiaires">
                 <ScalarProperty Name="Id" ColumnName="fnvconben_id" />
@@ -822,12 +822,12 @@
                 <ScalarProperty Name="Ville" ColumnName="fnvconben_ville" />
                 <ScalarProperty Name="Cp" ColumnName="fnvconben_cp" />
                 <ScalarProperty Name="Pays" ColumnName="fnvconben_pays" />
-                <ScalarProperty Name="FkFnvcon" ColumnName="fnvconben_fk_fnvcon" />
+                <ScalarProperty Name="FkDemNvcon" ColumnName="fnvconben_fk_fnvcon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FormulairesInhumation">
-            <EntityTypeMapping TypeName="cimetiereModel.FormulaireInhumation">
+          <EntitySetMapping Name="DemandesInhumation">
+            <EntityTypeMapping TypeName="cimetiereModel.DemandeInhumation">
               <MappingFragment StoreEntitySet="forms_inhumation">
                 <ScalarProperty Name="Id" ColumnName="finh_id" />
                 <ScalarProperty Name="NumDefLh" ColumnName="finh_num_def_lh" />
@@ -861,8 +861,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FormulairesNvConcession">
-            <EntityTypeMapping TypeName="cimetiereModel.FormulaireNvConcession">
+          <EntitySetMapping Name="DemandesNvConcession">
+            <EntityTypeMapping TypeName="cimetiereModel.DemandeNvConcession">
               <MappingFragment StoreEntitySet="forms_nouvelle_con">
                 <ScalarProperty Name="Id" ColumnName="fnvcon_id" />
                 <ScalarProperty Name="PmandNom" ColumnName="fnvcon_pmand_nom" />
@@ -886,7 +886,7 @@
                 <ScalarProperty Name="DateSign" ColumnName="fnvcon_date_sign" />
                 <ScalarProperty Name="SigneParPmand" ColumnName="fnvcon_signe_par_pmand" />
                 <ScalarProperty Name="Commentaire" ColumnName="fnvcon_commentaire" />
-                <ScalarProperty Name="FkFinh" ColumnName="fnvcon_fk_finh" />
+                <ScalarProperty Name="FkDemInh" ColumnName="fnvcon_fk_finh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

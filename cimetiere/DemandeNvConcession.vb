@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class FormulaireNvConcession
+Partial Public Class DemandeNvConcession
     Public Property Id As Integer
     Public Property PmandNom As String
     Public Property PmandPrenom As String
@@ -33,9 +33,9 @@ Partial Public Class FormulaireNvConcession
     Public Property DateSign As Nullable(Of Date)
     Public Property SigneParPmand As Nullable(Of Boolean)
     Public Property Commentaire As String
-    Public Property FkFinh As Nullable(Of Integer)
+    Public Property FkDemInh As Nullable(Of Integer)
 
     Public Overridable Property Beneficiaires As ICollection(Of FnvConBenef) = New HashSet(Of FnvConBenef)
-    Public Overridable Property FormInhumation As FormulaireInhumation
+    Public Overridable Property DemandeInhumation As DemandeInhumation
 
 End Class

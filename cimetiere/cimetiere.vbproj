@@ -98,10 +98,6 @@
       <Private>True</Private>
       <HintPath>..\packages\MySql.Data.6.9.9\lib\net40\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.CF, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.Entity, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.7\Assemblies\v2.0\MySql.Data.Entity.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net40\MySql.Data.Entity.EF6.dll</HintPath>
       <Private>True</Private>
@@ -179,6 +175,12 @@
     <Compile Include="Defunt.vb">
       <DependentUpon>CimBddContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DemandeInhumation.vb">
+      <DependentUpon>CimBddContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DemandeNvConcession.vb">
+      <DependentUpon>CimBddContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="ElemListeBenefBdd.Designer.vb">
       <DependentUpon>ElemListeBenefBdd.vb</DependentUpon>
     </Compile>
@@ -232,12 +234,6 @@
     </Compile>
     <Compile Include="FormRechercheConcession.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormulaireInhumation.vb">
-      <DependentUpon>CimBddContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FormulaireNvConcession.vb">
-      <DependentUpon>CimBddContext.tt</DependentUpon>
     </Compile>
     <Compile Include="IEntityInterface.vb" />
     <Compile Include="ListboxEntites.vb">
@@ -295,7 +291,7 @@
     <Compile Include="FormRechercheEmplacement.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulaireInhumation.partial.vb" />
+    <Compile Include="DemandeInhumation.partial.vb" />
     <Compile Include="FormulaireNvConcession.partial.vb" />
     <Compile Include="Demande.Designer.vb">
       <DependentUpon>Demande.vb</DependentUpon>

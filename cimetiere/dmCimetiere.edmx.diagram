@@ -10,8 +10,8 @@
         <EntityTypeShape EntityType="cimetiereModel.Defunt" Width="1.5" PointX="12.75" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="cimetiereModel.Emplacement" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="cimetiereModel.FnvConBenef" Width="1.5" PointX="4.875" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="cimetiereModel.FormulaireInhumation" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="cimetiereModel.FormulaireNvConcession" Width="1.5" PointX="2.625" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cimetiereModel.DemandeInhumation" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cimetiereModel.DemandeNvConcession" Width="1.5" PointX="2.625" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="cimetiereModel.MentionBeneficiaire" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cimetiereModel.Sejour" Width="1.5" PointX="10.125" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="cimetiereModel.concessions_ibfk_2" ManuallyRouted="false" ></AssociationConnector>

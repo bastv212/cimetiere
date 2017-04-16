@@ -31,7 +31,7 @@ Public Class FormLogin
         'LeDem = New Acteur With {.Nom = "Ngeghy", .Prenom = "Laszlo", .Adresse = "Drève du Zèle", .Tel = "+7675765765", .Cp = 12345, .DateNaiss = #12/09/1973#, .NoRegistre = 123456789, .Pays = "Iran", .Ville = "Al-Hulp"}
         'LeDef = New Defunt With {.Nom = "MacAbbé", .Prenom = "Antoine", .Adresse = "90 boulevard iurfzeof", .DateDeces = Today, .DateNaiss = Today, .LieuDeces = "Là-bas", .Ville = "La Hulpe", .Pays = "Italie", .NumeroAnnee = 2345, .NumeroLh = 123456, .LieuNaiss = "Ici-bas", .Cp = 23456, .EtatCivil = "epoux", .EtatCivilDe = "Simone Sesavet"}
 
-        ''' ajouter form nv con
+        '''' ajouter form nv con
         'Dim csnr As New Acteur With {
         '.Adresse = "13 rue du IUDSIUHDIsudsf",
         '.Cp = "23123213",
@@ -44,7 +44,7 @@ Public Class FormLogin
         '.Ville = "Bruxeilless"
         '}
 
-        'Dim fnvc As New FormulaireNvConcession With {
+        'Dim fnvc As New DemandeNvConcession With {
         '.DateSign = Today,
         '.TypeCon = "pl_2pers_15ans_urne",
         '.SigneParPmand = True,
@@ -78,7 +78,7 @@ Public Class FormLogin
         ''fnvc.AjouterBeneficiaire(UnBenef)
 
 
-        'Dim leform As New FormulaireInhumation With {
+        'Dim leform As New DemandeInhumation With {
         '.AvisFossoy = True,
         '.Commentaire = "ràs",
         '.ConcSollic = "sans_concession",

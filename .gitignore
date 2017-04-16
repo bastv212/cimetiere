@@ -256,3 +256,5 @@ paket-files/
 *.sln.iml
 cimetiere/bin/Debug/cimetiere.exe
 cimetiere/bin/Debug/*.exe
+cimetiere/bin/Debug/cimetiere.exe
+cimetiere/bin/Debug/cimetiere.exe

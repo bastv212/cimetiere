@@ -1,6 +1,6 @@
 ﻿Imports cimetiere
 
-Public Class FormulaireInhumation
+Public Class DemandeInhumation
     Inherits IEntity
     Implements IEntityInterface
     Private Property InternId As Integer Implements IEntityInterface.Id
@@ -14,17 +14,17 @@ Public Class FormulaireInhumation
 
 
 
-    Public Property FormNvCon As FormulaireNvConcession
+    Public Property DemandeNvCon As DemandeNvConcession
         Get
-            If FormsNvCon.Count <> 0 Then
-                Return FormsNvCon(0)
+            If DemandesNvCon.Count <> 0 Then
+                Return DemandesNvCon(0)
             Else
                 Return Nothing
             End If
         End Get
-        Set(value As FormulaireNvConcession)
-            FormsNvCon.Clear()
-            FormsNvCon.Add(value)
+        Set(value As DemandeNvConcession)
+            DemandesNvCon.Clear()
+            DemandesNvCon.Add(value)
         End Set
     End Property
 

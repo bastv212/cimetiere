@@ -26,9 +26,9 @@ Partial Public Class CimBddContext
     Public Overridable Property Concessions() As DbSet(Of Concession)
     Public Overridable Property Defunts() As DbSet(Of Defunt)
     Public Overridable Property Emplacements() As DbSet(Of Emplacement)
-    Public Overridable Property FnvConBenefs() As DbSet(Of FnvConBenef)
-    Public Overridable Property FormulairesInhumation() As DbSet(Of FormulaireInhumation)
-    Public Overridable Property FormulairesNvConcession() As DbSet(Of FormulaireNvConcession)
+    Public Overridable Property DemNvConBenefs() As DbSet(Of FnvConBenef)
+    Public Overridable Property DemandesInhumation() As DbSet(Of DemandeInhumation)
+    Public Overridable Property DemandesNvConcession() As DbSet(Of DemandeNvConcession)
     Public Overridable Property MentionsBeneficiaires() As DbSet(Of MentionBeneficiaire)
     Public Overridable Property Sejours() As DbSet(Of Sejour)
 

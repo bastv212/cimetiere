@@ -13,12 +13,12 @@ Imports System.Text
 ' GetTable(table as String) As DataTable        ' ex : GetTable("demandeurs")
 ' GetTableWithId(table as String, NomPk As String, Id As Integer) As DataTable      ' ex : GetTableWithId("emplacements","empl_id",4)
 
-' Function GetFormInhumation(id As Integer) As FormulaireInhumation
-' Function GetFormNvConcession(id As Integer) As FormulaireNvConcession
+' Function GetFormInhumation(id As Integer) As DemandeInhumation
+' Function GetFormNvConcession(id As Integer) As DemandeNvConcession
 ' Function GetFormNvConBenefs(IdForm) As Beneficiaire()
-' PutFormInhumation(LeForm As FormulaireInhumation) As Integer      ' ajoute un nouveau form en bdd (table forms inhum + éventuellement form nv con & fnvcon bénéficiaires
+' PutFormInhumation(LeForm As DemandeInhumation) As Integer      ' ajoute un nouveau form en bdd (table forms inhum + éventuellement form nv con & fnvcon bénéficiaires
 '                                                                     renvoie l'id inséré
-' Function PutFormNvCon(LeForm As FormulaireNvConcession) As Integer
+' Function PutFormNvCon(LeForm As DemandeNvConcession) As Integer
 ' 
 
 
@@ -27,11 +27,11 @@ Module Bdd
     'Public Const URL_API = "http://phpcimetiere/connecteur.php"
     Public Const ERR_OK = 0, ERR_MAUVAIS_LOGIN = 1, ERR_PAS_IDENT = 2, ERR_SESS_EXP = 3, ERR_NON_AUTOR = 4, ERR_INPUT = 5, ERR_CMD = 6, ERR_OUTPUT = 7
     Public Const USER_AUCUN = 0, USER_SERVICEPOP = 1, USER_FOSSOYEUR = 2
-    '' Préfixes permettant d'identifier le type de réponse reçue
-    'Public Const PREFIXE_ERREUR = "ER", PREFIXE_IDENTIFICATION = "ID"
+    ' Préfixes permettant d'identifier le type de réponse reçue
+    Public Const PREFIXE_ERREUR = "ER", PREFIXE_IDENTIFICATION = "ID"
 
 
-    ' Ajoute une entité, renvoie le nouvel Id
+    ' Ajoute une entité, renvoie le nouvel Id (Id aussi mis à jour dans l'entité)
     ' Attention, ajoute aussi les entités liées (normalement)
     Function Add(ent As IEntityInterface) As Integer
         Using ctx As New CimBddContext
@@ -222,7 +222,6 @@ Module Bdd
         End Using
     End Function
 
-
     ' Get acteur avec filtre sur nom, prénom et adresse
     ' sert à remplir la liste abrégée de la popup de recherche
     Function ChercherActeurs(text As String) As List(Of IEntity.Condense) 'List(Of Acteur.Condense)
@@ -354,10 +353,10 @@ Module Bdd
     'désassociation en mettant le membre (une liste) à Nothing (le/les items liés se sont pas supprimés)
     Sub desassoclistenothing()
         Dim ctx As New CimBddContext
-        Dim req = From item In ctx.FormulairesInhumation        ' ou ctx.FormulairesInhumation.Find(id)
+        Dim req = From item In ctx.DemandesInhumation        ' ou ctx.FormulairesInhumation.Find(id)
                   Where item.Id = 13
         Dim leforminh = req.First
-        leforminh.FormNvCon = Nothing
+        leforminh.DemandeNvCon = Nothing
         ctx.SaveChanges()
     End Sub
 
@@ -365,8 +364,8 @@ Module Bdd
     'création d'un nouvel item ; l'id spécifié est ignoré (qu'il existe ou non, l'autoincrement décidera)
     Sub creerlidosef()
         Dim ctx As New CimBddContext
-        unform = New FormulaireNvConcession With {.Id = 30, .PmandNom = "Tombal", .PmandPrenom = "Pierre"}
-        ctx.FormulairesNvConcession.Add(unform)
+        unform = New DemandeNvConcession With {.Id = 30, .PmandNom = "Tombal", .PmandPrenom = "Pierre"}
+        ctx.DemandesNvConcession.Add(unform)
         ctx.SaveChanges()
     End Sub
 
@@ -375,7 +374,7 @@ Module Bdd
     ' retire association (du moins tente) en retirant un item de la liste de membres liés (dans une relation 1-n)
     Sub defairerelation()
         Dim ctx As New CimBddContext
-        Dim req1 = From item In ctx.FormulairesNvConcession
+        Dim req1 = From item In ctx.DemandesNvConcession
                    Where item.Id = 16
         Dim leform = req1.First
         leform.Beneficiaires.Remove(leform.Beneficiaires(0))
@@ -386,11 +385,11 @@ Module Bdd
     ' changement d'association par changement de membre de navigation
     Sub changeassociationparmembre()
         Dim ctx As New CimBddContext
-        Dim req1 = From item In ctx.FormulairesNvConcession
+        Dim req1 = From item In ctx.DemandesNvConcession
                    Where item.Id = 16
         Dim leform1 = req1.First
 
-        Dim req2 = From item In ctx.FormulairesNvConcession
+        Dim req2 = From item In ctx.DemandesNvConcession
                    Where item.Id = 17
         Dim leform2 = req2.First
         leform2.Beneficiaires.Add(leform1.Beneficiaires(0))   ' transfert d'un bénéficiaire du form1 au form2 - le bénef est lié à l'objet leform2, mais est toujours lié au form1
@@ -402,16 +401,16 @@ Module Bdd
     ' changement d'association par changement de la fk (de l'item associé)
     Sub changeassociationparfk()
         Dim ctx As New CimBddContext
-        Dim req = From item In ctx.FormulairesNvConcession
+        Dim req = From item In ctx.DemandesNvConcession
                   Where item.Id = 17
         Dim leform = req.First
         MessageBox.Show(leform.Beneficiaires(0).Id & " " & leform.Beneficiaires(0).Nom)
 
-        leform.Beneficiaires(0).FkFnvcon = 16                                                  ' un bénéf du form 17 prend la fk du form 16
+        leform.Beneficiaires(0).FkDemNvcon = 16                                                  ' un bénéf du form 17 prend la fk du form 16
 
         MessageBox.Show(leform.Beneficiaires(0).Id & " " & leform.Beneficiaires(0).Nom)        ' le bénéf est toujours accessible parmi les bénéficiaires du form 17
 
-        Dim req2 = From item In ctx.FormulairesNvConcession                                    ' il n'est pas chargé avec le form 16
+        Dim req2 = From item In ctx.DemandesNvConcession                                    ' il n'est pas chargé avec le form 16
                    Where item.Id = 16 ''
         Dim lautreform = req2.First
 
@@ -425,17 +424,17 @@ Module Bdd
     ' changement d'association par changement de la fk
     Sub assocentit()
         Dim ctx As New CimBddContext
-        Dim req = From item In ctx.FnvConBenefs
+        Dim req = From item In ctx.DemNvConBenefs
                   Where item.Id = 5
         Dim leben = req.First
-        MessageBox.Show(leben.FormNvCon.Id & " " & leben.FormNvCon.PmandNom)       ' leben.FormNvCon est le form 16
+        MessageBox.Show(leben.DemNvCon.Id & " " & leben.DemNvCon.PmandNom)       ' leben.FormNvCon est le form 16
 
-        leben.FkFnvcon = 17
-        MessageBox.Show(leben.FormNvCon.Id & " " & leben.FormNvCon.PmandNom)        ' leben.FormNvCon est toujours le form 16
+        leben.FkDemNvcon = 17
+        MessageBox.Show(leben.DemNvCon.Id & " " & leben.DemNvCon.PmandNom)        ' leben.FormNvCon est toujours le form 16
 
         ctx.SaveChanges()
 
-        MessageBox.Show(leben.FormNvCon.Id & " " & leben.FormNvCon.PmandNom)        ' Maintenant, c'est le form 17
+        MessageBox.Show(leben.DemNvCon.Id & " " & leben.DemNvCon.PmandNom)        ' Maintenant, c'est le form 17
 
     End Sub
 
@@ -444,12 +443,12 @@ Module Bdd
     Sub des_manips()
         Dim ctx As New CimBddContext
 
-        Dim reqform = From item In ctx.FormulairesNvConcession
+        Dim reqform = From item In ctx.DemandesNvConcession
                       Where item.Id = 16
         Dim leform = reqform.First
         leform.Beneficiaires(0).Nom = "Krobelaar"
 
-        Dim reqben = From item In ctx.FnvConBenefs
+        Dim reqben = From item In ctx.DemNvConBenefs
                      Where item.Id = 5         ' bénéficiaire lié au form ci-dessus
         Dim lebenef = reqben.First          ' tient compte du changement fait en tant que leform.Beneficiaires(0)
 
@@ -463,7 +462,7 @@ Module Bdd
 
     Sub contextedispose()
         Dim ctx As New CimBddContext
-        Dim req = From item In ctx.FormulairesNvConcession
+        Dim req = From item In ctx.DemandesNvConcession
                   Where item.Id = 16
         Dim leform = req.First
         ctx.Dispose()
@@ -478,7 +477,7 @@ Module Bdd
     ' modification d'un item existant et d'un item lié, même objet contexte
     Sub modiformnouv()
         Dim ctx As New CimBddContext
-        Dim req = From item In ctx.FormulairesNvConcession
+        Dim req = From item In ctx.DemandesNvConcession
                   Where item.Id = 16
         Dim leform = req.First
         leform.PmandNom = "Fourne"
@@ -488,10 +487,10 @@ Module Bdd
 
     ' enregistrement simple d'un nouvel élément
     Sub ajout_nouveau_form_nvcon()
-        Dim leformnvc = New FormulaireNvConcession With {.CsnrNom = "Dupzceuezds", .CsnrPrenom = "Rcidsjfène"}
+        Dim leformnvc = New DemandeNvConcession With {.CsnrNom = "Dupzceuezds", .CsnrPrenom = "Rcidsjfène"}
         ' leformnvc.Beneficiaires = {New FnvConBenef With {.Nom = "Grozejez", .Prenom = "Gruwciueh"}, New FnvConBenef With {.Nom = "Tazeods", .Prenom = "Pecozsx"}}
         Dim contexte As New CimBddContext
-        contexte.FormulairesNvConcession.Add(leformnvc)
+        contexte.DemandesNvConcession.Add(leformnvc)
         contexte.SaveChanges()
     End Sub
 
@@ -499,7 +498,7 @@ Module Bdd
     'chargement lazy des entités associées
     Sub choper_form_nvc()
         Dim contexte As New CimBddContext
-        Dim req = From item In contexte.FormulairesNvConcession
+        Dim req = From item In contexte.DemandesNvConcession
                   Select item
         Dim listeform = req.ToList      ' la requête bdd se fait ici
         Dim osef As Integer
@@ -606,11 +605,11 @@ Module Bdd
     ' insère un nouveau formulaire de demande d'inhumation
     ' renvoie l'id inséré
     ' fonction faite à l'arrache pour pouvoir continuer le reste
-    Public Function PutFormInhumation_anc(LeForm As FormulaireInhumation) As Integer
+    Public Function PutFormInhumation_anc(LeForm As DemandeInhumation) As Integer
         ' si il y a un form nouvelle concession associé, le crée aussi
-        If LeForm.FormNvCon IsNot Nothing Then
+        If LeForm.DemandeNvCon IsNot Nothing Then
             Dim idformnvcon As Integer
-            idformnvcon = PutFormNvCon(LeForm.FormNvCon)
+            idformnvcon = PutFormNvCon(LeForm.DemandeNvCon)
         End If
 
         Dim cmd = New MySqlCommand
@@ -661,7 +660,7 @@ Module Bdd
 
     ' obsolète
     ' enregistre un nouveau formulaire de demande de concession
-    Function PutFormNvCon(LeForm As FormulaireNvConcession) As Integer
+    Function PutFormNvCon(LeForm As DemandeNvConcession) As Integer
         Dim cmd = New MySqlCommand
         cmd.CommandText = "INSERT INTO forms_nouvelle_con" _
                 & " (fnvcon_pmand_nom,fnvcon_pmand_prenom,fnvcon_pmand_date_naiss,fnvcon_pmand_tel,fnvcon_pmand_adresse," _
@@ -722,12 +721,12 @@ Module Bdd
 
 
     ' Obsolète
-    ' Renvoie une datatable, pas (encore ?) un objet FormulaireInhumation
+    ' Renvoie une datatable, pas (encore ?) un objet DemandeInhumation
     ' À continuer : doit aussi lire la partie nouvelle concession avec les bénéficiaires
-    Function GetFormInhumation(id As Integer) As FormulaireInhumation
+    Function GetFormInhumation(id As Integer) As DemandeInhumation
         Dim dtResultat As DataTable = GetTableWithId("forms_inhumation", "fdec_id", id)
         Dim ligne As DataRow = dtResultat.Rows(0)
-        Dim LeForm As New FormulaireInhumation
+        Dim LeForm As New DemandeInhumation
         ' automatiser ?
         With LeForm
             .Id = ligne("fdec_id")
@@ -764,11 +763,11 @@ Module Bdd
     End Function
 
 
-    '' Renvoie un objet FormulaireNvConcession
-    'Function GetFormNvConcession(id As Integer) As FormulaireNvConcession
+    '' Renvoie un objet DemandeNvConcession
+    'Function GetFormNvConcession(id As Integer) As DemandeNvConcession
     '    Dim dtResultat As DataTable = GetTableWithId("forms_nouvelle_con", "fnvcon_id", id)
     '    Dim ligne As DataRow = dtResultat.Rows(0)
-    '    Dim LeForm As New FormulaireNvConcession
+    '    Dim LeForm As New DemandeNvConcession
     '    'moyen d'automatiser ?
     '    With LeForm
     '        .Id = ligne("fnvcon_id")

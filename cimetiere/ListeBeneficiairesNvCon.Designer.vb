@@ -22,22 +22,22 @@ Partial Class ListeBeneficiairesNvCon
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Lab = New System.Windows.Forms.Label()
+        Me.LabTitre = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btAjoutBenef = New System.Windows.Forms.Button()
         Me.LbSuggestions = New cimetiere.ListboxEntites()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Lab
+        'LabTitre
         '
-        Me.Lab.AutoSize = True
-        Me.Lab.Location = New System.Drawing.Point(5, 1)
-        Me.Lab.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Lab.Name = "Lab"
-        Me.Lab.Size = New System.Drawing.Size(89, 17)
-        Me.Lab.TabIndex = 7
-        Me.Lab.Text = "Bénéficiaires"
+        Me.LabTitre.AutoSize = True
+        Me.LabTitre.Location = New System.Drawing.Point(5, 1)
+        Me.LabTitre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabTitre.Name = "LabTitre"
+        Me.LabTitre.Size = New System.Drawing.Size(32, 17)
+        Me.LabTitre.TabIndex = 7
+        Me.LabTitre.Text = "titre"
         '
         'FlowLayoutPanel1
         '
@@ -88,7 +88,7 @@ Partial Class ListeBeneficiairesNvCon
         Me.BackColor = System.Drawing.Color.AliceBlue
         Me.Controls.Add(Me.LbSuggestions)
         Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.Lab)
+        Me.Controls.Add(Me.LabTitre)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ListeBeneficiairesNvCon"
         Me.Size = New System.Drawing.Size(874, 67)
@@ -99,7 +99,7 @@ Partial Class ListeBeneficiairesNvCon
     End Sub
 
     Friend WithEvents btAjoutBenef As Button
-    Friend WithEvents Lab As Label
+    Friend WithEvents LabTitre As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents LbSuggestions As ListboxEntites
 End Class

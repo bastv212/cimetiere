@@ -24,15 +24,25 @@ Partial Class FormNouvelleConcession
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabDemandeCsn = New System.Windows.Forms.TabPage()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CbPersMand = New System.Windows.Forms.CheckBox()
+        Me.LabTitrePmand = New System.Windows.Forms.Label()
+        Me.LbListeDemandeurs = New cimetiere.ListBoxCustomActeurs()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LbListeConcessionnaires = New cimetiere.ListBoxCustomActeurs()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PanelChoixTypeEmpl1 = New cimetiere.PanelChoixTypeEmpl()
+        Me.ListeBeneficiaires = New cimetiere.ListeBeneficiairesNvCon()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BtSuivantDeForm = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PanCoordsDmdr = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabRecap = New System.Windows.Forms.TabPage()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.GbPersMand = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LabDmdrTel = New System.Windows.Forms.Label()
         Me.LabDmdrAdresse = New System.Windows.Forms.Label()
         Me.LabDmdrNom = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -44,20 +54,19 @@ Partial Class FormNouvelleConcession
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.LabTypeConcession = New System.Windows.Forms.Label()
         Me.GbRecapBenefs = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FlpLabsBeneficiaires = New System.Windows.Forms.FlowLayoutPanel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TbCommentaire = New cimetiere.TextBoxNullable()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CbOuvrirPdf = New System.Windows.Forms.CheckBox()
         Me.CbEnregPdf = New System.Windows.Forms.CheckBox()
         Me.BtTerminer = New System.Windows.Forms.Button()
         Me.BtPrecedentDeRecap = New System.Windows.Forms.Button()
-        Me.LbListeConcessionnaires = New cimetiere.ListBoxCustomActeurs()
-        Me.ListeBeneficiaires = New cimetiere.ListeBeneficiairesNvCon()
-        Me.PanelChoixTypeEmpl1 = New cimetiere.PanelChoixTypeEmpl()
-        Me.TextBoxNullable1 = New cimetiere.TextBoxNullable()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabDemandeCsn.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.PanCoordsDmdr.SuspendLayout()
         Me.TabRecap.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -65,47 +74,164 @@ Partial Class FormNouvelleConcession
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GbRecapBenefs.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabDemandeCsn)
         Me.TabControl1.Controls.Add(Me.TabRecap)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 10)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(814, 1021)
+        Me.TabControl1.Size = New System.Drawing.Size(814, 1332)
         Me.TabControl1.TabIndex = 0
         '
         'TabDemandeCsn
         '
-        Me.TabDemandeCsn.Controls.Add(Me.LbListeConcessionnaires)
-        Me.TabDemandeCsn.Controls.Add(Me.BtSuivantDeForm)
+        Me.TabDemandeCsn.Controls.Add(Me.FlowLayoutPanel2)
         Me.TabDemandeCsn.Controls.Add(Me.PanCoordsDmdr)
-        Me.TabDemandeCsn.Controls.Add(Me.Label3)
-        Me.TabDemandeCsn.Controls.Add(Me.ListeBeneficiaires)
-        Me.TabDemandeCsn.Controls.Add(Me.PanelChoixTypeEmpl1)
         Me.TabDemandeCsn.Controls.Add(Me.Label1)
         Me.TabDemandeCsn.Location = New System.Drawing.Point(4, 25)
         Me.TabDemandeCsn.Name = "TabDemandeCsn"
         Me.TabDemandeCsn.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabDemandeCsn.Size = New System.Drawing.Size(806, 992)
+        Me.TabDemandeCsn.Size = New System.Drawing.Size(806, 1303)
         Me.TabDemandeCsn.TabIndex = 0
         Me.TabDemandeCsn.Text = "Demande de concession"
         Me.TabDemandeCsn.UseVisualStyleBackColor = True
         '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.AutoSize = True
+        Me.FlowLayoutPanel2.Controls.Add(Me.CbPersMand)
+        Me.FlowLayoutPanel2.Controls.Add(Me.LabTitrePmand)
+        Me.FlowLayoutPanel2.Controls.Add(Me.LbListeDemandeurs)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Label4)
+        Me.FlowLayoutPanel2.Controls.Add(Me.LbListeConcessionnaires)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Label5)
+        Me.FlowLayoutPanel2.Controls.Add(Me.PanelChoixTypeEmpl1)
+        Me.FlowLayoutPanel2.Controls.Add(Me.ListeBeneficiaires)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Panel3)
+        Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(6, 6)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(800, 1278)
+        Me.FlowLayoutPanel2.TabIndex = 176
+        '
+        'CbPersMand
+        '
+        Me.CbPersMand.AutoSize = True
+        Me.CbPersMand.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.CbPersMand.Location = New System.Drawing.Point(3, 3)
+        Me.CbPersMand.Name = "CbPersMand"
+        Me.CbPersMand.Size = New System.Drawing.Size(347, 21)
+        Me.CbPersMand.TabIndex = 190
+        Me.CbPersMand.Text = "La demande est faite par une personne mandatée"
+        Me.CbPersMand.UseVisualStyleBackColor = True
+        '
+        'LabTitrePmand
+        '
+        Me.LabTitrePmand.AutoSize = True
+        Me.LabTitrePmand.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabTitrePmand.Location = New System.Drawing.Point(3, 27)
+        Me.LabTitrePmand.Name = "LabTitrePmand"
+        Me.LabTitrePmand.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.LabTitrePmand.Size = New System.Drawing.Size(230, 39)
+        Me.LabTitrePmand.TabIndex = 189
+        Me.LabTitrePmand.Text = "Personne Mandatée"
+        '
+        'LbListeDemandeurs
+        '
+        Me.LbListeDemandeurs.AspectActif = True
+        Me.LbListeDemandeurs.BackColor = System.Drawing.Color.Transparent
+        Me.LbListeDemandeurs.DataSource = Nothing
+        Me.LbListeDemandeurs.Location = New System.Drawing.Point(3, 69)
+        Me.LbListeDemandeurs.Name = "LbListeDemandeurs"
+        Me.LbListeDemandeurs.Size = New System.Drawing.Size(794, 176)
+        Me.LbListeDemandeurs.TabIndex = 186
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(3, 248)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.Label4.Size = New System.Drawing.Size(194, 39)
+        Me.Label4.TabIndex = 189
+        Me.Label4.Text = "Concessionnaire"
+        '
+        'LbListeConcessionnaires
+        '
+        Me.LbListeConcessionnaires.AspectActif = True
+        Me.LbListeConcessionnaires.BackColor = System.Drawing.Color.Transparent
+        Me.LbListeConcessionnaires.DataSource = Nothing
+        Me.LbListeConcessionnaires.Location = New System.Drawing.Point(3, 290)
+        Me.LbListeConcessionnaires.Name = "LbListeConcessionnaires"
+        Me.LbListeConcessionnaires.Size = New System.Drawing.Size(794, 176)
+        Me.LbListeConcessionnaires.TabIndex = 186
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 469)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.Label5.Size = New System.Drawing.Size(153, 39)
+        Me.Label5.TabIndex = 189
+        Me.Label5.Text = "Bénéficiaires"
+        '
+        'PanelChoixTypeEmpl1
+        '
+        Me.PanelChoixTypeEmpl1.BackColor = System.Drawing.Color.Transparent
+        Me.PanelChoixTypeEmpl1.Location = New System.Drawing.Point(4, 512)
+        Me.PanelChoixTypeEmpl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PanelChoixTypeEmpl1.Name = "PanelChoixTypeEmpl1"
+        Me.PanelChoixTypeEmpl1.Size = New System.Drawing.Size(669, 441)
+        Me.PanelChoixTypeEmpl1.TabIndex = 184
+        '
+        'ListeBeneficiaires
+        '
+        Me.ListeBeneficiaires.AutoScroll = True
+        Me.ListeBeneficiaires.BackColor = System.Drawing.Color.AliceBlue
+        Me.ListeBeneficiaires.Location = New System.Drawing.Point(4, 961)
+        Me.ListeBeneficiaires.Margin = New System.Windows.Forms.Padding(4)
+        Me.ListeBeneficiaires.Name = "ListeBeneficiaires"
+        Me.ListeBeneficiaires.Size = New System.Drawing.Size(770, 207)
+        Me.ListeBeneficiaires.TabIndex = 185
+        Me.ListeBeneficiaires.Titre = ""
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.BtSuivantDeForm)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Location = New System.Drawing.Point(3, 1175)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(775, 100)
+        Me.Panel3.TabIndex = 188
+        '
         'BtSuivantDeForm
         '
         Me.BtSuivantDeForm.Enabled = False
-        Me.BtSuivantDeForm.Location = New System.Drawing.Point(564, 882)
+        Me.BtSuivantDeForm.Location = New System.Drawing.Point(571, 31)
         Me.BtSuivantDeForm.Name = "BtSuivantDeForm"
         Me.BtSuivantDeForm.Size = New System.Drawing.Size(105, 36)
-        Me.BtSuivantDeForm.TabIndex = 181
+        Me.BtSuivantDeForm.TabIndex = 183
         Me.BtSuivantDeForm.Text = "Suivant >>"
         Me.BtSuivantDeForm.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(99, 13)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(393, 75)
+        Me.Label3.TabIndex = 182
+        Me.Label3.Text = "A faire : mettre la personne mandatée quelque part (si il y en a une)"
         '
         'PanCoordsDmdr
         '
@@ -131,16 +257,6 @@ Partial Class FormNouvelleConcession
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Personne introduisant la demande"
         '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(92, 864)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(393, 75)
-        Me.Label3.TabIndex = 180
-        Me.Label3.Text = "A faire : mettre la personne mandatée quelque part (si il y en a une)"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -153,19 +269,18 @@ Partial Class FormNouvelleConcession
         '
         'TabRecap
         '
-        Me.TabRecap.AutoScroll = True
         Me.TabRecap.Controls.Add(Me.FlowLayoutPanel1)
         Me.TabRecap.Location = New System.Drawing.Point(4, 25)
         Me.TabRecap.Name = "TabRecap"
         Me.TabRecap.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabRecap.Size = New System.Drawing.Size(806, 992)
+        Me.TabRecap.Size = New System.Drawing.Size(806, 1303)
         Me.TabRecap.TabIndex = 1
         Me.TabRecap.Text = "Récapitulatif"
         Me.TabRecap.UseVisualStyleBackColor = True
         '
         'FlowLayoutPanel1
         '
-        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.AutoSize = True
         Me.FlowLayoutPanel1.Controls.Add(Me.GbPersMand)
         Me.FlowLayoutPanel1.Controls.Add(Me.GroupBox6)
         Me.FlowLayoutPanel1.Controls.Add(Me.GroupBox3)
@@ -175,12 +290,12 @@ Partial Class FormNouvelleConcession
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(6, 3)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(620, 884)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(623, 884)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'GbPersMand
         '
-        Me.GbPersMand.Controls.Add(Me.Label6)
+        Me.GbPersMand.Controls.Add(Me.LabDmdrTel)
         Me.GbPersMand.Controls.Add(Me.LabDmdrAdresse)
         Me.GbPersMand.Controls.Add(Me.LabDmdrNom)
         Me.GbPersMand.Location = New System.Drawing.Point(3, 3)
@@ -188,16 +303,16 @@ Partial Class FormNouvelleConcession
         Me.GbPersMand.Size = New System.Drawing.Size(617, 118)
         Me.GbPersMand.TabIndex = 0
         Me.GbPersMand.TabStop = False
-        Me.GbPersMand.Text = "Personne introduisant la demande - si n'est pas le concessionnaire"
+        Me.GbPersMand.Text = "Personne introduisant la demande"
         '
-        'Label6
+        'LabDmdrTel
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 91)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(76, 17)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "Téléphone"
+        Me.LabDmdrTel.AutoSize = True
+        Me.LabDmdrTel.Location = New System.Drawing.Point(6, 91)
+        Me.LabDmdrTel.Name = "LabDmdrTel"
+        Me.LabDmdrTel.Size = New System.Drawing.Size(76, 17)
+        Me.LabDmdrTel.TabIndex = 2
+        Me.LabDmdrTel.Text = "Téléphone"
         '
         'LabDmdrAdresse
         '
@@ -294,7 +409,7 @@ Partial Class FormNouvelleConcession
         Me.GroupBox3.Controls.Add(Me.LabTypeConcession)
         Me.GroupBox3.Location = New System.Drawing.Point(3, 303)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(617, 100)
+        Me.GroupBox3.Size = New System.Drawing.Size(605, 100)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Emplacement demandé"
@@ -302,9 +417,12 @@ Partial Class FormNouvelleConcession
         'LabTypeConcession
         '
         Me.LabTypeConcession.AutoSize = True
-        Me.LabTypeConcession.Location = New System.Drawing.Point(56, 18)
+        Me.LabTypeConcession.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabTypeConcession.Location = New System.Drawing.Point(56, 11)
+        Me.LabTypeConcession.MaximumSize = New System.Drawing.Size(539, 0)
         Me.LabTypeConcession.Name = "LabTypeConcession"
-        Me.LabTypeConcession.Size = New System.Drawing.Size(157, 17)
+        Me.LabTypeConcession.Padding = New System.Windows.Forms.Padding(0, 20, 0, 0)
+        Me.LabTypeConcession.Size = New System.Drawing.Size(186, 40)
         Me.LabTypeConcession.TabIndex = 0
         Me.LabTypeConcession.Text = "Type concession et prix"
         '
@@ -319,6 +437,15 @@ Partial Class FormNouvelleConcession
         Me.GbRecapBenefs.TabStop = False
         Me.GbRecapBenefs.Text = "Bénéficiaires"
         '
+        'Panel2
+        '
+        Me.Panel2.AutoScroll = True
+        Me.Panel2.Controls.Add(Me.FlpLabsBeneficiaires)
+        Me.Panel2.Location = New System.Drawing.Point(13, 21)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(585, 100)
+        Me.Panel2.TabIndex = 1
+        '
         'FlpLabsBeneficiaires
         '
         Me.FlpLabsBeneficiaires.AutoSize = True
@@ -331,13 +458,23 @@ Partial Class FormNouvelleConcession
         'GroupBox5
         '
         Me.GroupBox5.AutoSize = True
-        Me.GroupBox5.Controls.Add(Me.TextBoxNullable1)
+        Me.GroupBox5.Controls.Add(Me.TbCommentaire)
         Me.GroupBox5.Location = New System.Drawing.Point(3, 557)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(611, 138)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Remarque éventuelle"
+        '
+        'TbCommentaire
+        '
+        Me.TbCommentaire.CueBanner = Nothing
+        Me.TbCommentaire.Location = New System.Drawing.Point(9, 21)
+        Me.TbCommentaire.Multiline = True
+        Me.TbCommentaire.Name = "TbCommentaire"
+        Me.TbCommentaire.Size = New System.Drawing.Size(596, 96)
+        Me.TbCommentaire.TabIndex = 0
+        Me.TbCommentaire.Value = Nothing
         '
         'Panel1
         '
@@ -395,62 +532,13 @@ Partial Class FormNouvelleConcession
         Me.BtPrecedentDeRecap.Text = "<< Précédent"
         Me.BtPrecedentDeRecap.UseVisualStyleBackColor = True
         '
-        'LbListeConcessionnaires
-        '
-        Me.LbListeConcessionnaires.AspectActif = True
-        Me.LbListeConcessionnaires.BackColor = System.Drawing.Color.Transparent
-        Me.LbListeConcessionnaires.DataSource = Nothing
-        Me.LbListeConcessionnaires.Location = New System.Drawing.Point(6, 3)
-        Me.LbListeConcessionnaires.Name = "LbListeConcessionnaires"
-        Me.LbListeConcessionnaires.Size = New System.Drawing.Size(794, 213)
-        Me.LbListeConcessionnaires.TabIndex = 182
-        '
-        'ListeBeneficiaires
-        '
-        Me.ListeBeneficiaires.AutoScroll = True
-        Me.ListeBeneficiaires.BackColor = System.Drawing.Color.AliceBlue
-        Me.ListeBeneficiaires.Location = New System.Drawing.Point(-2, 638)
-        Me.ListeBeneficiaires.Margin = New System.Windows.Forms.Padding(4)
-        Me.ListeBeneficiaires.Name = "ListeBeneficiaires"
-        Me.ListeBeneficiaires.Size = New System.Drawing.Size(783, 207)
-        Me.ListeBeneficiaires.TabIndex = 177
-        Me.ListeBeneficiaires.Titre = "Bénéficiaires"
-        '
-        'PanelChoixTypeEmpl1
-        '
-        Me.PanelChoixTypeEmpl1.BackColor = System.Drawing.Color.Transparent
-        Me.PanelChoixTypeEmpl1.Location = New System.Drawing.Point(0, 189)
-        Me.PanelChoixTypeEmpl1.Margin = New System.Windows.Forms.Padding(4)
-        Me.PanelChoixTypeEmpl1.Name = "PanelChoixTypeEmpl1"
-        Me.PanelChoixTypeEmpl1.Size = New System.Drawing.Size(669, 441)
-        Me.PanelChoixTypeEmpl1.TabIndex = 176
-        '
-        'TextBoxNullable1
-        '
-        Me.TextBoxNullable1.CueBanner = Nothing
-        Me.TextBoxNullable1.Location = New System.Drawing.Point(9, 21)
-        Me.TextBoxNullable1.Multiline = True
-        Me.TextBoxNullable1.Name = "TextBoxNullable1"
-        Me.TextBoxNullable1.Size = New System.Drawing.Size(596, 96)
-        Me.TextBoxNullable1.TabIndex = 0
-        Me.TextBoxNullable1.Value = Nothing
-        '
-        'Panel2
-        '
-        Me.Panel2.AutoScroll = True
-        Me.Panel2.Controls.Add(Me.FlpLabsBeneficiaires)
-        Me.Panel2.Location = New System.Drawing.Point(13, 21)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(585, 100)
-        Me.Panel2.TabIndex = 1
-        '
         'FormNouvelleConcession
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.GhostWhite
-        Me.ClientSize = New System.Drawing.Size(835, 1045)
+        Me.ClientSize = New System.Drawing.Size(855, 653)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "FormNouvelleConcession"
         Me.Tag = ""
@@ -458,8 +546,12 @@ Partial Class FormNouvelleConcession
         Me.TabControl1.ResumeLayout(False)
         Me.TabDemandeCsn.ResumeLayout(False)
         Me.TabDemandeCsn.PerformLayout()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
         Me.PanCoordsDmdr.ResumeLayout(False)
         Me.TabRecap.ResumeLayout(False)
+        Me.TabRecap.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
         Me.GbPersMand.ResumeLayout(False)
@@ -469,38 +561,33 @@ Partial Class FormNouvelleConcession
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GbRecapBenefs.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabDemandeCsn As TabPage
-    Friend WithEvents BtSuivantDeForm As Button
     Friend WithEvents PanCoordsDmdr As Panel
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents ListeBeneficiaires As ListeBeneficiairesNvCon
-    Friend WithEvents PanelChoixTypeEmpl1 As PanelChoixTypeEmpl
     Friend WithEvents Label1 As Label
     Friend WithEvents TabRecap As TabPage
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents GbPersMand As GroupBox
     Friend WithEvents LabDmdrNom As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents LabDmdrTel As Label
     Friend WithEvents LabDmdrAdresse As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents LabTypeConcession As Label
     Friend WithEvents GbRecapBenefs As GroupBox
     Friend WithEvents FlpLabsBeneficiaires As FlowLayoutPanel
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents TextBoxNullable1 As TextBoxNullable
-    Friend WithEvents LbListeConcessionnaires As ListBoxCustomActeurs
+    Friend WithEvents TbCommentaire As TextBoxNullable
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents LabCsnrNomComplet As Label
     Friend WithEvents LabCsnrNoNat As Label
@@ -513,4 +600,16 @@ Partial Class FormNouvelleConcession
     Friend WithEvents BtTerminer As Button
     Friend WithEvents BtPrecedentDeRecap As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents LabTitrePmand As Label
+    Friend WithEvents LbListeDemandeurs As ListBoxCustomActeurs
+    Friend WithEvents Label4 As Label
+    Friend WithEvents LbListeConcessionnaires As ListBoxCustomActeurs
+    Friend WithEvents ListeBeneficiaires As ListeBeneficiairesNvCon
+    Friend WithEvents PanelChoixTypeEmpl1 As PanelChoixTypeEmpl
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents BtSuivantDeForm As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CbPersMand As CheckBox
+    Friend WithEvents Label5 As Label
 End Class

@@ -3,7 +3,7 @@
 
     Dim LeDemandeur As Acteur
     Dim LeConcessionnaire As Acteur
-    Dim LeFormNvCon As FormulaireNvConcession
+    Dim LeFormNvCon As DemandeNvConcession
     Dim LesBenefs As List(Of Acteur)
     Dim LesParentes As List(Of String)
 
@@ -23,7 +23,7 @@
 
     Public Event BddChanged() Implements QuiModifieBdd.BddChanged
     ' À FAIRE : ajouter liste demandeurs (pers mand) quand sera mise
-    Public Sub OnBddChanged() Handles ListeBeneficiaires.BddChanged, LbListeConcessionnaires.BddChanged
+    Public Sub OnBddChanged()
         RaiseEvent BddChanged()
     End Sub
 
@@ -33,6 +33,8 @@
         TabControl1.ItemSize = New Size(0, 1)
         TabControl1.SizeMode = TabSizeMode.Fixed
         TabControl1.TabStop = False
+
+        CbPersMand_CheckedChanged(Nothing, Nothing)  ' maj visibilité partie pmand
     End Sub
 
     Private Sub BtSuivantDeForm_Click(sender As Object, e As EventArgs) Handles BtSuivantDeForm.Click
@@ -44,32 +46,42 @@
         ChangerPage(0)
     End Sub
 
+    Private Sub BtTerminer_Click(sender As Object, e As EventArgs) Handles BtTerminer.Click
+        Finaliser()
+    End Sub
+
     Sub MajRecapitulatif()
-        LeFormNvCon = New FormulaireNvConcession
+        LeFormNvCon = New DemandeNvConcession
 
-        ' Récupère les infos des champs
         LeFormNvCon.TypeCon = PanelChoixTypeEmpl1.GetChoix
-
         LeFormNvCon.DateSign = Today.Date
+        LeFormNvCon.SigneParPmand = CbPersMand.Checked
 
-        ' À FAIRE
-        ' LeDemandeur = LbListeDemandeurs.ActeurSelectionne
-        ' LeFormNvCon.IntegrerInfosPmand(LeDemandeur)
+        If LeFormNvCon.SigneParPmand Then
+            LeDemandeur = LbListeDemandeurs.ActeurSelectionne
+            LeFormNvCon.IntegrerInfosPmand(LeDemandeur)
+        End If
 
-        LeConcessionnaire = LbListeConcessionnaires.ActeurSelectionne
+        LeConcessionnaire = LbListeDemandeurs.ActeurSelectionne
         LeFormNvCon.IntegrerInfosCsnr(LeConcessionnaire)
 
-        ' À FAIRE
-        'LeFormNvCon.SigneParPmand = 
-
         ListeBeneficiaires.GetBeneficiaires(LesBenefs, LesParentes)
-        LeFormNvCon.AjouterBeneficiaires(LesBenefs,LesParentes)
+        LeFormNvCon.AjouterBeneficiaires(LesBenefs, LesParentes)
 
         LabDmdrNom.Text = LeConcessionnaire.NomComplet
 
         ' Affiche le récapitulatif
-        ' À FAIRE - masquer la GbPersMand si pas de pmand
         ' ou màj ses infos
+
+        If LeFormNvCon.SigneParPmand Then
+            LabDmdrNom.Text = LeDemandeur.NomComplet(True)
+            LabDmdrAdresse.Text = If(LeDemandeur.AdresseComplete <> "", LeDemandeur.AdresseComplete, "(adresse non spécifiée)")
+            LabDmdrTel.Text = If(LeDemandeur.Tel <> "", LeDemandeur.Tel, "(pas de numéro de téléphone)")
+            GbPersMand.Visible = True
+        Else
+            GbPersMand.Visible = False
+        End If
+
 
         LabCsnrNomComplet.Text = LeConcessionnaire.NomComplet(True)
         Dim adrcsnr = LeConcessionnaire.AdresseComplete
@@ -81,6 +93,7 @@
         ' À FAIRE : prix
         LabTypeConcession.Text = LeFormNvCon.TypeConToString
 
+
         GbRecapBenefs.Visible = LeFormNvCon.Beneficiaires.Count >= 1
         FlpLabsBeneficiaires.Controls.Clear()
         For n = 0 To LesBenefs.Count - 1
@@ -89,25 +102,45 @@
 
     End Sub
 
-    Public Sub OnTrucsChanged() Handles LbListeConcessionnaires.ActeurChanged, PanelChoixTypeEmpl1.SelectionChanged
+    Public Sub OnTrucsChanged()
         UpdateBtSuivantDeForm()
     End Sub
 
     'désact btn suiv si emplacement ne demande pas de concession, si csnr non indiqué ou si pmand présente mais pas choisie
-
-    Private Sub UpdateBtSuivantDeForm()
+    Private Sub UpdateBtSuivantDeForm() Handles PanelChoixTypeEmpl1.SelectionChanged, LbListeConcessionnaires.ActeurChanged, LbListeDemandeurs.ActeurChanged, CbPersMand.CheckedChanged
         Dim emplchoisi As String = PanelChoixTypeEmpl1.GetChoix
         BtSuivantDeForm.Enabled = emplchoisi <> Nothing _
                                   AndAlso UzineAGaz.EmplacementImpliqueConcession(emplchoisi) _
                                   AndAlso LbListeConcessionnaires.ActeurSelectionne IsNot Nothing _
-        '                         + À FAIRE : pmand (soit pas de personne mandatée impliquée, ou il y en a une choisie)
+                                  AndAlso (Not CbPersMand.Checked OrElse LbListeDemandeurs.ActeurSelectionne IsNot Nothing)
     End Sub
 
 
     Private Sub Finaliser()
+        ' form vers bdd (avec infos bénefs)
+        Bdd.Add(LeFormNvCon)
+
+        ' ajout bénefs non enregistrés en tant qu'acteurs
+        For Each b In LesBenefs
+            If b.Id = 0 Then Bdd.Add(b)
+        Next
+
+        ' jointures bénefs - concession
+
+
+        ' enregistrement concession ????????
+
+        ' jointure concessionnaire
+
+        ' jointure pmand si nécessaire
+
+        ' pdf
 
 
     End Sub
 
-
+    Private Sub CbPersMand_CheckedChanged(sender As Object, e As EventArgs) Handles CbPersMand.CheckedChanged
+        LbListeDemandeurs.Visible = CbPersMand.Checked
+        LabTitrePmand.Visible = CbPersMand.Checked
+    End Sub
 End Class

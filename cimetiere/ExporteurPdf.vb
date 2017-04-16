@@ -57,12 +57,12 @@ Public Class ExporteurPdf
     End Sub
 
 
-    Public Sub CreePdfInhum(Optional LeForm As FormulaireInhumation = Nothing)
+    Public Sub CreePdfInhum(Optional LeForm As DemandeInhumation = Nothing)
         ' juste pour pouvoir faire les tests If LeDefunt.Nom is Nothing...
-        If LeForm Is Nothing Then LeForm = New FormulaireInhumation
-        Dim fnvc As FormulaireNvConcession
+        If LeForm Is Nothing Then LeForm = New DemandeInhumation
+        Dim fnvc As DemandeNvConcession
         ' idem, form vide si aucun n'est précisé, évite de tester fnvc is nothing sans arrêt
-        fnvc = If(LeForm.FormNvCon, New FormulaireNvConcession)
+        fnvc = If(LeForm.DemandeNvCon, New DemandeNvConcession)
 
         Dim p As Paragraph
 
@@ -74,7 +74,7 @@ Public Class ExporteurPdf
 
             Logo.ScaleToFit(50, 50)
             Logo.SetAbsolutePosition(455, 750)
-            pdf.Add(logo)
+            pdf.Add(Logo)
 
             Colonne(If(.NumDefLh IsNot Nothing, .NumDefLh, ".............."), 512, 150, 700, 790, fGrasS)
             Colonne(If(.NumDefAnnee IsNot Nothing, .NumDefAnnee, "........"), 507, 150, 700, 770, fGrasS)
@@ -129,7 +129,7 @@ Public Class ExporteurPdf
             pdf.Add(New Paragraph(If(.ConcSollic = "nouvelle", CASE_COCHEE, CASE_VIDE) & " a) l'obtention d'un emplacement suivant :", fGrasS))
             'pdf.Add(New Paragraph(CASE_VIDE & " b) la prolongation d'un emplacement existant de type :", fNormal))
 
-            InsererTableauTypeEmplacement(If(LeForm.FormNvCon IsNot Nothing, LeForm.FormNvCon.TypeCon, ""))
+            InsererTableauTypeEmplacement(If(LeForm.DemandeNvCon IsNot Nothing, LeForm.DemandeNvCon.TypeCon, ""))
 
             ' À FAIRE :  voir si les cases existante - "urne" etc sont encore pertinentes
             p = New Paragraph
@@ -300,7 +300,7 @@ Public Class ExporteurPdf
     End Sub
 
 
-    Sub CreePdfReservation(LeForm As FormulaireNvConcession)
+    Sub CreePdfReservation(LeForm As DemandeNvConcession)
 
         Dim p As Paragraph
 
