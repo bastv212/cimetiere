@@ -23,7 +23,7 @@ Partial Class FormGestion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGestion))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -144,50 +144,18 @@ Partial Class FormGestion
         Me.PRBConcessionnaire = New System.Windows.Forms.RadioButton()
         Me.PRBBenef = New System.Windows.Forms.RadioButton()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.GroupBox13 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.GroupBox15 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.DgvListeConcessionnaire = New System.Windows.Forms.DataGridView()
         Me.ColPersNom = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BTPersSearch = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BottomToolStripPanel = New System.Windows.Forms.ToolStripPanel()
         Me.TopToolStripPanel = New System.Windows.Forms.ToolStripPanel()
@@ -195,32 +163,29 @@ Partial Class FormGestion
         Me.LeftToolStripPanel = New System.Windows.Forms.ToolStripPanel()
         Me.ContentPanel = New System.Windows.Forms.ToolStripContentPanel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.TBPersAdress = New cimetiere.TextBoxNullable()
-        Me.TBPersNumNational = New cimetiere.TextBoxIntNullable()
-        Me.TBPersDN = New cimetiere.MaskedTextBoxDate()
-        Me.TBPersTel = New cimetiere.TextBoxNullable()
-        Me.TBPersPays = New cimetiere.TextBoxNullable()
-        Me.TBPersVille = New cimetiere.TextBoxNullable()
-        Me.TBPersCodePostal = New cimetiere.TextBoxIntNullable()
-        Me.TBPersNom = New cimetiere.TextBoxNullable()
-        Me.TBPersPrenom = New cimetiere.TextBoxNullable()
-        Me.TBConsAdresse = New cimetiere.TextBoxNullable()
-        Me.TBConsDateNaiss = New cimetiere.MaskedTextBoxDate()
-        Me.TBConsTel = New cimetiere.TextBoxNullable()
-        Me.TBConsPays = New cimetiere.TextBoxNullable()
-        Me.TBConsVille = New cimetiere.TextBoxNullable()
-        Me.TBConsCodePostal = New cimetiere.TextBoxIntNullable()
-        Me.TBConsNom = New cimetiere.TextBoxNullable()
-        Me.TBConsPrenom = New cimetiere.TextBoxNullable()
-        Me.TBBenefAdresse = New cimetiere.TextBoxNullable()
-        Me.TBBenefDN = New cimetiere.MaskedTextBoxDate()
-        Me.TBBenefTel = New cimetiere.TextBoxNullable()
-        Me.TBBenefPays = New cimetiere.TextBoxNullable()
-        Me.TBBenefVille = New cimetiere.TextBoxNullable()
-        Me.TBBenefCodePostal = New cimetiere.TextBoxIntNullable()
-        Me.TBBenefNom = New cimetiere.TextBoxNullable()
-        Me.TBBenefPrenom = New cimetiere.TextBoxNullable()
         Me.TextBoxNullable1 = New cimetiere.TextBoxNullable()
+        Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TBPersPrenom = New cimetiere.TextBoxNullable()
+        Me.TBPersNom = New cimetiere.TextBoxNullable()
+        Me.TBPersCodePostal = New cimetiere.TextBoxIntNullable()
+        Me.TBPersVille = New cimetiere.TextBoxNullable()
+        Me.TBPersPays = New cimetiere.TextBoxNullable()
+        Me.TBPersTel = New cimetiere.TextBoxNullable()
+        Me.TBPersDN = New cimetiere.MaskedTextBoxDate()
+        Me.TBPersNumNational = New cimetiere.TextBoxIntNullable()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TBPersAdress = New cimetiere.TextBoxNullable()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Panel13 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -252,10 +217,6 @@ Partial Class FormGestion
         CType(Me.FCPBlahulpe, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
-        Me.Panel13.SuspendLayout()
-        Me.GroupBox13.SuspendLayout()
-        Me.Panel11.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -264,6 +225,8 @@ Partial Class FormGestion
         Me.Panel14.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox13.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -519,8 +482,8 @@ Partial Class FormGestion
         Me.DgvListeDefunts.AllowUserToDeleteRows = False
         Me.DgvListeDefunts.AllowUserToOrderColumns = True
         Me.DgvListeDefunts.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.DgvListeDefunts.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.DgvListeDefunts.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvListeDefunts.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.DgvListeDefunts.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvListeDefunts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -1472,308 +1435,17 @@ Partial Class FormGestion
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel13)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Panel11)
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel15)
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(546, 29)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(547, 582)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(547, 425)
         Me.FlowLayoutPanel1.TabIndex = 139
-        '
-        'Panel13
-        '
-        Me.Panel13.BackColor = System.Drawing.Color.SeaGreen
-        Me.Panel13.Controls.Add(Me.GroupBox13)
-        Me.Panel13.Location = New System.Drawing.Point(3, 3)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(531, 200)
-        Me.Panel13.TabIndex = 138
-        '
-        'GroupBox13
-        '
-        Me.GroupBox13.BackColor = System.Drawing.Color.GhostWhite
-        Me.GroupBox13.Controls.Add(Me.Button5)
-        Me.GroupBox13.Controls.Add(Me.TBPersAdress)
-        Me.GroupBox13.Controls.Add(Me.Button6)
-        Me.GroupBox13.Controls.Add(Me.Label4)
-        Me.GroupBox13.Controls.Add(Me.TBPersNumNational)
-        Me.GroupBox13.Controls.Add(Me.TBPersDN)
-        Me.GroupBox13.Controls.Add(Me.TBPersTel)
-        Me.GroupBox13.Controls.Add(Me.TBPersPays)
-        Me.GroupBox13.Controls.Add(Me.TBPersVille)
-        Me.GroupBox13.Controls.Add(Me.TBPersCodePostal)
-        Me.GroupBox13.Controls.Add(Me.TBPersNom)
-        Me.GroupBox13.Controls.Add(Me.TBPersPrenom)
-        Me.GroupBox13.Controls.Add(Me.Label9)
-        Me.GroupBox13.Controls.Add(Me.Label8)
-        Me.GroupBox13.Controls.Add(Me.Label7)
-        Me.GroupBox13.Controls.Add(Me.Label6)
-        Me.GroupBox13.Controls.Add(Me.Label5)
-        Me.GroupBox13.Controls.Add(Me.Label10)
-        Me.GroupBox13.Controls.Add(Me.Label11)
-        Me.GroupBox13.Controls.Add(Me.Label28)
-        Me.GroupBox13.Location = New System.Drawing.Point(17, 14)
-        Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(500, 166)
-        Me.GroupBox13.TabIndex = 0
-        Me.GroupBox13.TabStop = False
-        Me.GroupBox13.Text = "Infos Personnes"
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.SeaGreen
-        Me.Button5.ForeColor = System.Drawing.Color.Transparent
-        Me.Button5.Location = New System.Drawing.Point(403, 129)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(74, 23)
-        Me.Button5.TabIndex = 137
-        Me.Button5.Text = "Supprimer"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.SeaGreen
-        Me.Button6.ForeColor = System.Drawing.Color.Transparent
-        Me.Button6.Location = New System.Drawing.Point(403, 100)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(64, 23)
-        Me.Button6.TabIndex = 136
-        Me.Button6.Text = "Modifier"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 47)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(47, 14)
-        Me.Label4.TabIndex = 38
-        Me.Label4.Text = "Adresse"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 131)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(65, 14)
-        Me.Label9.TabIndex = 36
-        Me.Label9.Text = "N° national"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(14, 104)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 14)
-        Me.Label8.TabIndex = 33
-        Me.Label8.Text = "Date de naissance"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(14, 76)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 14)
-        Me.Label7.TabIndex = 32
-        Me.Label7.Text = "Téléphone"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(226, 102)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(29, 14)
-        Me.Label6.TabIndex = 30
-        Me.Label6.Text = "Pays"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(226, 74)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 14)
-        Me.Label5.TabIndex = 28
-        Me.Label5.Text = "Ville"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(223, 45)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(69, 14)
-        Me.Label10.TabIndex = 25
-        Me.Label10.Text = "Code postal"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(222, 15)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(31, 14)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "Nom"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(14, 17)
-        Me.Label28.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(46, 14)
-        Me.Label28.TabIndex = 21
-        Me.Label28.Text = "Prénom"
-        '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.Color.SeaGreen
-        Me.Panel11.Controls.Add(Me.GroupBox11)
-        Me.Panel11.Location = New System.Drawing.Point(3, 209)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(531, 200)
-        Me.Panel11.TabIndex = 139
-        '
-        'GroupBox11
-        '
-        Me.GroupBox11.BackColor = System.Drawing.Color.GhostWhite
-        Me.GroupBox11.Controls.Add(Me.TBConsAdresse)
-        Me.GroupBox11.Controls.Add(Me.Label12)
-        Me.GroupBox11.Controls.Add(Me.Button3)
-        Me.GroupBox11.Controls.Add(Me.Button4)
-        Me.GroupBox11.Controls.Add(Me.TBConsDateNaiss)
-        Me.GroupBox11.Controls.Add(Me.TBConsTel)
-        Me.GroupBox11.Controls.Add(Me.TBConsPays)
-        Me.GroupBox11.Controls.Add(Me.TBConsVille)
-        Me.GroupBox11.Controls.Add(Me.TBConsCodePostal)
-        Me.GroupBox11.Controls.Add(Me.TBConsNom)
-        Me.GroupBox11.Controls.Add(Me.TBConsPrenom)
-        Me.GroupBox11.Controls.Add(Me.Label14)
-        Me.GroupBox11.Controls.Add(Me.Label15)
-        Me.GroupBox11.Controls.Add(Me.Label16)
-        Me.GroupBox11.Controls.Add(Me.Label17)
-        Me.GroupBox11.Controls.Add(Me.Label18)
-        Me.GroupBox11.Controls.Add(Me.Label19)
-        Me.GroupBox11.Controls.Add(Me.Label29)
-        Me.GroupBox11.Location = New System.Drawing.Point(17, 14)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(500, 166)
-        Me.GroupBox11.TabIndex = 0
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Infos concessionnaire"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(5, 47)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 14)
-        Me.Label12.TabIndex = 38
-        Me.Label12.Text = "Adresse"
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.SeaGreen
-        Me.Button3.ForeColor = System.Drawing.Color.Transparent
-        Me.Button3.Location = New System.Drawing.Point(403, 129)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(74, 23)
-        Me.Button3.TabIndex = 135
-        Me.Button3.Text = "Supprimer"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.SeaGreen
-        Me.Button4.ForeColor = System.Drawing.Color.Transparent
-        Me.Button4.Location = New System.Drawing.Point(403, 100)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(64, 23)
-        Me.Button4.TabIndex = 134
-        Me.Button4.Text = "Modifier"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(5, 104)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(100, 14)
-        Me.Label14.TabIndex = 33
-        Me.Label14.Text = "Date de naissance"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(5, 76)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(61, 14)
-        Me.Label15.TabIndex = 32
-        Me.Label15.Text = "Téléphone"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(195, 104)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(29, 14)
-        Me.Label16.TabIndex = 30
-        Me.Label16.Text = "Pays"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(195, 76)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(29, 14)
-        Me.Label17.TabIndex = 28
-        Me.Label17.Text = "Ville"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(192, 47)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(69, 14)
-        Me.Label18.TabIndex = 25
-        Me.Label18.Text = "Code postal"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(191, 17)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(31, 14)
-        Me.Label19.TabIndex = 23
-        Me.Label19.Text = "Nom"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(5, 17)
-        Me.Label29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(46, 14)
-        Me.Label29.TabIndex = 21
-        Me.Label29.Text = "Prénom"
         '
         'Panel15
         '
         Me.Panel15.BackColor = System.Drawing.Color.SeaGreen
         Me.Panel15.Controls.Add(Me.GroupBox15)
-        Me.Panel15.Location = New System.Drawing.Point(3, 415)
+        Me.Panel15.Location = New System.Drawing.Point(3, 209)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(531, 200)
         Me.Panel15.TabIndex = 140
@@ -1781,30 +1453,25 @@ Partial Class FormGestion
         'GroupBox15
         '
         Me.GroupBox15.BackColor = System.Drawing.Color.GhostWhite
+        Me.GroupBox15.Controls.Add(Me.LinkLabel1)
         Me.GroupBox15.Controls.Add(Me.Button7)
-        Me.GroupBox15.Controls.Add(Me.TBBenefAdresse)
         Me.GroupBox15.Controls.Add(Me.Button8)
-        Me.GroupBox15.Controls.Add(Me.Label20)
-        Me.GroupBox15.Controls.Add(Me.TBBenefDN)
-        Me.GroupBox15.Controls.Add(Me.TBBenefTel)
-        Me.GroupBox15.Controls.Add(Me.TBBenefPays)
-        Me.GroupBox15.Controls.Add(Me.TBBenefVille)
-        Me.GroupBox15.Controls.Add(Me.TBBenefCodePostal)
-        Me.GroupBox15.Controls.Add(Me.TBBenefNom)
-        Me.GroupBox15.Controls.Add(Me.TBBenefPrenom)
-        Me.GroupBox15.Controls.Add(Me.Label22)
-        Me.GroupBox15.Controls.Add(Me.Label23)
-        Me.GroupBox15.Controls.Add(Me.Label24)
-        Me.GroupBox15.Controls.Add(Me.Label25)
-        Me.GroupBox15.Controls.Add(Me.Label26)
-        Me.GroupBox15.Controls.Add(Me.Label27)
-        Me.GroupBox15.Controls.Add(Me.Label30)
         Me.GroupBox15.Location = New System.Drawing.Point(17, 14)
         Me.GroupBox15.Name = "GroupBox15"
         Me.GroupBox15.Size = New System.Drawing.Size(500, 166)
         Me.GroupBox15.TabIndex = 0
         Me.GroupBox15.TabStop = False
         Me.GroupBox15.Text = "Infos bénéficiaires"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(32, 27)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(109, 14)
+        Me.LinkLabel1.TabIndex = 138
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Emplacement A7262"
         '
         'Button7
         '
@@ -1827,86 +1494,6 @@ Partial Class FormGestion
         Me.Button8.TabIndex = 136
         Me.Button8.Text = "Modifier"
         Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(8, 47)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(47, 14)
-        Me.Label20.TabIndex = 38
-        Me.Label20.Text = "Adresse"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(8, 104)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(100, 14)
-        Me.Label22.TabIndex = 33
-        Me.Label22.Text = "Date de naissance"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(8, 76)
-        Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(61, 14)
-        Me.Label23.TabIndex = 32
-        Me.Label23.Text = "Téléphone"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(198, 104)
-        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(29, 14)
-        Me.Label24.TabIndex = 30
-        Me.Label24.Text = "Pays"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(198, 76)
-        Me.Label25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(29, 14)
-        Me.Label25.TabIndex = 28
-        Me.Label25.Text = "Ville"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(195, 47)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(69, 14)
-        Me.Label26.TabIndex = 25
-        Me.Label26.Text = "Code postal"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(194, 17)
-        Me.Label27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(31, 14)
-        Me.Label27.TabIndex = 23
-        Me.Label27.Text = "Nom"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(8, 17)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(46, 14)
-        Me.Label30.TabIndex = 21
-        Me.Label30.Text = "Prénom"
         '
         'Panel12
         '
@@ -1963,7 +1550,7 @@ Partial Class FormGestion
         '
         Me.GroupBox14.BackColor = System.Drawing.Color.GhostWhite
         Me.GroupBox14.Controls.Add(Me.TextBoxNullable1)
-        Me.GroupBox14.Controls.Add(Me.Button2)
+        Me.GroupBox14.Controls.Add(Me.BTPersSearch)
         Me.GroupBox14.Location = New System.Drawing.Point(11, 11)
         Me.GroupBox14.Name = "GroupBox14"
         Me.GroupBox14.Size = New System.Drawing.Size(127, 93)
@@ -1971,14 +1558,14 @@ Partial Class FormGestion
         Me.GroupBox14.TabStop = False
         Me.GroupBox14.Text = "Rechercher :"
         '
-        'Button2
+        'BTPersSearch
         '
-        Me.Button2.Location = New System.Drawing.Point(6, 41)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 44
-        Me.Button2.Text = "Rechercher"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BTPersSearch.Location = New System.Drawing.Point(6, 41)
+        Me.BTPersSearch.Name = "BTPersSearch"
+        Me.BTPersSearch.Size = New System.Drawing.Size(75, 23)
+        Me.BTPersSearch.TabIndex = 44
+        Me.BTPersSearch.Text = "Rechercher"
+        Me.BTPersSearch.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -2026,25 +1613,184 @@ Partial Class FormGestion
         '
         Me.ContentPanel.Size = New System.Drawing.Size(150, 150)
         '
-        'TBPersAdress
+        'TextBoxNullable1
         '
-        Me.TBPersAdress.CueBanner = Nothing
-        Me.TBPersAdress.Location = New System.Drawing.Point(74, 44)
-        Me.TBPersAdress.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersAdress.Name = "TBPersAdress"
-        Me.TBPersAdress.Size = New System.Drawing.Size(121, 21)
-        Me.TBPersAdress.TabIndex = 26
-        Me.TBPersAdress.Value = Nothing
+        Me.TextBoxNullable1.CueBanner = Nothing
+        Me.TextBoxNullable1.Location = New System.Drawing.Point(6, 20)
+        Me.TextBoxNullable1.Name = "TextBoxNullable1"
+        Me.TextBoxNullable1.Size = New System.Drawing.Size(100, 21)
+        Me.TextBoxNullable1.TabIndex = 136
+        Me.TextBoxNullable1.Value = Nothing
         '
-        'TBPersNumNational
+        'GroupBox13
         '
-        Me.TBPersNumNational.CueBanner = Nothing
-        Me.TBPersNumNational.Location = New System.Drawing.Point(80, 129)
-        Me.TBPersNumNational.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersNumNational.Name = "TBPersNumNational"
-        Me.TBPersNumNational.Size = New System.Drawing.Size(109, 21)
-        Me.TBPersNumNational.TabIndex = 37
-        Me.TBPersNumNational.Value = Nothing
+        Me.GroupBox13.BackColor = System.Drawing.Color.GhostWhite
+        Me.GroupBox13.Controls.Add(Me.Button5)
+        Me.GroupBox13.Controls.Add(Me.TBPersAdress)
+        Me.GroupBox13.Controls.Add(Me.Button6)
+        Me.GroupBox13.Controls.Add(Me.Label4)
+        Me.GroupBox13.Controls.Add(Me.TBPersNumNational)
+        Me.GroupBox13.Controls.Add(Me.TBPersDN)
+        Me.GroupBox13.Controls.Add(Me.TBPersTel)
+        Me.GroupBox13.Controls.Add(Me.TBPersPays)
+        Me.GroupBox13.Controls.Add(Me.TBPersVille)
+        Me.GroupBox13.Controls.Add(Me.TBPersCodePostal)
+        Me.GroupBox13.Controls.Add(Me.TBPersNom)
+        Me.GroupBox13.Controls.Add(Me.TBPersPrenom)
+        Me.GroupBox13.Controls.Add(Me.Label9)
+        Me.GroupBox13.Controls.Add(Me.Label8)
+        Me.GroupBox13.Controls.Add(Me.Label7)
+        Me.GroupBox13.Controls.Add(Me.Label6)
+        Me.GroupBox13.Controls.Add(Me.Label5)
+        Me.GroupBox13.Controls.Add(Me.Label10)
+        Me.GroupBox13.Controls.Add(Me.Label11)
+        Me.GroupBox13.Controls.Add(Me.Label28)
+        Me.GroupBox13.Location = New System.Drawing.Point(17, 14)
+        Me.GroupBox13.Name = "GroupBox13"
+        Me.GroupBox13.Size = New System.Drawing.Size(500, 166)
+        Me.GroupBox13.TabIndex = 0
+        Me.GroupBox13.TabStop = False
+        Me.GroupBox13.Text = "Infos Personnes"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(14, 17)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(46, 14)
+        Me.Label28.TabIndex = 21
+        Me.Label28.Text = "Prénom"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(222, 15)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(31, 14)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Nom"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(223, 45)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(69, 14)
+        Me.Label10.TabIndex = 25
+        Me.Label10.Text = "Code postal"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(226, 74)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 14)
+        Me.Label5.TabIndex = 28
+        Me.Label5.Text = "Ville"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(226, 102)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(29, 14)
+        Me.Label6.TabIndex = 30
+        Me.Label6.Text = "Pays"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(14, 76)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(61, 14)
+        Me.Label7.TabIndex = 32
+        Me.Label7.Text = "Téléphone"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(14, 104)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(100, 14)
+        Me.Label8.TabIndex = 33
+        Me.Label8.Text = "Date de naissance"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(17, 131)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(65, 14)
+        Me.Label9.TabIndex = 36
+        Me.Label9.Text = "N° national"
+        '
+        'TBPersPrenom
+        '
+        Me.TBPersPrenom.CueBanner = Nothing
+        Me.TBPersPrenom.Location = New System.Drawing.Point(74, 15)
+        Me.TBPersPrenom.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersPrenom.Name = "TBPersPrenom"
+        Me.TBPersPrenom.Size = New System.Drawing.Size(121, 21)
+        Me.TBPersPrenom.TabIndex = 22
+        Me.TBPersPrenom.Value = Nothing
+        '
+        'TBPersNom
+        '
+        Me.TBPersNom.CueBanner = Nothing
+        Me.TBPersNom.Location = New System.Drawing.Point(265, 15)
+        Me.TBPersNom.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersNom.Name = "TBPersNom"
+        Me.TBPersNom.Size = New System.Drawing.Size(105, 21)
+        Me.TBPersNom.TabIndex = 24
+        Me.TBPersNom.Value = Nothing
+        '
+        'TBPersCodePostal
+        '
+        Me.TBPersCodePostal.CueBanner = Nothing
+        Me.TBPersCodePostal.Location = New System.Drawing.Point(291, 42)
+        Me.TBPersCodePostal.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersCodePostal.Name = "TBPersCodePostal"
+        Me.TBPersCodePostal.Size = New System.Drawing.Size(79, 21)
+        Me.TBPersCodePostal.TabIndex = 27
+        Me.TBPersCodePostal.Value = Nothing
+        '
+        'TBPersVille
+        '
+        Me.TBPersVille.CueBanner = Nothing
+        Me.TBPersVille.Location = New System.Drawing.Point(265, 71)
+        Me.TBPersVille.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersVille.Name = "TBPersVille"
+        Me.TBPersVille.Size = New System.Drawing.Size(105, 21)
+        Me.TBPersVille.TabIndex = 31
+        Me.TBPersVille.Value = Nothing
+        '
+        'TBPersPays
+        '
+        Me.TBPersPays.CueBanner = Nothing
+        Me.TBPersPays.Location = New System.Drawing.Point(265, 100)
+        Me.TBPersPays.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersPays.Name = "TBPersPays"
+        Me.TBPersPays.Size = New System.Drawing.Size(105, 21)
+        Me.TBPersPays.TabIndex = 35
+        Me.TBPersPays.Value = Nothing
+        '
+        'TBPersTel
+        '
+        Me.TBPersTel.CueBanner = Nothing
+        Me.TBPersTel.Location = New System.Drawing.Point(74, 73)
+        Me.TBPersTel.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersTel.Name = "TBPersTel"
+        Me.TBPersTel.Size = New System.Drawing.Size(121, 21)
+        Me.TBPersTel.TabIndex = 29
+        Me.TBPersTel.Value = Nothing
         '
         'TBPersDN
         '
@@ -2058,238 +1804,66 @@ Partial Class FormGestion
         Me.TBPersDN.TabIndex = 34
         Me.TBPersDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TBPersTel
+        'TBPersNumNational
         '
-        Me.TBPersTel.CueBanner = Nothing
-        Me.TBPersTel.Location = New System.Drawing.Point(74, 73)
-        Me.TBPersTel.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersTel.Name = "TBPersTel"
-        Me.TBPersTel.Size = New System.Drawing.Size(121, 21)
-        Me.TBPersTel.TabIndex = 29
-        Me.TBPersTel.Value = Nothing
+        Me.TBPersNumNational.CueBanner = Nothing
+        Me.TBPersNumNational.Location = New System.Drawing.Point(80, 129)
+        Me.TBPersNumNational.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersNumNational.Name = "TBPersNumNational"
+        Me.TBPersNumNational.Size = New System.Drawing.Size(109, 21)
+        Me.TBPersNumNational.TabIndex = 37
+        Me.TBPersNumNational.Value = Nothing
         '
-        'TBPersPays
+        'Label4
         '
-        Me.TBPersPays.CueBanner = Nothing
-        Me.TBPersPays.Location = New System.Drawing.Point(265, 100)
-        Me.TBPersPays.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersPays.Name = "TBPersPays"
-        Me.TBPersPays.Size = New System.Drawing.Size(105, 21)
-        Me.TBPersPays.TabIndex = 35
-        Me.TBPersPays.Value = Nothing
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(14, 47)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(47, 14)
+        Me.Label4.TabIndex = 38
+        Me.Label4.Text = "Adresse"
         '
-        'TBPersVille
+        'Button6
         '
-        Me.TBPersVille.CueBanner = Nothing
-        Me.TBPersVille.Location = New System.Drawing.Point(265, 71)
-        Me.TBPersVille.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersVille.Name = "TBPersVille"
-        Me.TBPersVille.Size = New System.Drawing.Size(105, 21)
-        Me.TBPersVille.TabIndex = 31
-        Me.TBPersVille.Value = Nothing
+        Me.Button6.BackColor = System.Drawing.Color.SeaGreen
+        Me.Button6.ForeColor = System.Drawing.Color.Transparent
+        Me.Button6.Location = New System.Drawing.Point(403, 100)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(64, 23)
+        Me.Button6.TabIndex = 136
+        Me.Button6.Text = "Modifier"
+        Me.Button6.UseVisualStyleBackColor = False
         '
-        'TBPersCodePostal
+        'TBPersAdress
         '
-        Me.TBPersCodePostal.CueBanner = Nothing
-        Me.TBPersCodePostal.Location = New System.Drawing.Point(291, 42)
-        Me.TBPersCodePostal.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersCodePostal.Name = "TBPersCodePostal"
-        Me.TBPersCodePostal.Size = New System.Drawing.Size(79, 21)
-        Me.TBPersCodePostal.TabIndex = 27
-        Me.TBPersCodePostal.Value = Nothing
+        Me.TBPersAdress.CueBanner = Nothing
+        Me.TBPersAdress.Location = New System.Drawing.Point(74, 44)
+        Me.TBPersAdress.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPersAdress.Name = "TBPersAdress"
+        Me.TBPersAdress.Size = New System.Drawing.Size(121, 21)
+        Me.TBPersAdress.TabIndex = 26
+        Me.TBPersAdress.Value = Nothing
         '
-        'TBPersNom
+        'Button5
         '
-        Me.TBPersNom.CueBanner = Nothing
-        Me.TBPersNom.Location = New System.Drawing.Point(265, 15)
-        Me.TBPersNom.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersNom.Name = "TBPersNom"
-        Me.TBPersNom.Size = New System.Drawing.Size(105, 21)
-        Me.TBPersNom.TabIndex = 24
-        Me.TBPersNom.Value = Nothing
+        Me.Button5.BackColor = System.Drawing.Color.SeaGreen
+        Me.Button5.ForeColor = System.Drawing.Color.Transparent
+        Me.Button5.Location = New System.Drawing.Point(403, 129)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(74, 23)
+        Me.Button5.TabIndex = 137
+        Me.Button5.Text = "Supprimer"
+        Me.Button5.UseVisualStyleBackColor = False
         '
-        'TBPersPrenom
+        'Panel13
         '
-        Me.TBPersPrenom.CueBanner = Nothing
-        Me.TBPersPrenom.Location = New System.Drawing.Point(74, 15)
-        Me.TBPersPrenom.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBPersPrenom.Name = "TBPersPrenom"
-        Me.TBPersPrenom.Size = New System.Drawing.Size(121, 21)
-        Me.TBPersPrenom.TabIndex = 22
-        Me.TBPersPrenom.Value = Nothing
-        '
-        'TBConsAdresse
-        '
-        Me.TBConsAdresse.CueBanner = Nothing
-        Me.TBConsAdresse.Location = New System.Drawing.Point(65, 44)
-        Me.TBConsAdresse.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsAdresse.Name = "TBConsAdresse"
-        Me.TBConsAdresse.Size = New System.Drawing.Size(121, 21)
-        Me.TBConsAdresse.TabIndex = 26
-        Me.TBConsAdresse.Value = Nothing
-        '
-        'TBConsDateNaiss
-        '
-        Me.TBConsDateNaiss.DateValue = Nothing
-        Me.TBConsDateNaiss.IntArrayValue = CType(resources.GetObject("TBConsDateNaiss.IntArrayValue"), System.Collections.Generic.List(Of System.Nullable(Of Integer)))
-        Me.TBConsDateNaiss.Location = New System.Drawing.Point(104, 102)
-        Me.TBConsDateNaiss.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsDateNaiss.Mask = "00/00/0000"
-        Me.TBConsDateNaiss.Name = "TBConsDateNaiss"
-        Me.TBConsDateNaiss.Size = New System.Drawing.Size(76, 21)
-        Me.TBConsDateNaiss.TabIndex = 34
-        Me.TBConsDateNaiss.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'TBConsTel
-        '
-        Me.TBConsTel.CueBanner = Nothing
-        Me.TBConsTel.Location = New System.Drawing.Point(65, 73)
-        Me.TBConsTel.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsTel.Name = "TBConsTel"
-        Me.TBConsTel.Size = New System.Drawing.Size(121, 21)
-        Me.TBConsTel.TabIndex = 29
-        Me.TBConsTel.Value = Nothing
-        '
-        'TBConsPays
-        '
-        Me.TBConsPays.CueBanner = Nothing
-        Me.TBConsPays.Location = New System.Drawing.Point(234, 102)
-        Me.TBConsPays.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsPays.Name = "TBConsPays"
-        Me.TBConsPays.Size = New System.Drawing.Size(105, 21)
-        Me.TBConsPays.TabIndex = 35
-        Me.TBConsPays.Value = Nothing
-        '
-        'TBConsVille
-        '
-        Me.TBConsVille.CueBanner = Nothing
-        Me.TBConsVille.Location = New System.Drawing.Point(234, 73)
-        Me.TBConsVille.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsVille.Name = "TBConsVille"
-        Me.TBConsVille.Size = New System.Drawing.Size(105, 21)
-        Me.TBConsVille.TabIndex = 31
-        Me.TBConsVille.Value = Nothing
-        '
-        'TBConsCodePostal
-        '
-        Me.TBConsCodePostal.CueBanner = Nothing
-        Me.TBConsCodePostal.Location = New System.Drawing.Point(260, 44)
-        Me.TBConsCodePostal.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsCodePostal.Name = "TBConsCodePostal"
-        Me.TBConsCodePostal.Size = New System.Drawing.Size(79, 21)
-        Me.TBConsCodePostal.TabIndex = 27
-        Me.TBConsCodePostal.Value = Nothing
-        '
-        'TBConsNom
-        '
-        Me.TBConsNom.CueBanner = Nothing
-        Me.TBConsNom.Location = New System.Drawing.Point(234, 17)
-        Me.TBConsNom.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsNom.Name = "TBConsNom"
-        Me.TBConsNom.Size = New System.Drawing.Size(105, 21)
-        Me.TBConsNom.TabIndex = 24
-        Me.TBConsNom.Value = Nothing
-        '
-        'TBConsPrenom
-        '
-        Me.TBConsPrenom.CueBanner = Nothing
-        Me.TBConsPrenom.Location = New System.Drawing.Point(65, 15)
-        Me.TBConsPrenom.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBConsPrenom.Name = "TBConsPrenom"
-        Me.TBConsPrenom.Size = New System.Drawing.Size(121, 21)
-        Me.TBConsPrenom.TabIndex = 22
-        Me.TBConsPrenom.Value = Nothing
-        '
-        'TBBenefAdresse
-        '
-        Me.TBBenefAdresse.CueBanner = Nothing
-        Me.TBBenefAdresse.Location = New System.Drawing.Point(68, 44)
-        Me.TBBenefAdresse.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefAdresse.Name = "TBBenefAdresse"
-        Me.TBBenefAdresse.Size = New System.Drawing.Size(121, 21)
-        Me.TBBenefAdresse.TabIndex = 26
-        Me.TBBenefAdresse.Value = Nothing
-        '
-        'TBBenefDN
-        '
-        Me.TBBenefDN.DateValue = Nothing
-        Me.TBBenefDN.IntArrayValue = CType(resources.GetObject("TBBenefDN.IntArrayValue"), System.Collections.Generic.List(Of System.Nullable(Of Integer)))
-        Me.TBBenefDN.Location = New System.Drawing.Point(107, 102)
-        Me.TBBenefDN.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefDN.Mask = "00/00/0000"
-        Me.TBBenefDN.Name = "TBBenefDN"
-        Me.TBBenefDN.Size = New System.Drawing.Size(76, 21)
-        Me.TBBenefDN.TabIndex = 34
-        Me.TBBenefDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'TBBenefTel
-        '
-        Me.TBBenefTel.CueBanner = Nothing
-        Me.TBBenefTel.Location = New System.Drawing.Point(68, 73)
-        Me.TBBenefTel.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefTel.Name = "TBBenefTel"
-        Me.TBBenefTel.Size = New System.Drawing.Size(121, 21)
-        Me.TBBenefTel.TabIndex = 29
-        Me.TBBenefTel.Value = Nothing
-        '
-        'TBBenefPays
-        '
-        Me.TBBenefPays.CueBanner = Nothing
-        Me.TBBenefPays.Location = New System.Drawing.Point(237, 102)
-        Me.TBBenefPays.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefPays.Name = "TBBenefPays"
-        Me.TBBenefPays.Size = New System.Drawing.Size(105, 21)
-        Me.TBBenefPays.TabIndex = 35
-        Me.TBBenefPays.Value = Nothing
-        '
-        'TBBenefVille
-        '
-        Me.TBBenefVille.CueBanner = Nothing
-        Me.TBBenefVille.Location = New System.Drawing.Point(237, 73)
-        Me.TBBenefVille.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefVille.Name = "TBBenefVille"
-        Me.TBBenefVille.Size = New System.Drawing.Size(105, 21)
-        Me.TBBenefVille.TabIndex = 31
-        Me.TBBenefVille.Value = Nothing
-        '
-        'TBBenefCodePostal
-        '
-        Me.TBBenefCodePostal.CueBanner = Nothing
-        Me.TBBenefCodePostal.Location = New System.Drawing.Point(263, 44)
-        Me.TBBenefCodePostal.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefCodePostal.Name = "TBBenefCodePostal"
-        Me.TBBenefCodePostal.Size = New System.Drawing.Size(79, 21)
-        Me.TBBenefCodePostal.TabIndex = 27
-        Me.TBBenefCodePostal.Value = Nothing
-        '
-        'TBBenefNom
-        '
-        Me.TBBenefNom.CueBanner = Nothing
-        Me.TBBenefNom.Location = New System.Drawing.Point(237, 17)
-        Me.TBBenefNom.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefNom.Name = "TBBenefNom"
-        Me.TBBenefNom.Size = New System.Drawing.Size(105, 21)
-        Me.TBBenefNom.TabIndex = 24
-        Me.TBBenefNom.Value = Nothing
-        '
-        'TBBenefPrenom
-        '
-        Me.TBBenefPrenom.CueBanner = Nothing
-        Me.TBBenefPrenom.Location = New System.Drawing.Point(68, 15)
-        Me.TBBenefPrenom.Margin = New System.Windows.Forms.Padding(2)
-        Me.TBBenefPrenom.Name = "TBBenefPrenom"
-        Me.TBBenefPrenom.Size = New System.Drawing.Size(121, 21)
-        Me.TBBenefPrenom.TabIndex = 22
-        Me.TBBenefPrenom.Value = Nothing
-        '
-        'TextBoxNullable1
-        '
-        Me.TextBoxNullable1.CueBanner = Nothing
-        Me.TextBoxNullable1.Location = New System.Drawing.Point(6, 20)
-        Me.TextBoxNullable1.Name = "TextBoxNullable1"
-        Me.TextBoxNullable1.Size = New System.Drawing.Size(100, 21)
-        Me.TextBoxNullable1.TabIndex = 136
-        Me.TextBoxNullable1.Value = Nothing
+        Me.Panel13.BackColor = System.Drawing.Color.SeaGreen
+        Me.Panel13.Controls.Add(Me.GroupBox13)
+        Me.Panel13.Location = New System.Drawing.Point(3, 3)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(531, 200)
+        Me.Panel13.TabIndex = 138
         '
         'FormGestion
         '
@@ -2340,12 +1914,6 @@ Partial Class FormGestion
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.Panel13.ResumeLayout(False)
-        Me.GroupBox13.ResumeLayout(False)
-        Me.GroupBox13.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
-        Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout()
         Me.Panel15.ResumeLayout(False)
         Me.GroupBox15.ResumeLayout(False)
         Me.GroupBox15.PerformLayout()
@@ -2356,6 +1924,9 @@ Partial Class FormGestion
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox13.ResumeLayout(False)
+        Me.GroupBox13.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2482,19 +2053,13 @@ Partial Class FormGestion
     Friend WithEvents ColCode As DataGridViewTextBoxColumn
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents Panel13 As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox13 As System.Windows.Forms.GroupBox
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
     Friend WithEvents DgvListeConcessionnaire As System.Windows.Forms.DataGridView
     Friend WithEvents Panel14 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox14 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents BTPersSearch As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Panel11 As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
     Friend WithEvents Panel15 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox15 As System.Windows.Forms.GroupBox
     Friend WithEvents ColPersNom As DataGridViewTextBoxColumn
@@ -2502,6 +2067,11 @@ Partial Class FormGestion
     Friend WithEvents PRBConcessionnaire As RadioButton
     Friend WithEvents PRBBenef As RadioButton
     Friend WithEvents TextBoxNullable1 As TextBoxNullable
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents GroupBox13 As GroupBox
     Friend WithEvents Button5 As Button
     Friend WithEvents TBPersAdress As TextBoxNullable
     Friend WithEvents Button6 As Button
@@ -2522,38 +2092,4 @@ Partial Class FormGestion
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label28 As Label
-    Friend WithEvents TBConsAdresse As TextBoxNullable
-    Friend WithEvents Label12 As Label
-    Friend WithEvents TBConsDateNaiss As MaskedTextBoxDate
-    Friend WithEvents TBConsTel As TextBoxNullable
-    Friend WithEvents TBConsPays As TextBoxNullable
-    Friend WithEvents TBConsVille As TextBoxNullable
-    Friend WithEvents TBConsCodePostal As TextBoxIntNullable
-    Friend WithEvents TBConsNom As TextBoxNullable
-    Friend WithEvents TBConsPrenom As TextBoxNullable
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label29 As Label
-    Friend WithEvents Button7 As Button
-    Friend WithEvents TBBenefAdresse As TextBoxNullable
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Label20 As Label
-    Friend WithEvents TBBenefDN As MaskedTextBoxDate
-    Friend WithEvents TBBenefTel As TextBoxNullable
-    Friend WithEvents TBBenefPays As TextBoxNullable
-    Friend WithEvents TBBenefVille As TextBoxNullable
-    Friend WithEvents TBBenefCodePostal As TextBoxIntNullable
-    Friend WithEvents TBBenefNom As TextBoxNullable
-    Friend WithEvents TBBenefPrenom As TextBoxNullable
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Label24 As Label
-    Friend WithEvents Label25 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label30 As Label
 End Class
