@@ -1,6 +1,7 @@
 ﻿
 Public Class FormGestion
-
+    Dim empl As Emplacement
+    Dim i = 0
     Dim _listeConcessionnairesSortable As SortableBindingList(Of Acteur.InfosPourListe)
     Dim _ListeBeneficiaireSortable As SortableBindingList(Of Acteur.InfosPourListe)
     Dim _ListePersContactSortable As SortableBindingList(Of Acteur.InfosPourListe)
@@ -243,26 +244,62 @@ Public Class FormGestion
     End Sub
 
     Private Sub DgvListeConcessionnaire_SelectionChanged(sender As Object, e As EventArgs) Handles DgvListeConcessionnaire.SelectionChanged
+        GroupBox15.Controls.Clear()
 
         If DgvListeConcessionnaire.SelectedRows.Count > 0 Then
+
             If ActeurAffiche Is Nothing Then
 
             End If
 
             ActeurAffiche = Bdd.GetActeur(DgvListeConcessionnaire.SelectedRows(0).DataBoundItem.Id)
-
+            i = 0
             With ActeurAffiche
-                TBPersPrenom.Text = If(.Prenom IsNot Nothing Or .Nom IsNot Nothing, .Prenom & " " & .Nom, "?")
+                TBPersPrenom.Text = If(.Prenom IsNot Nothing, .Prenom, "?")
+                TBPersNom.Text = If(.Nom IsNot Nothing, .Nom, "?")
+                TBPersAdress.Text = If(.Adresse IsNot Nothing, .Adresse, "?")
+                TBPersCodePostal.Text = If(.Cp IsNot Nothing, .Cp, "?")
+                TBPersTel.Text = If(.Tel IsNot Nothing, .Tel, "?")
+                TBPersVille.Text = If(.Ville IsNot Nothing, .Ville, "?")
+                TBPersDN.Text = If(.DateNaiss IsNot Nothing, .DateNaiss.Value.ToString("dd/MM/yyyy"), "/")
+                TBPersPays.Text = If(.Pays IsNot Nothing, .Pays, "?")
+                TBPersNumNational.Text = If(.NoRegistre IsNot Nothing, .NoRegistre, "?")
 
 
-                ' TxtDefNom.Text = If(.Prenom IsNot Nothing Or .Nom IsNot Nothing, .Prenom & " " & .Nom, "?")
-                'TxtDefEmplacement.Text = If(.SejourActif IsNot Nothing, .SejourActif.Emplacement.Reference, "/")
-                'TxtDefDateDeces.Text = If(.DateDeces IsNot Nothing, .DateDeces.Value.ToString("dd/MM/yyyy"), "/")
-                'TxtDefCode.Text = If(.NumeroLh, "/")
-                'TxtDefEtatCiv.Text = If(.EtatCivil IsNot Nothing, Defunt.StaticEtatCivilToString(.EtatCivil) & If(.EtatCivil <> "celibataire", " de " & .EtatCivilDe, ""), "/")
-                'Dim strdomicile As String = If(.Adresse IsNot Nothing, .Adresse & ",", "") _
-                '   & If(.Cp IsNot Nothing, .Cp & " ", "") & If(.Ville IsNot Nothing, .Ville, "") & If(.Pays <> "" And String.Compare(.Pays, "belgique", True) <> 0, ", " & .Pays, "")
-                'TxtDefDomicile.Text = If(strdomicile <> "", strdomicile, "/")
+
+                If ActeurAffiche.MentionsCommeBenef.Count > 0 Then
+
+                    Dim x = 20
+                    Dim y = 25
+                    'Dim Lab(ActeurAffiche.MentionsCommeBenef.Count) As Label
+                    For Each mention In ActeurAffiche.MentionsCommeBenef
+
+                        If mention.Concession.FkEmpl IsNot Nothing Then
+                            empl = Bdd.Load(Of Emplacement)(mention.Concession.FkEmpl)
+                            Dim lelabel As New Label
+                            lelabel.Text = empl.Reference
+                            lelabel.Location = New Point(x, y)
+                            GroupBox15.Controls.Add(lelabel)
+                        End If
+
+                        i = i + 1
+                        x = x + 0
+                        y = y + 20
+                        ' afficher les infos de l'emplacementd
+
+
+
+                    Next
+
+
+                End If
+
+
+
+
+
+
+
             End With
 
         End If
@@ -293,4 +330,6 @@ Public Class FormGestion
     Private Sub PRBBenef_CheckedChanged(sender As Object, e As EventArgs) Handles PRBBenef.CheckedChanged
         DgvListeConcessionnaire.DataSource = ListeBeneficiaireSortable
     End Sub
+
+
 End Class
